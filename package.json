@@ -1,0 +1,14 @@
+{
+  "name": "s-template",
+  "version": "1.0.0",
+  "description": "Official list of template repositories for [s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)",
+  "scripts": {
+    "prepare:node": "s-prepare-template --isDebug --projectCatalog='./node'",
+    "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./NextJs'"
+  },
+  "dependencies": {
+    "s-update-manager": "~1.0.0-dev.37"
+  },
+  "author": "",
+  "license": "ISC"
+}
