@@ -129,8 +129,25 @@ module.exports = {
           find ./templates -type f | sort > .build_status_files
         `,
         verifyConditionsCmd: 'rm -f .build_status .build_status_files',
-        successCmd: 'rm -f .build_status .build_status_files',
-        failCmd: 'rm -f .build_status .build_status_files',
+        successCmd: `
+          if [ -f .build_status ] && [ -f .build_status_files ]; then
+            echo "Build was successful. Verifying files..."
+            find ./templates -type f | sort > .build_status_current
+            if diff -q .build_status_files .build_status_current; then
+              echo "All expected files are present."
+              rm .build_status_current
+              exit 0
+            else
+              echo "Mismatch in expected files. Release may be incomplete."
+              rm .build_status_current
+              exit 1
+            fi
+          else
+            echo "Build failed or was not completed"
+            exit 1
+          fi
+        `,
+        failCmd: 'rm -f .build_status .build_status_files .build_status_current',
       },
     ],
     [
