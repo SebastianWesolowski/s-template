@@ -119,12 +119,7 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-    [
-      "@semantic-release/github",
-      {
-        branches: ["main"],
-      },
-    ],
+
     [
       '@semantic-release/exec',
       {
@@ -136,6 +131,12 @@ module.exports = {
       {
         assets: ['CHANGELOG.md', 'templates/**/*'],
         message: 'release: 📦 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+      },
+    ],
+    [
+      "@semantic-release/github",
+      {
+        branches: ["main"],
       },
     ],
   ],
