@@ -8,8 +8,8 @@
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
     "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
     "build": "npm-run-all -s prepare:*",
-    "prepare:node": "s-prepare-template --isDebug --projectCatalog='./node'",
-    "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./NextJs'"
+    "prepare:node": "s-prepare-template --isDebug --projectCatalog='./templates/node'",
+    "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./templates/NextJs'"
   },
   "dependencies": {
     "@commitlint/cli": "^19.5.0",
