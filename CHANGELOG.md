@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## [1.0.0-dev.9](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.8...v1.0.0-dev.9) (October 16, 2024)
+<<<<<<< HEAD
 =======
 ## 1.0.0 (October 16, 2024)
 >>>>>>> 4d2ed2e (release: 📦 1.0.0 [skip ci])
@@ -8,23 +7,25 @@
 ## 1.0.0 (October 16, 2024)
 >>>>>>> 4d2ed2e (release: 📦 1.0.0 [skip ci])
 
+=======
+>>>>>>> 835f29f (refactor: ♻ [SC-8] ️ clean up)
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([9f88871](https://github.com/SebastianWesolowski/s-template/commit/9f8887121f0dba5921773effe1490b36a4947335))
 
 ## [1.0.0-dev.8](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.7...v1.0.0-dev.8) (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([72d39ad](https://github.com/SebastianWesolowski/s-template/commit/72d39ad0bcff23e9f696a9dffb71d2df345b2981))
 - 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 4d2ed2e (release: 📦 1.0.0 [skip ci])
+=======
+>>>>>>> 835f29f (refactor: ♻ [SC-8] ️ clean up)
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] prepare scripts ([bc7a57f](https://github.com/SebastianWesolowski/s-template/commit/bc7a57f53edc5c12cc580cbc79fbf07b3e4da5e8))
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] change order in releaserc ([9ac7aeb](https://github.com/SebastianWesolowski/s-template/commit/9ac7aebca1887de4f5b2247e8d67ec5be4a04ddb))
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] change order in releaserc ([4e9ad4d](https://github.com/SebastianWesolowski/s-template/commit/4e9ad4da271489a4bed4ebfedd3952382ad9715c))
@@ -54,9 +55,16 @@ add node template ([83c80b0](https://github.com/SebastianWesolowski/s-template/c
 - 📦 1.0.0-dev.2 [skip ci] ([3c7402f](https://github.com/SebastianWesolowski/s-template/commit/3c7402f96e2ec4927def7a908172d61831a8a380))
 - 📦 1.0.0-dev.1 [skip ci] ([7d0b81e](https://github.com/SebastianWesolowski/s-template/commit/7d0b81e4eb86d9165d058f83e51f3d83a76db119))
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4d2ed2e (release: 📦 1.0.0 [skip ci])
 =======
 >>>>>>> 4d2ed2e (release: 📦 1.0.0 [skip ci])
+=======
+
+
+
+
+>>>>>>> 835f29f (refactor: ♻ [SC-8] ️ clean up)
 
 ## [1.0.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.6...v1.0.0-dev.7) (October 16, 2024)
 
