@@ -1,3 +1,10 @@
+## [1.0.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.3...v1.0.0-dev.4) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] change order in releaserc ([4e9ad4d](https://github.com/SebastianWesolowski/s-template/commit/4e9ad4da271489a4bed4ebfedd3952382ad9715c))
+
 ## [1.0.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.2...v1.0.0-dev.3) (October 16, 2024)
 
 
