@@ -1,14 +1,37 @@
 {
   "name": "s-template",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Official list of template repositories for [s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)",
   "scripts": {
+    "commit": "czg",
+    "prepare": "husky",
+    "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
+    "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
     "prepare:node": "s-prepare-template --isDebug --projectCatalog='./node'",
     "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./NextJs'"
   },
   "dependencies": {
-    "s-update-manager": "~1.0.0-dev.37"
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@ryansonshine/commitizen": "^4.2.8",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^22.7.5",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "czg": "^1.9.4",
+    "husky": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "s-update-manager": "~1.0.0-dev.37",
+    "semantic-release": "^21.0.1",
+    "typescript": "^5.6.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
 }

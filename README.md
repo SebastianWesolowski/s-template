@@ -21,10 +21,10 @@ If you want to use these templates with s-update-manager, you must use the repos
 
 ---
 
-| Template          | Repository URL                                                                                                       |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------- |
-| [node](#node)     | [https://github.com/SebastianWesolowski/s-template/node](https://github.com/SebastianWesolowski/s-template/node)     |
-| [NextJs](#NextJs) | [https://github.com/SebastianWesolowski/s-template/nextjs](https://github.com/SebastianWesolowski/s-template/nextjs) |
+| Template          | Repository URL                                                                                                                           |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [node](#node)     | [https://github.com/SebastianWesolowski/s-template/templates/node](https://github.com/SebastianWesolowski/s-template/templates/node)     |
+| [NextJs](#NextJs) | [https://github.com/SebastianWesolowski/s-template/templates/nextjs](https://github.com/SebastianWesolowski/s-template/templates/nextjs) |
 
 ## node
 
