@@ -126,16 +126,16 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'echo "Preparing release" && yarn build',
+      },
+    ],
+    [
       '@semantic-release/git',
       {
         assets: ['CHANGELOG.md', 'templates/**/*'],
         message: 'release: 📦 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
-      },
-    ],
-    [
-      '@semantic-release/exec',
-      {
-        prepareCmd: 'echo "Preparing release" && yarn build',
       },
     ],
   ],
