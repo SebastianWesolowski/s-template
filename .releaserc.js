@@ -122,23 +122,53 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'echo "Preparing release" && yarn build && echo "BUILD_COMPLETED" > .build_status',
-        verifyConditionsCmd: 'rm -f .build_status',
-        successCmd: 'rm -f .build_status',
-        failCmd: 'rm -f .build_status',
+        prepareCmd: `
+          echo "Preparing release" &&
+          yarn build &&
+          echo "BUILD_COMPLETED" > .build_status &&
+          find ./templates -type f | sort > .build_status_files
+        `,
+        verifyConditionsCmd: 'rm -f .build_status .build_status_files',
+        successCmd: 'rm -f .build_status .build_status_files',
+        failCmd: 'rm -f .build_status .build_status_files',
       },
     ],
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'templates/*', 'templates/node/*', 'templates/NextJs/*', '.build_status'],
+        assets: [
+          'CHANGELOG.md',
+          './templates/*',
+          './templates/**',
+          './templates/*/**',
+          './templates/**/**',
+          './templates/**/**/*',
+          './templates/node/*',
+          './templates/NextJs/*',
+          '.build_status',
+          '.build_status_files',
+        ],
         message: 'release: 📦 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
     [
       '@semantic-release/exec',
       {
-        successCmd: 'test -f .build_status && echo "Build was successful" || echo "Build failed or was not completed"',
+        successCmd: `
+          if [ -f .build_status ] && [ -f .build_status_files ]; then
+            echo "Build was successful. Verifying files..."
+            current_files=$(find ./templates -type f | sort)
+            if diff -q .build_status_files <(echo "$current_files"); then
+              echo "All expected files are present."
+            else
+              echo "Mismatch in expected files. Release may be incomplete."
+              exit 1
+            fi
+          else
+            echo "Build failed or was not completed"
+            exit 1
+          fi
+        `,
       },
     ],
     [
