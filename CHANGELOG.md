@@ -1,3 +1,18 @@
+## [1.0.0-dev.10](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.9...v1.0.0-dev.10) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] refresh configs ([faf664c](https://github.com/SebastianWesolowski/s-template/commit/faf664c6baf1db295ddd71a82c21058ddb357d24))
+- ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
+
+
+### Other tasks
+
+- 📦 1.0.0 [skip ci] ([70b77ac](https://github.com/SebastianWesolowski/s-template/commit/70b77ac7c691a210c1baa0a12de1884e767cd46e))
+- 📦 1.0.0 [skip ci] ([eaf8471](https://github.com/SebastianWesolowski/s-template/commit/eaf8471f1ae5c65c24b7423bb9f26b9095a2d00c))
+- 📦 1.0.0 [skip ci] ([e7910ae](https://github.com/SebastianWesolowski/s-template/commit/e7910ae871e72692dcd7b10baa1085cebb8ef412))
+
 ## [1.0.0-dev.9](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.8...v1.0.0-dev.9) (October 16, 2024)
 <<<<<<< HEAD
 =======
