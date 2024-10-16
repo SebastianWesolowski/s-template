@@ -1,13 +1,11 @@
 ## [1.1.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.1...v1.1.0-dev.2) (November 18, 2024)
 
-
 ### Other tasks
 
 - ✨ [] addpre-commithook ([f8fa7a8](https://github.com/SebastianWesolowski/s-template/commit/f8fa7a86bd75fbc27534dfaf8ba3d85c10b520e6))
 - 📦 1.1.0 [skip ci] ([f3eb3c9](https://github.com/SebastianWesolowski/s-template/commit/f3eb3c9fa11aa8cf344006847084addaa8fa8652))
 
 ## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
@@ -17,12 +15,12 @@
 - 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
 - ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
 
-
 ### Other tasks
 
 - Merge pull request #2 from SebastianWesolowski/dev
 
 Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b525168ccfe9a9deef1743769c102ccf0ba))
+
 - Merge branch 'main' into dev ([04f849d](https://github.com/SebastianWesolowski/s-template/commit/04f849dd631aa251f5cdf3db4ef854b14724fb08))
 - 📦 1.1.0-dev.1 [skip ci] ([e652ee6](https://github.com/SebastianWesolowski/s-template/commit/e652ee66174ee16ef6af2e1b83bac89d1c3948df))
 - 📦 1.0.0-dev.10 [skip ci] ([205ecc0](https://github.com/SebastianWesolowski/s-template/commit/205ecc0772588ad8791f71af514e8cc038028c77))
@@ -34,7 +32,6 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 
 ## [1.1.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0-dev.1) (October 16, 2024)
 
-
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([9f88871](https://github.com/SebastianWesolowski/s-template/commit/9f8887121f0dba5921773effe1490b36a4947335))
@@ -42,7 +39,6 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] refresh configs ([faf664c](https://github.com/SebastianWesolowski/s-template/commit/faf664c6baf1db295ddd71a82c21058ddb357d24))
 - 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
 - ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
-
 
 ### Other tasks
 
@@ -56,15 +52,12 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 
 ## [1.0.0-dev.10](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.9...v1.0.0-dev.10) (October 16, 2024)
 
-
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] refresh configs ([faf664c](https://github.com/SebastianWesolowski/s-template/commit/faf664c6baf1db295ddd71a82c21058ddb357d24))
 - ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
 
-
 ## [1.0.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.6...v1.0.0-dev.7) (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
@@ -73,13 +66,11 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 
 ## [1.0.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.5...v1.0.0-dev.6) (October 16, 2024)
 
-
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] new release build ([cb3a0da](https://github.com/SebastianWesolowski/s-template/commit/cb3a0daa1ef745ca44953c09c6bd1d4434e25479))
 
 ## [1.0.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.4...v1.0.0-dev.5) (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
@@ -87,13 +78,11 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 
 ## [1.0.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.3...v1.0.0-dev.4) (October 16, 2024)
 
-
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] change order in releaserc ([4e9ad4d](https://github.com/SebastianWesolowski/s-template/commit/4e9ad4da271489a4bed4ebfedd3952382ad9715c))
 
 ## [1.0.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.2...v1.0.0-dev.3) (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
@@ -101,13 +90,11 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 
 ## [1.0.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.1...v1.0.0-dev.2) (October 16, 2024)
 
-
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] build templates with release ([f964272](https://github.com/SebastianWesolowski/s-template/commit/f964272f7d7778604e61c82aacce55af9d3e01fd))
 
 ## 1.0.0-dev.1 (October 16, 2024)
-
 
 ### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
 
@@ -116,7 +103,6 @@ Dev ([a2b00b5](https://github.com/SebastianWesolowski/s-template/commit/a2b00b52
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] add node template ([adfb150](https://github.com/SebastianWesolowski/s-template/commit/adfb150ddf33a2191b1a78556060e4d8db76cec1))
 - ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] initial config for changelog ([6d368af](https://github.com/SebastianWesolowski/s-template/commit/6d368af929e85eab647501e9c774d375840627b7))
 - 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] improve release config ([7372456](https://github.com/SebastianWesolowski/s-template/commit/73724564a69f69422c6ead67bb073105572199f5))
-
 
 ### Other tasks
 
