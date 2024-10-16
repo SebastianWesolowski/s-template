@@ -135,7 +135,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'echo "Preparing release"',
+        prepareCmd: 'echo "Preparing release" && yarn build',
       },
     ],
   ],
