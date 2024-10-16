@@ -1,4 +1,5 @@
 ./templates/NextJs/templateCatalog/repositoryMap.json
+./templates/NextJs/templateCatalog/repositoryMap.json.backup
 ./templates/node/.gitignore
 ./templates/node/LICENSE
 ./templates/node/README.md
