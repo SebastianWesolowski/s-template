@@ -1,3 +1,10 @@
+## [1.0.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.1...v1.0.0-dev.2) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] build templates with release ([f964272](https://github.com/SebastianWesolowski/s-template/commit/f964272f7d7778604e61c82aacce55af9d3e01fd))
+
 ## 1.0.0-dev.1 (October 16, 2024)
 
 
