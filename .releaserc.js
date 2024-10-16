@@ -119,18 +119,26 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'echo "Preparing release" && yarn build',
+        prepareCmd: 'echo "Preparing release" && yarn build && echo "BUILD_COMPLETED" > .build_status',
+        verifyConditionsCmd: 'rm -f .build_status',
+        successCmd: 'rm -f .build_status',
+        failCmd: 'rm -f .build_status',
       },
     ],
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'templates/**/*'],
+        assets: ['CHANGELOG.md', 'templates/*', 'templates/node/*', 'templates/NextJs/*', '.build_status'],
         message: 'release: 📦 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+      },
+    ],
+    [
+      '@semantic-release/exec',
+      {
+        successCmd: 'test -f .build_status && echo "Build was successful" || echo "Build failed or was not completed"',
       },
     ],
     [
