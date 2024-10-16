@@ -1,3 +1,11 @@
+## [1.0.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.6...v1.0.0-dev.7) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] prepare scripts ([bc7a57f](https://github.com/SebastianWesolowski/s-template/commit/bc7a57f53edc5c12cc580cbc79fbf07b3e4da5e8))
+- ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] improve release process ([1be81db](https://github.com/SebastianWesolowski/s-template/commit/1be81db21f110e475f8e9d04b524ca010fad40b4))
+
 ## [1.0.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.5...v1.0.0-dev.6) (October 16, 2024)
 
 
