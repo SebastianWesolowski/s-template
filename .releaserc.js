@@ -138,13 +138,7 @@ module.exports = {
       {
         assets: [
           'CHANGELOG.md',
-          './templates/*',
-          './templates/**',
           './templates/*/**',
-          './templates/**/**',
-          './templates/**/**/*',
-          './templates/node/*',
-          './templates/NextJs/*',
           '.build_status',
           '.build_status_files',
         ],
