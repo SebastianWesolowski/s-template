@@ -1,0 +1,14 @@
+{
+  "projectCatalog": "./templates/NextJs",
+  "templateCatalogName": "templateCatalog",
+  "templateCatalogPath": "./templates/NextJs/templateCatalog",
+  "repositoryMapFileName": "repositoryMap.json",
+  "repositoryMapFilePath": "./templateCatalog/repositoryMap.json",
+  "bumpVersion": true,
+  "isDebug": false,
+  "_": [],
+  "templateVersion": "1.0.0",
+  "fileMap": [],
+  "templateFileList": [],
+  "rootPathFileList": []
+}
