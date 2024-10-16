@@ -122,32 +122,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: `
-          echo "Preparing release" &&
-          yarn build &&
-          echo "BUILD_COMPLETED" > .build_status &&
-          find ./templates -type f | sort > .build_status_files
-        `,
-        verifyConditionsCmd: 'rm -f .build_status .build_status_files',
-        successCmd: `
-          if [ -f .build_status ] && [ -f .build_status_files ]; then
-            echo "Build was successful. Verifying files..."
-            find ./templates -type f | sort > .build_status_current
-            if diff -q .build_status_files .build_status_current; then
-              echo "All expected files are present."
-              rm .build_status_current
-              exit 0
-            else
-              echo "Mismatch in expected files. Release may be incomplete."
-              rm .build_status_current
-              exit 1
-            fi
-          else
-            echo "Build failed or was not completed"
-            exit 1
-          fi
-        `,
-        failCmd: 'rm -f .build_status .build_status_files .build_status_current',
+        prepareCmd: `echo "Preparing release" && yarn build`,
       },
     ],
     [
@@ -156,30 +131,8 @@ module.exports = {
         assets: [
           'CHANGELOG.md',
           './templates/*/**',
-          '.build_status',
-          '.build_status_files',
         ],
         message: 'release: 📦 ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
-      },
-    ],
-    [
-      '@semantic-release/exec',
-      {
-        successCmd: `
-          if [ -f .build_status ] && [ -f .build_status_files ]; then
-            echo "Build was successful. Verifying files..."
-            current_files=$(find ./templates -type f | sort)
-            if diff -q .build_status_files <(echo "$current_files"); then
-              echo "All expected files are present."
-            else
-              echo "Mismatch in expected files. Release may be incomplete."
-              exit 1
-            fi
-          else
-            echo "Build failed or was not completed"
-            exit 1
-          fi
-        `,
       },
     ],
     [
