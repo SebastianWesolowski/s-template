@@ -1,0 +1,14 @@
+{
+  "projectCatalog": "./",
+  "templateCatalogName": "templateCatalog",
+  "templateCatalogPath": "./templateCatalog",
+  "repositoryMapFileName": "repositoryMap.json",
+  "repositoryMapFilePath": "./templateCatalog/repositoryMap.json",
+  "bumpVersion": true,
+  "isDebug": false,
+  "_": [],
+  "templateVersion": "1.0.0",
+  "fileMap": [],
+  "templateFileList": [],
+  "rootPathFileList": []
+}
