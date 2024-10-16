@@ -1,3 +1,25 @@
+## [1.1.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0-dev.1) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([9f88871](https://github.com/SebastianWesolowski/s-template/commit/9f8887121f0dba5921773effe1490b36a4947335))
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([72d39ad](https://github.com/SebastianWesolowski/s-template/commit/72d39ad0bcff23e9f696a9dffb71d2df345b2981))
+- ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] refresh configs ([faf664c](https://github.com/SebastianWesolowski/s-template/commit/faf664c6baf1db295ddd71a82c21058ddb357d24))
+- 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
+- ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
+
+
+### Other tasks
+
+- Merge branch 'main' into dev ([04f849d](https://github.com/SebastianWesolowski/s-template/commit/04f849dd631aa251f5cdf3db4ef854b14724fb08))
+- 📦 1.0.0-dev.10 [skip ci] ([205ecc0](https://github.com/SebastianWesolowski/s-template/commit/205ecc0772588ad8791f71af514e8cc038028c77))
+- 📦 1.0.0 [skip ci] ([70b77ac](https://github.com/SebastianWesolowski/s-template/commit/70b77ac7c691a210c1baa0a12de1884e767cd46e))
+- 📦 1.0.0 [skip ci] ([eaf8471](https://github.com/SebastianWesolowski/s-template/commit/eaf8471f1ae5c65c24b7423bb9f26b9095a2d00c))
+- 📦 1.0.0 [skip ci] ([e7910ae](https://github.com/SebastianWesolowski/s-template/commit/e7910ae871e72692dcd7b10baa1085cebb8ef412))
+- 📦 1.0.0-dev.9 [skip ci] ([6d5ad29](https://github.com/SebastianWesolowski/s-template/commit/6d5ad29262391ff48deb3ff960f3f91e3792cda0))
+- 📦 1.0.0-dev.8 [skip ci] ([5fc3db1](https://github.com/SebastianWesolowski/s-template/commit/5fc3db1715ce17e1cdf68711b9f83f342e9ac25d))
+
 ## [1.0.0-dev.10](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.9...v1.0.0-dev.10) (October 16, 2024)
 
 
