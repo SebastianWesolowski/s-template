@@ -1,3 +1,11 @@
+## [1.0.0-dev.8](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.7...v1.0.0-dev.8) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([72d39ad](https://github.com/SebastianWesolowski/s-template/commit/72d39ad0bcff23e9f696a9dffb71d2df345b2981))
+- 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
+
 ## [1.0.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.6...v1.0.0-dev.7) (October 16, 2024)
 
 
