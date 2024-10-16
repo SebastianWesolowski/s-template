@@ -1,3 +1,10 @@
+## [1.0.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.2...v1.0.0-dev.3) (October 16, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] assets in semantic-release/git config ([8d4a74d](https://github.com/SebastianWesolowski/s-template/commit/8d4a74d5285d5862381b320eb9ead7e9e18f235f))
+
 ## [1.0.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0-dev.1...v1.0.0-dev.2) (October 16, 2024)
 
 
