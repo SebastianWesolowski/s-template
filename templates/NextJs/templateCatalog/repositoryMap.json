@@ -7,8 +7,9 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.3",
+  "templateVersion": "1.0.4",
   "fileMap": [],
   "templateFileList": [],
-  "rootPathFileList": []
+  "rootPathFileList": [],
+  "redOnlyFileList": []
 }
