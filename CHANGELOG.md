@@ -1,3 +1,11 @@
+## [1.1.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.1...v1.1.0-dev.2) (November 18, 2024)
+
+
+### Other tasks
+
+- ✨ [] addpre-commithook ([f8fa7a8](https://github.com/SebastianWesolowski/s-template/commit/f8fa7a86bd75fbc27534dfaf8ba3d85c10b520e6))
+- 📦 1.1.0 [skip ci] ([f3eb3c9](https://github.com/SebastianWesolowski/s-template/commit/f3eb3c9fa11aa8cf344006847084addaa8fa8652))
+
 ## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (October 16, 2024)
 
 
