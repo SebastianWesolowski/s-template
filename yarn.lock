@@ -5917,10 +5917,10 @@ rxjs@^7.5.5:
   dependencies:
     tslib "^2.1.0"
 
-s-update-manager@~1.0.0-dev.37:
-  version "1.0.0-dev.37"
-  resolved "https://registry.yarnpkg.com/s-update-manager/-/s-update-manager-1.0.0-dev.37.tgz#078983af3ac8a3b7cce60b141a26ec5bb0116adb"
-  integrity sha512-wqjQP72m7EAbYoIjcCVVix3ovKpmIrvisILV1KD8H2ykW6mDrBHbUp96a/98h+sCAh7s0jUM+tWGobjKLd6YZQ==
+s-update-manager@~1.0.0-dev.46:
+  version "1.0.0-dev.46"
+  resolved "https://registry.yarnpkg.com/s-update-manager/-/s-update-manager-1.0.0-dev.46.tgz#99a4014850505ca9d00971e040d8ae4ee2fd50a4"
+  integrity sha512-Yo/T+H87/2L2RwswdxC8J6UHnLNn/Piu9RtMssnSygigCO6HmgrAyQpI34eoaUHYI4Uz1lJ1wIF5oZtY4ZEzYw==
   dependencies:
     deepmerge "^4.3.1"
     dotenv "^16.4.5"
