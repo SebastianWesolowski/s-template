@@ -1,3 +1,11 @@
+## [1.1.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.3...v1.1.0-dev.4) (November 19, 2024)
+
+
+### Other tasks
+
+- ✨ [] adjusttemplates/startetNpmPackage/node ([38eb0fb](https://github.com/SebastianWesolowski/s-template/commit/38eb0fb7d2edccfcc3c11028dcd220d1756109a8))
+- ✨ [] initstarterNpmPackage/node ([7918d2b](https://github.com/SebastianWesolowski/s-template/commit/7918d2be2e7200326e229d149cc7c5be43af310a))
+
 ## [1.1.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.2...v1.1.0-dev.3) (November 18, 2024)
 
 
