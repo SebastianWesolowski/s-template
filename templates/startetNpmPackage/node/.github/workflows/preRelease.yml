@@ -6,8 +6,8 @@ on:
     branches:
       - dev
 jobs:
-  release:
-    name: Release
+  preRelease:
+    name: Pre Release
     runs-on: ubuntu-latest
     steps:
       - name: "📝Checkout"
@@ -23,7 +23,7 @@ jobs:
       - name: "📂 Install dependencies"
         run: yarn install --frozen-lockfile --ignore-scripts  --omit=dev
 
-      - name: "🚀Release"
+      - name: "🚀 Pre Release to NPM and GitHub"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

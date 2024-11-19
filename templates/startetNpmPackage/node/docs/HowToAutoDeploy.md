@@ -40,12 +40,12 @@ Add permission to edit `chmod +x ./tools/customize.sh` and rund it `./tools/cust
 
 ### Add Tokens for NPM(**Automation**), Github
 
-Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN` 
+Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
 
 - Set `GH_TOKEN` - https://github.com/settings/tokens/new
 - Set `NPM_TOKEN`, set automation type - https://www.npmjs.com/settings/PLACEHOLDER_NPM_USER/tokens/new
   ![npm.png](npm.png)
-  
+
 
 - in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/settings/secrets/actions as new repo secret
   ![actions-secrets.png](actions-secrets.png)
@@ -66,5 +66,10 @@ start publish from dev brnach !
 
 remove unnecessary files:
 
+- remove `docs` folder
+- remove `mock` folder if it is not used
+  - remove occurrence of `mock/*` in `.eslintignore`
+- remove `__tests__` folder if it is not used
+  - remove occurrence of `__tests__/*` in `.eslintignore`
 
 Add permission to edit `chmod +x ./tools/cleanCustomize.sh` and rund it `./tools/cleanCustomize.sh`

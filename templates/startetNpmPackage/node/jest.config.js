@@ -1,19 +1,29 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/test/**/*.spec.ts'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/types/**/*.ts'],
+  testEnvironmentOptions: {
+    experimentalVmModules: true,
+  },
+  testMatch: ['**/*.spec.ts', '**/*.test.ts'],
+  collectCoverage: false,
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
+  verbose: true,
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.scss$': 'jest-scss-transform',
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        diagnostics: false,
+        isolatedModules: true,
+        tsconfig: '<rootDir>/tsconfig.json',
+        sourceMap: true,
+      },
+    ],
   },
-  globals: {
-    'ts-jest': {
-      diagnostics: false,
-      isolatedModules: true,
-    },
-  },
+  moduleDirectories: ['node_modules', 'src'],
+  roots: ['<rootDir>/src'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/lib/'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 };

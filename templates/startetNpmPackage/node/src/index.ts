@@ -1,2 +1,7 @@
-import '@/styles/global.scss';
-export const myPackage = (taco = ''): string => `${taco} from my package`;
+import { getFavoriteFruit } from './getFavoriteFruit';
+
+if (process.env.SDEBUG) {
+    getFavoriteFruit();
+}
+
+export { getFavoriteFruit };

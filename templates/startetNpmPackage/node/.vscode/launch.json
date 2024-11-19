@@ -43,6 +43,18 @@
       "windows": {
         "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start Init",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:init"],
+      "env": {
+        "SDEBUG": "true",
+        "STYPE": "init"
+      },
+      "console": "integratedTerminal"
+    },
   ]
 }

@@ -32,28 +32,38 @@ npm install PLACEHOLDER_REPO_NAME
 ```ts
 import { myPackage } from "PLACEHOLDER_REPO_NAME";
 
-myPackage("hello");
-//=> 'hello from my package'
+// Default value is 'Watermelon 🍉'
+getFavoriteFruit();
+//=> 'My favorite fruit is Watermelon 🍉'
+
+getFavoriteFruit('Apple 🍎');
+//=> 'My favorite fruit is Apple 🍎'
 ```
 
 ## API
 
-### myPackage(input, options?)
+### getFavoriteFruit(fruit?)
 
-#### input
+Returns a string with your favorite fruit.
+
+#### fruit
+
+Type: `string`
+Default: `'Watermelon 🍉'`
+
+The fruit to use in the returned string. Must be a string value.
+
+#### Returns
 
 Type: `string`
 
-Lorem ipsum.
+Returns a string in the format: `'My favorite fruit is {fruit}'`
 
-#### options
+#### Throws
 
-Type: `object`
+Throws an error if the fruit parameter is not a string.
 
-##### postfix
-
-Type: `string`
-Default: `rainbows`
+#### Example
 
 Lorem ipsum.
 

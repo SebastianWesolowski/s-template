@@ -52,6 +52,10 @@ replace_in_file "PLACEHOLDER_FULL_NAME" "$FULL_NAME" ".github/FUNDING.yml"
 
 replace_in_file "PLACEHOLDER_PAGE_AUTHOR" "$PAGE_AUTHOR" ".github/FUNDING.yml"
 replace_in_file "PLACEHOLDER_PAGE_AUTHOR" "$PAGE_AUTHOR" "package.json"
+replace_in_file "PLACEHOLDER_PAGE_AUTHOR" "$PAGE_AUTHOR" "LICENSE"
+
+CURRENT_YEAR=$(date +%Y)
+replace_in_file "CURRENT_YEAR" "$CURRENT_YEAR" "LICENSE"
 
 replace_in_file "PLACEHOLDER_GITHUB_USER" "$GITHUB_USER" "package.json"
 replace_in_file "PLACEHOLDER_GITHUB_USER" "$GITHUB_USER" "README.md"
@@ -64,6 +68,7 @@ replace_in_file "PLACEHOLDER_NODE_VERSION" "$NODE_VERSION" ".github/nodejs.versi
 
 replace_in_file "placeholder-repo-name" "$REPO_NAME" "package.json"
 replace_in_file "PLACEHOLDER_REPO_NAME" "$REPO_NAME" "package.json"
+replace_in_file "PLACEHOLDER_REPO_NAME" "$REPO_NAME" "tools/addDependency.js"
 replace_in_file "A template for creating npm packages using TypeScript" "$REPO_NAME is npm package to ..." "package.json"
 replace_in_file "A template for creating npm packages using TypeScript" "$REPO_NAME is npm package to ..." "README.md"
 replace_in_file "PLACEHOLDER_REPO_NAME" "$REPO_NAME" "README.md"

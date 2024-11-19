@@ -10,7 +10,8 @@
     "build": "npm-run-all -s prepare:*",
     "prepare:node": "s-prepare-template --isDebug --projectCatalog='./templates/node'",
     "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./templates/NextJs'",
-    "prepare:mockTemplateWithImageWithConfig": "s-prepare-template --isDebug --projectCatalog='./templates/mockTemplateWithImageWithConfig'"
+    "prepare:mockTemplateWithImageWithConfig": "s-prepare-template --isDebug --projectCatalog='./templates/mockTemplateWithImageWithConfig'",
+    "prepare:startetNpmPackage/node": "s-prepare-template --isDebug --projectCatalog='./templates/startetNpmPackage/node'"
   },
   "dependencies": {
     "@commitlint/cli": "^19.5.0",

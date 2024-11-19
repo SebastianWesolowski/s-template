@@ -1,4 +1,4 @@
-#!/bin/bash
+echo \[🐶 Husky] Running pre-commit hook...\
 
 # Get current branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -22,5 +22,7 @@ if [ "$current_branch" != "main" ]; then
         fi
     fi
 fi
+
+echo \[🐶 Husky] Done ✅ pre-commit hook...\
 
 exit 0
