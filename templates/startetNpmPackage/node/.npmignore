@@ -1,0 +1,13 @@
+# Development files
+*.spec.js
+.env.example
+
+# Configuration files
+clean-package.config.json
+.eslintrc.js
+
+# Documentation and notes
+todo.md
+
+# Lock files
+yarn.lock

@@ -1,3 +1,20 @@
+## [1.1.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.3...v1.1.0-dev.4) (November 19, 2024)
+
+
+### Other tasks
+
+- ✨ [] adjusttemplates/startetNpmPackage/node ([38eb0fb](https://github.com/SebastianWesolowski/s-template/commit/38eb0fb7d2edccfcc3c11028dcd220d1756109a8))
+- ✨ [] initstarterNpmPackage/node ([7918d2b](https://github.com/SebastianWesolowski/s-template/commit/7918d2be2e7200326e229d149cc7c5be43af310a))
+
+## [1.1.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.2...v1.1.0-dev.3) (November 18, 2024)
+
+
+### Other tasks
+
+- ✨ [] addMockTemplateWithImage ([4e6d1a9](https://github.com/SebastianWesolowski/s-template/commit/4e6d1a93feee3c6eef9e2b1d2862eefd82a04edc))
+- 🔧 [] bumpSUM ([de18302](https://github.com/SebastianWesolowski/s-template/commit/de1830209d0ddeebfdee94a42f05c8b4001f249e))
+- 📦 1.1.0 [skip ci] ([64f0eab](https://github.com/SebastianWesolowski/s-template/commit/64f0eab90fa2b85e016ff1af42c3cf8520fa836a))
+
 ## [1.1.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.1...v1.1.0-dev.2) (November 18, 2024)
 
 ### Other tasks
