@@ -23,7 +23,7 @@ jobs:
       - name: "📂 Install dependencies"
         run: yarn install --frozen-lockfile --ignore-scripts  --omit=dev
 
-      - name: "🚀Release"
+      - name: "🚀 PreRelease"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release

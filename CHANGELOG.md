@@ -1,3 +1,26 @@
+## [1.1.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.6...v1.1.0-dev.7) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] remove docs folder after cleanCustomize ([8d2b2cf](https://github.com/SebastianWesolowski/s-template/commit/8d2b2cf85c723ffde556bc57288e2718861fca57))
+
+## [1.1.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.5...v1.1.0-dev.6) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] remove docs folder after cleanCustomize ([4cc0ef8](https://github.com/SebastianWesolowski/s-template/commit/4cc0ef8e5fe9c9ace708fddbd9cacde184bd4758))
+- Merge pull request #4 from SebastianWesolowski/dev
+
+feat: ✨ [] add some future in starterNpmPackage/node ([f72faa1](https://github.com/SebastianWesolowski/s-template/commit/f72faa1fea8a5b637c12c1cbb006348b79cb1c9d))
+- Merge branch 'main' into dev ([9477b3c](https://github.com/SebastianWesolowski/s-template/commit/9477b3c994c31c77df4a72970a9e19d5bf24594d))
+- Merge pull request #3 from SebastianWesolowski/dev
+
+Dev ([7319057](https://github.com/SebastianWesolowski/s-template/commit/7319057cb891ca80c14a7b9ea318500d7764ad51))
+- 📦 1.1.0 [skip ci] ([fb5559d](https://github.com/SebastianWesolowski/s-template/commit/fb5559d11728b700a635362a731fb15f28e80a9c))
+- 📦 1.1.0 [skip ci] ([4200471](https://github.com/SebastianWesolowski/s-template/commit/42004712d1288b149992c2a5ae7036530b36bba0))
+
 ## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (November 22, 2024)
 
 
