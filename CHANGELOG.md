@@ -1,9 +1,18 @@
 ## [1.1.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.4...v1.1.0-dev.5) (November 22, 2024)
+=======
+## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (November 19, 2024)
+
+
+### [SC-8](https://linear.app/wesolowskidev/issue/SC-8)
+
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([9f88871](https://github.com/SebastianWesolowski/s-template/commit/9f8887121f0dba5921773effe1490b36a4947335))
+- 🐛 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] release script ([72d39ad](https://github.com/SebastianWesolowski/s-template/commit/72d39ad0bcff23e9f696a9dffb71d2df345b2981))
+- ✨ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] refresh configs ([faf664c](https://github.com/SebastianWesolowski/s-template/commit/faf664c6baf1db295ddd71a82c21058ddb357d24))
+- 🔧 [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] remove unnessesery configs ([9aaa8c0](https://github.com/SebastianWesolowski/s-template/commit/9aaa8c0a6057c1e2f8bc23618550d7346f6ac015))
+- ♻ [[SC-8](https://linear.app/wesolowskidev/issue/SC-8)] ️ clean up ([77165ca](https://github.com/SebastianWesolowski/s-template/commit/77165cac72746127279300605d0a4ab4ecc53bf0))
 
 
 ### Other tasks
-
-- ✨ [] add some future in starterNpmPackage/node ([b50d46d](https://github.com/SebastianWesolowski/s-template/commit/b50d46d023c6f4c01cf0e34eef20869dbf4a8afc))
 
 ## [1.1.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.3...v1.1.0-dev.4) (November 19, 2024)
 
