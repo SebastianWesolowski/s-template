@@ -3,5 +3,4 @@
 - [ ] add eslintcache
 - [ ] .specs -> .test.js
 - [ ] cleanCustomize
-  - remove docs
   - fill README.md using varialbes form package.json and customize.json
