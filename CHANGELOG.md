@@ -1,3 +1,5 @@
+## [1.1.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.4...v1.1.0-dev.5) (November 22, 2024)
+=======
 ## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (November 19, 2024)
 
 
@@ -11,28 +13,6 @@
 
 
 ### Other tasks
-
-- ✨ [] adjusttemplates/startetNpmPackage/node ([38eb0fb](https://github.com/SebastianWesolowski/s-template/commit/38eb0fb7d2edccfcc3c11028dcd220d1756109a8))
-- ✨ [] initstarterNpmPackage/node ([7918d2b](https://github.com/SebastianWesolowski/s-template/commit/7918d2be2e7200326e229d149cc7c5be43af310a))
-- ✨ [] addMockTemplateWithImage ([4e6d1a9](https://github.com/SebastianWesolowski/s-template/commit/4e6d1a93feee3c6eef9e2b1d2862eefd82a04edc))
-- ✨ [] addpre-commithook ([f8fa7a8](https://github.com/SebastianWesolowski/s-template/commit/f8fa7a86bd75fbc27534dfaf8ba3d85c10b520e6))
-- Merge pull request #3 from SebastianWesolowski/dev
-
-Dev ([7319057](https://github.com/SebastianWesolowski/s-template/commit/7319057cb891ca80c14a7b9ea318500d7764ad51))
-- 🔧 [] bumpSUM ([de18302](https://github.com/SebastianWesolowski/s-template/commit/de1830209d0ddeebfdee94a42f05c8b4001f249e))
-- Merge branch 'main' into dev ([04f849d](https://github.com/SebastianWesolowski/s-template/commit/04f849dd631aa251f5cdf3db4ef854b14724fb08))
-- 📦 1.1.0-dev.4 [skip ci] ([44841c3](https://github.com/SebastianWesolowski/s-template/commit/44841c39d6494e86d5ef96686cab12c78b8c6a01))
-- 📦 1.1.0-dev.3 [skip ci] ([d401439](https://github.com/SebastianWesolowski/s-template/commit/d40143914f19ca6dbeb84a94e73f30160d20b877))
-- 📦 1.1.0 [skip ci] ([64f0eab](https://github.com/SebastianWesolowski/s-template/commit/64f0eab90fa2b85e016ff1af42c3cf8520fa836a))
-- 📦 1.1.0-dev.2 [skip ci] ([4efce53](https://github.com/SebastianWesolowski/s-template/commit/4efce534d0c3f3e58ff831384fc7f9759968518d))
-- 📦 1.1.0 [skip ci] ([f3eb3c9](https://github.com/SebastianWesolowski/s-template/commit/f3eb3c9fa11aa8cf344006847084addaa8fa8652))
-- 📦 1.1.0-dev.1 [skip ci] ([e652ee6](https://github.com/SebastianWesolowski/s-template/commit/e652ee66174ee16ef6af2e1b83bac89d1c3948df))
-- 📦 1.0.0-dev.10 [skip ci] ([205ecc0](https://github.com/SebastianWesolowski/s-template/commit/205ecc0772588ad8791f71af514e8cc038028c77))
-- 📦 1.0.0 [skip ci] ([70b77ac](https://github.com/SebastianWesolowski/s-template/commit/70b77ac7c691a210c1baa0a12de1884e767cd46e))
-- 📦 1.0.0 [skip ci] ([eaf8471](https://github.com/SebastianWesolowski/s-template/commit/eaf8471f1ae5c65c24b7423bb9f26b9095a2d00c))
-- 📦 1.0.0 [skip ci] ([e7910ae](https://github.com/SebastianWesolowski/s-template/commit/e7910ae871e72692dcd7b10baa1085cebb8ef412))
-- 📦 1.0.0-dev.9 [skip ci] ([6d5ad29](https://github.com/SebastianWesolowski/s-template/commit/6d5ad29262391ff48deb3ff960f3f91e3792cda0))
-- 📦 1.0.0-dev.8 [skip ci] ([5fc3db1](https://github.com/SebastianWesolowski/s-template/commit/5fc3db1715ce17e1cdf68711b9f83f342e9ac25d))
 
 ## [1.1.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.3...v1.1.0-dev.4) (November 19, 2024)
 

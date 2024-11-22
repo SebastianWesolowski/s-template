@@ -1,4 +1,7 @@
-[] add JSCoverage/node-jscoverage
-[] add automation clone .env.example to .env
-[] add eslintcache
-[] .specs -> .test.js
+- [ ] add JSCoverage/node-jscoverage
+- [ ] add automation clone .env.example to .env
+- [ ] add eslintcache
+- [ ] .specs -> .test.js
+- [ ] cleanCustomize
+  - remove docs
+  - fill README.md using varialbes form package.json and customize.json
