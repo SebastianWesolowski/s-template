@@ -1,3 +1,17 @@
+## [1.2.0](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0...v1.2.0) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] add .gitignore rule for env ([1c8f476](https://github.com/SebastianWesolowski/s-template/commit/1c8f47665869c3980dea808ec0ab0dddee763ba9))
+- Merge pull request #6 from SebastianWesolowski/dev
+
+Dev ([c73d8b5](https://github.com/SebastianWesolowski/s-template/commit/c73d8b5459036c96bf57c42a50ddef751b4c724f))
+- Merge branch 'main' into dev ([4cde10e](https://github.com/SebastianWesolowski/s-template/commit/4cde10e58fecd4489c22a07f2b8519fa71647b2d))
+- 📦 1.2.0-dev.1 [skip ci] ([af41403](https://github.com/SebastianWesolowski/s-template/commit/af414031073687939f5ec0d540efe3e77c90116a))
+- 📦 1.1.0-dev.8 [skip ci] ([26a9d55](https://github.com/SebastianWesolowski/s-template/commit/26a9d5511eb8de23341f7d2006368a3eb5c82602))
+- 📦 1.1.0 [skip ci] ([161e21d](https://github.com/SebastianWesolowski/s-template/commit/161e21d34657d17cbbfe429b4aee8cc1dc683584))
+
 ## [1.2.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0...v1.2.0-dev.1) (November 22, 2024)
 
 
