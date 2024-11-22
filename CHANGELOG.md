@@ -1,3 +1,11 @@
+## [1.1.0-dev.8](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.7...v1.1.0-dev.8) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] add .gitignore rule for env ([1c8f476](https://github.com/SebastianWesolowski/s-template/commit/1c8f47665869c3980dea808ec0ab0dddee763ba9))
+- 📦 1.1.0 [skip ci] ([161e21d](https://github.com/SebastianWesolowski/s-template/commit/161e21d34657d17cbbfe429b4aee8cc1dc683584))
+
 ## [1.1.0](https://github.com/SebastianWesolowski/s-template/compare/v1.0.0...v1.1.0) (November 22, 2024)
 
 
