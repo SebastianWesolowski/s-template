@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": true,
   "_": [],
-  "templateVersion": "1.0.0",
+  "templateVersion": "1.0.1",
   "fileMap": [
     "templateCatalog/.commitlintrc.js-default.md",
     "templateCatalog/.cursorignore-default.md",
@@ -105,6 +105,7 @@
     "./docs/cz-problem.png",
     "./docs/fetchUpstream.png",
     "./docs/gh.png",
+    "./docs/gh_token_permission.png",
     "./docs/knowProblems.md",
     "./docs/npm.png",
     "./jest.config.js",
@@ -193,6 +194,7 @@
     "docs/cz-problem.png",
     "docs/fetchUpstream.png",
     "docs/gh.png",
+    "docs/gh_token_permission.png",
     "docs/npm.png",
     "srcReadme/heroImageReposytory.png"
   ]

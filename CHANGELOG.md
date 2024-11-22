@@ -1,3 +1,10 @@
+## [1.1.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.4...v1.1.0-dev.5) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] add some future in starterNpmPackage/node ([b50d46d](https://github.com/SebastianWesolowski/s-template/commit/b50d46d023c6f4c01cf0e34eef20869dbf4a8afc))
+
 ## [1.1.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.3...v1.1.0-dev.4) (November 19, 2024)
 
 
