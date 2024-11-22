@@ -1,3 +1,10 @@
+## [1.1.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.6...v1.1.0-dev.7) (November 22, 2024)
+
+
+### Other tasks
+
+- ✨ [] remove docs folder after cleanCustomize ([8d2b2cf](https://github.com/SebastianWesolowski/s-template/commit/8d2b2cf85c723ffde556bc57288e2718861fca57))
+
 ## [1.1.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0-dev.5...v1.1.0-dev.6) (November 22, 2024)
 
 
