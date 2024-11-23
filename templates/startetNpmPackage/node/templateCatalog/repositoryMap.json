@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": true,
   "_": [],
-  "templateVersion": "1.0.8",
+  "templateVersion": "1.0.9",
   "fileMap": [
     "templateCatalog/.commitlintrc.js-default.md",
     "templateCatalog/.cursorignore-default.md",

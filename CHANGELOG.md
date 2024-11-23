@@ -1,3 +1,21 @@
+## [1.3.1](https://github.com/SebastianWesolowski/s-template/compare/v1.3.0...v1.3.1) (November 23, 2024)
+
+
+### [SC-93](https://linear.app/wesolowskidev/issue/SC-93)
+
+- 🐛 [[SC-93](https://linear.app/wesolowskidev/issue/SC-93)] improve releaserc for github ([a7bc88e](https://github.com/SebastianWesolowski/s-template/commit/a7bc88e67e4f06992057341430dd0fce62ece775))
+
+
+### Other tasks
+
+- Merge pull request #8 from SebastianWesolowski/dev
+
+Dev ([249ae48](https://github.com/SebastianWesolowski/s-template/commit/249ae4832a5a797239d28df565cfaa13089b0a5d))
+- Merge branch 'main' into dev ([cdb9cda](https://github.com/SebastianWesolowski/s-template/commit/cdb9cdaddc32f4c49e6b799ed8f4e648d0f95827))
+- 📦 1.3.1-dev.1 [skip ci] ([a0650c7](https://github.com/SebastianWesolowski/s-template/commit/a0650c7e232b5dcee300183989a885237b4106d6))
+- 📦 1.3.0-dev.2 [skip ci] ([c230bfc](https://github.com/SebastianWesolowski/s-template/commit/c230bfc1da5f955c96c97b89e2f47086d7278a8e))
+- 📦 1.3.0 [skip ci] ([f9496aa](https://github.com/SebastianWesolowski/s-template/commit/f9496aa4b9ed99c58c21f29c80f68945e90b1f6b))
+
 ## [1.3.1-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.3.0...v1.3.1-dev.1) (November 23, 2024)
 
 
