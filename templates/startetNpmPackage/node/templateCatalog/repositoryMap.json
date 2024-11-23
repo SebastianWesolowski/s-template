@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": true,
   "_": [],
-  "templateVersion": "1.0.8",
+  "templateVersion": "1.0.9",
   "fileMap": [
     "templateCatalog/.commitlintrc.js-default.md",
     "templateCatalog/.cursorignore-default.md",
@@ -62,8 +62,7 @@
     "templateCatalog/tools/customize.sh-default.md",
     "templateCatalog/tools/transform-browser-list/index.js-default.md",
     "templateCatalog/tsconfig.build.json-default.md",
-    "templateCatalog/tsconfig.json-default.md",
-    "templateCatalog/yarn.lock-default.md"
+    "templateCatalog/tsconfig.json-default.md"
   ],
   "templateFileList": [
     "./.commitlintrc.js",
@@ -126,8 +125,7 @@
     "./tools/customize.sh",
     "./tools/transform-browser-list/index.js",
     "./tsconfig.build.json",
-    "./tsconfig.json",
-    "./yarn.lock"
+    "./tsconfig.json"
   ],
   "rootPathFileList": [
     "./templates/startetNpmPackage/node/.commitlintrc.js",
@@ -183,8 +181,7 @@
     "./templates/startetNpmPackage/node/tools/customize.sh",
     "./templates/startetNpmPackage/node/tools/transform-browser-list/index.js",
     "./templates/startetNpmPackage/node/tsconfig.build.json",
-    "./templates/startetNpmPackage/node/tsconfig.json",
-    "./templates/startetNpmPackage/node/yarn.lock"
+    "./templates/startetNpmPackage/node/tsconfig.json"
   ],
   "redOnlyFileList": [
     "docs/actions-secrets.png",

@@ -1,3 +1,15 @@
+## [1.2.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.2.0-dev.1...v1.2.0-dev.2) (November 23, 2024)
+
+
+### [SC-93](https://linear.app/wesolowskidev/issue/SC-93)
+
+- ✨ [[SC-93](https://linear.app/wesolowskidev/issue/SC-93)] add micro template for tests ([c66db16](https://github.com/SebastianWesolowski/s-template/commit/c66db1681e5a164781937e789cfbab5ebfd2f29f))
+
+
+### Other tasks
+
+- 📦 1.2.0 [skip ci] ([af37fbb](https://github.com/SebastianWesolowski/s-template/commit/af37fbb4155d33026492034df2501e470dd76d78))
+
 ## [1.2.0](https://github.com/SebastianWesolowski/s-template/compare/v1.1.0...v1.2.0) (November 22, 2024)
 
 
