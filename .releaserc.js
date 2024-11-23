@@ -135,7 +135,7 @@ module.exports = {
       "@semantic-release/exec",
       {
         prepareCmd:
-          process.env.BRANCH === "main"
+          process.env.GITHUB_REF === "refs/heads/main"
             ? `echo "🔨 Preparing release" && yarn build`
             : `echo "⏭️ Skipping build - it's not main branch"`,
       },
