@@ -8,10 +8,11 @@
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
     "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
     "build": "npm-run-all -s prepare:*",
-    "prepare:node": "s-prepare-template --isDebug --projectCatalog='./templates/node'",
-    "prepare:NextJs": "s-prepare-template --isDebug --projectCatalog='./templates/NextJs'",
-    "prepare:mockTemplateWithImageWithConfig": "s-prepare-template --isDebug --projectCatalog='./templates/mockTemplateWithImageWithConfig'",
-    "prepare:startetNpmPackage/node": "s-prepare-template --isDebug --projectCatalog='./templates/startetNpmPackage/node'"
+    "prepare:node": "s-prepare-template --projectCatalog='./templates/node'",
+    "prepare:NextJs": "s-prepare-template --projectCatalog='./templates/NextJs'",
+    "prepare:mockTemplateWithImageWithConfig": "s-prepare-template --projectCatalog='./templates/mockTemplateWithImageWithConfig'",
+    "prepare:startetNpmPackage/node": "s-prepare-template --projectCatalog='./templates/startetNpmPackage/node'",
+    "prepare:mocks/microTemplate": "s-prepare-template --projectCatalog='./templates/mocks/microTemplate'"
   },
   "dependencies": {
     "@commitlint/cli": "^19.5.0",
