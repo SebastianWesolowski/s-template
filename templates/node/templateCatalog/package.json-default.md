@@ -46,7 +46,7 @@
     "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=20.17.0"
   },
   "keywords": [
     "boilerplate",
