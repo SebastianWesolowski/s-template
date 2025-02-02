@@ -1,3 +1,12 @@
+## [1.4.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.3.1...v1.4.0-dev.1) (February 02, 2025)
+
+
+### Other tasks
+
+- 🐛 [] lint-staged use yarn ([8cb9708](https://github.com/SebastianWesolowski/s-template/commit/8cb97083dde4a9c89a87795dcf1b00bc2db0ce64))
+- ✨ [] update node to 20.17.0 ([6f0d8e8](https://github.com/SebastianWesolowski/s-template/commit/6f0d8e8f58ec485d14c808e9bfb892351847660a))
+- 🔧 [] auto-merge main to dev after release ([6f76e36](https://github.com/SebastianWesolowski/s-template/commit/6f76e363327dd1353b43f1c60b24c4de90d02895))
+
 ## [1.3.1](https://github.com/SebastianWesolowski/s-template/compare/v1.3.0...v1.3.1) (November 23, 2024)
 
 
