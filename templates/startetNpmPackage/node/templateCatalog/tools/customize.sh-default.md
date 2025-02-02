@@ -1,33 +1,30 @@
 #!/bin/bash
 
 # Read values from a JSON file
-
 CONFIG_FILE="tools/customize.json"
 
 # Check that the JSON file exists
-
 if [ ! -f "$CONFIG_FILE" ]; then
-echo "File JSON ($CONFIG_FILE) doesn't exist."
-exit 1
+    echo "File JSON ($CONFIG_FILE) doesn't exist."
+    exit 1
 fi
 
 replace_in_file() {
-local placeholder="$1"
+    local placeholder="$1"
     local value="$2"
     local file="$3"
     sed -i.mybak "s/$placeholder/$value/g" "$file"
 }
 
 get_value_from_json() {
-local file="$1"
+    local file="$1"
     local key="$2"
     local value
-    value=$(grep "\"$key\"" "$file" | sed -n 's/._: "\(._\)",$/\1/p')
+    value=$(grep "\"$key\"" "$file" | sed -n 's/.*: "\(.*\)",$/\1/p')
     echo "$value"
 }
 
 # Odczytaj zmienne z pliku JSON
-
 FULL_NAME=$(get_value_from_json "$CONFIG_FILE" "FULL_NAME")
 PAGE_AUTHOR=$(get_value_from_json "$CONFIG_FILE" "PAGE_AUTHOR")
 GITHUB_USER=$(get_value_from_json "$CONFIG_FILE" "GITHUB_USER")
@@ -36,7 +33,6 @@ NODE_VERSION=$(get_value_from_json "$CONFIG_FILE" "NODE_VERSION")
 NPM_USER=$(get_value_from_json "$CONFIG_FILE" "NPM_USER")
 
 # Wyświetl odczytane wartości
-
 echo "FULL_NAME: $FULL_NAME"
 echo "PAGE_AUTHOR: $PAGE_AUTHOR"
 echo "GITHUB_USER: $GITHUB_USER"
@@ -45,10 +41,9 @@ echo "NODE_VERSION: $NODE_VERSION"
 echo "NPM_USER: $NPM_USER"
 
 # Use the sed command to edit files
-
 # Create backup copies of the original files with the .mybak extension
-
 # Then perform replacements in the files based on local variables
+
 
 replace_in_file "PLACEHOLDER_FULL_NAME" "$FULL_NAME" "package.json"
 replace_in_file "PLACEHOLDER_FULL_NAME" "$FULL_NAME" "README.md"
@@ -83,13 +78,12 @@ replace_in_file "PLACEHOLDER_NPM_USER" "$NPM_USER" "README.md"
 
 replace_in_file "PLACEHOLDER_NPM_USER" "$NPM_USER" "./docs/HowToAutoDeploy.md"
 
-rm _.mybak
-rm ._.mybak
-rm **/\*.mybak
-rm .**/\*.mybak
+rm *.mybak
+rm .*.mybak
+rm **/*.mybak
+rm .**/*.mybak
 
 # Display a message upon completion
-
 echo "Finished editing files."
 
 yarn install

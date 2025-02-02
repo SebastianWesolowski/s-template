@@ -1,3 +1,18 @@
+## [1.4.0](https://github.com/SebastianWesolowski/s-template/compare/v1.3.1...v1.4.0) (February 02, 2025)
+
+
+### Other tasks
+
+- 🐛 [] lint-staged use yarn ([8cb9708](https://github.com/SebastianWesolowski/s-template/commit/8cb97083dde4a9c89a87795dcf1b00bc2db0ce64))
+- ✨ [] improve husky and gh actions ([69882df](https://github.com/SebastianWesolowski/s-template/commit/69882df0380982e94198420488e9a418efb905a2))
+- ✨ [] update node to 20.17.0 ([6f0d8e8](https://github.com/SebastianWesolowski/s-template/commit/6f0d8e8f58ec485d14c808e9bfb892351847660a))
+- Merge pull request #9 from SebastianWesolowski/dev
+
+Dev ([e4caa70](https://github.com/SebastianWesolowski/s-template/commit/e4caa70197eee8339c637fb041e1767dba064f36))
+- 🔧 [] auto-merge main to dev after release ([6f76e36](https://github.com/SebastianWesolowski/s-template/commit/6f76e363327dd1353b43f1c60b24c4de90d02895))
+- 📦 1.4.0-dev.2 [skip ci] ([d4df1b4](https://github.com/SebastianWesolowski/s-template/commit/d4df1b4fa137955f625d694a64cefd8ae9acbb96))
+- 📦 1.4.0-dev.1 [skip ci] ([b72766e](https://github.com/SebastianWesolowski/s-template/commit/b72766e89feaa8e5e5fa5f7848a8ac55a05f1624))
+
 ## [1.4.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0-dev.1...v1.4.0-dev.2) (February 02, 2025)
 
 
