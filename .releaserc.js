@@ -152,6 +152,15 @@ module.exports = {
       "@semantic-release/github",
       {
         branches: ["main"],
+        successComment:
+          "🎉 This release has been published and will be automatically merged to dev branch.",
+      },
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        successCmd:
+          'echo "RELEASE_VERSION=${nextRelease.version}" >> $GITHUB_ENV',
       },
     ],
   ],

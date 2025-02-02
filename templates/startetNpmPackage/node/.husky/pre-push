@@ -1,4 +1,3 @@
-
 echo \[🐶 Husky] Running pre-push hook...\
 
 yarn husky:pre-push

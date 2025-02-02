@@ -8,16 +8,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x, 21.x]
-
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: '📥 Read Node.js version'
+        run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+
+      - name: '🟢 Setup Node.js ${{ env.node_version }}'
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm run lint:check
-      - run: npm run build:prod --if-present
-      - run: npm test:check
+          node-version: '${{ env.node_version }}'
+          cache: 'yarn'
+
+      - name: '📦 Install dependencies'
+        run: yarn install --frozen-lockfile --ignore-scripts
+
+      - name: '🔍 Lint'
+        run: yarn lint:check
+
+      - name: '🏗️ Build'
+        run: yarn build:prod --if-present
+
+      - name: '🧪 Test'
+        run: yarn test:check

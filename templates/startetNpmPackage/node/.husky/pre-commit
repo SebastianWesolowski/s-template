@@ -5,25 +5,33 @@ current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Check if we're not on main branch
 if [ "$current_branch" != "main" ]; then
-    echo "🔍 Checking for main branch updates..."
+    echo "🔍 Checking for branch updates..."
 
-    # Fetch latest changes from remote
-    git fetch origin main
+# Fetch all latest changes
+    git fetch origin
 
-    # Check if current branch is behind main
-    if git merge-base --is-ancestor HEAD origin/main; then
-        echo "✅ Your branch is up to date with main"
+# Check if main has commits that dev doesn't have
+    behind_commits=$(git rev-list --count $current_branch..origin/main)
+    if [ "$behind_commits" -gt 0 ]; then
+        echo "ℹ️  Main branch has $behind_commits new commits that are not in your branch! Update your branch before committing."
+        echo "ℹ️  [⏩]Run: git stash && git merge origin/main && git stash pop"
+        exit 1
     else
-        behind_commits=$(git rev-list HEAD..origin/main --count)
-        if [ "$behind_commits" -gt 0 ]; then
-            echo "⚠️ Your branch is behind main by $behind_commits commits! Update your branch before committing."
-            echo "Run: git merge origin/main"
-            exit 1
-        fi
+        echo "✅ Your branch is up to date with main"
+    fi
+
+# Check if remote branch has new commits
+    remote_commits=$(git rev-list --count $current_branch..origin/$current_branch 2>/dev/null)
+    if [ "$remote_commits" -gt 0 ]; then
+        echo "❗ Remote branch has $remote_commits new commits! Pull changes before committing."
+        echo "ℹ️  [⏩]Run: git stash && git merge origin/$current_branch && git stash pop"
+        exit 1
+    else
+        echo "✅ Your branch is up to date with remote"
+        yarn husky:pre-commit
     fi
 fi
 
-yarn husky:pre-commit
 echo \[🐶 Husky] Done ✅ pre-commit hook...\
 
 exit 0

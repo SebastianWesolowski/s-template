@@ -1,8 +1,8 @@
 {
   "*.{js,jsx,ts,tsx,json}": [
-    "npm run staged:prettier:fix",
-    "npm run staged:prettier:check",
-    "npm run staged:lint:fix",
-    "npm run staged:lint:check"
+    "yarn run staged:prettier:fix",
+    "yarn run staged:prettier:check",
+    "yarn run staged:lint:fix",
+    "yarn run staged:lint:check"
   ]
 }
