@@ -10,7 +10,9 @@ get_emoji() {
 
 # Extract issue number from commit message
 get_issue_number() {
-    echo "$1" | grep -oE "SC-[0-9]+" | head -n1
+    local issue=$(echo "$1" | grep -oE "SC-[0-9]+" | head -n1)
+    # Return "NO-TICKET" if no issue number found
+    echo "${issue:-NO-TICKET}"
 }
 
 # Extract commit message content
@@ -19,9 +21,9 @@ get_commit_message() {
     local used_emoji="$2"
     local issue_number="$3"
 
-    # Remove commit type, emoji, issue number, and trim whitespace
+    # Remove commit type, emoji, issue number, but preserve spaces in the message content
     echo "$commit_msg" | sed -E 's/^[^:]+: *//; s/^[[:space:]]*'"$used_emoji"'[[:space:]]*//' |
-        sed -E 's/[[:space:]]*'"$issue_number"'[[:space:]]*//g; s/^[[:space:]]+|[[:space:]]+$//g'
+        sed -E 's/[[:space:]]*'"$issue_number"'[[:space:]]*//'
 }
 
 # Extract commit type
@@ -40,14 +42,19 @@ update_commit_message() {
     local commit_content="$4"
     local commit_msg_file="$5"
 
+    # Only include brackets if there's a real issue number
+    if [ "$issue_number" = "NO-TICKET" ]; then
+        echo "$commit_type: $emoji $commit_content" > "$commit_msg_file"
+    else
     echo "$commit_type: $emoji [$issue_number] $commit_content" > "$commit_msg_file"
+    fi
     sed -i.bak '/^$/d' "$commit_msg_file" && rm "${commit_msg_file}.bak"
 }
 
 
 # Skip processing for amend commits
 if [ "$commit_source" = "commit" ] || [ "$commit_source" = "message" ]; then
-    echo "[🐶 Husky] Amend commit detected. Skipping prepare-commit-msg script."
+    echo "[🐶 Husky] ⏭️ Amend commit detected. Skipping prepare-commit-msg script."
     echo "[🐶 Husky] Done ✅ prepare-commit-msg hook..."
     exit 0
 fi
