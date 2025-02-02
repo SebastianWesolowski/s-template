@@ -1,3 +1,10 @@
+## [1.4.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0-dev.1...v1.4.0-dev.2) (February 02, 2025)
+
+
+### Other tasks
+
+- ✨ [] improve husky and gh actions ([69882df](https://github.com/SebastianWesolowski/s-template/commit/69882df0380982e94198420488e9a418efb905a2))
+
 ## [1.4.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.3.1...v1.4.0-dev.1) (February 02, 2025)
 
 
