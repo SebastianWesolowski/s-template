@@ -1,3 +1,10 @@
+## [1.4.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0-dev.2...v1.4.0-dev.3) (February 02, 2025)
+
+
+### Other tasks
+
+- ✨ [] add base boilerpalate nextJS ([018b291](https://github.com/SebastianWesolowski/s-template/commit/018b291aa7afb166e6c844364f8a7542f4c2d769))
+
 ## [1.4.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0-dev.1...v1.4.0-dev.2) (February 02, 2025)
 
 
