@@ -9,7 +9,7 @@
     "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
     "build": "npm-run-all -s prepare:*",
     "prepare:node": "s-prepare-template --projectCatalog='./templates/node'",
-    "prepare:NextJs": "s-prepare-template --projectCatalog='./templates/NextJs'",
+    "prepare:NextJs15": "s-prepare-template --projectCatalog='./templates/NextJs/NextJs15'",
     "prepare:mockTemplateWithImageWithConfig": "s-prepare-template --projectCatalog='./templates/mockTemplateWithImageWithConfig'",
     "prepare:startetNpmPackage/node": "s-prepare-template --projectCatalog='./templates/startetNpmPackage/node'",
     "prepare:mocks/microTemplate": "s-prepare-template --projectCatalog='./templates/mocks/microTemplate'"
