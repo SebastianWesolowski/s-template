@@ -1,3 +1,10 @@
+## [1.5.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0...v1.5.0-dev.1) (February 03, 2025)
+
+
+### Other tasks
+
+- ✨ [] add next15 ([59e6c5a](https://github.com/SebastianWesolowski/s-template/commit/59e6c5aaa5d74c13a1b80fac61e261eb7782f79e))
+
 ## [1.4.0](https://github.com/SebastianWesolowski/s-template/compare/v1.3.1...v1.4.0) (February 02, 2025)
 
 
