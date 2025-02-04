@@ -1,3 +1,12 @@
+## [1.5.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.1...v1.5.0-dev.2) (February 04, 2025)
+
+
+### Other tasks
+
+- ✨ [] add automate sync and build templates ([a9b782f](https://github.com/SebastianWesolowski/s-template/commit/a9b782f967044196225866e3edba684307f0a266))
+- ✨ [] move mockTemplateWithImageWithConfig into mocks ([05e9541](https://github.com/SebastianWesolowski/s-template/commit/05e95418f1a2d089bbd5a640b91a1d1126f78d54))
+- ✨ [] add sync folder scripts ([565cda9](https://github.com/SebastianWesolowski/s-template/commit/565cda9f2f43d8c0653b74e807f5faec0ae9d9e1))
+
 ## [1.5.0-dev.1](https://github.com/SebastianWesolowski/s-template/compare/v1.4.0...v1.5.0-dev.1) (February 03, 2025)
 
 
