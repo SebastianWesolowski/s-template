@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "description": "Official list of template repositories for [s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)",
   "scripts": {
+    "init:shared": "ts-node scripts/initShared.ts",
+    "sync:shared": "ts-node scripts/syncShared.ts",
     "commit": "czg",
     "prepare": "husky",
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
@@ -24,7 +26,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.0",
     "@semantic-release/release-notes-generator": "^14.0.1",
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.13.1",
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "czg": "^1.9.4",
@@ -33,7 +35,7 @@
     "npm-run-all": "^4.1.5",
     "s-update-manager": "~1.0.0-dev.46",
     "semantic-release": "^21.0.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   },
   "author": "",
   "license": "ISC",
@@ -41,5 +43,12 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "fs-extra": "^11.3.0",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.2"
   }
 }

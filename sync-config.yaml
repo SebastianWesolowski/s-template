@@ -1,0 +1,4 @@
+.husky:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
