@@ -1,44 +1,63 @@
-echo \[🐶 Husky] Running pre-commit hook...\
+echo "[🐶 Husky] Running pre-commit hook..."
 
 # Get current branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# Check if we're not on main branch
-if [ "$current_branch" != "main" ]; then
+# Skip checks if on main branch
+if [ "$current_branch" = "main" ]; then
+    echo "✅ On main branch, skipping update checks"
+else
     echo "🔍 Checking for branch updates..."
 
-# Fetch all latest changes
+    # Fetch latest changes
     git fetch origin
 
-# Check if main has commits that dev doesn't have
+    # Check updates from main
     behind_commits=$(git rev-list --count $current_branch..origin/main)
     if [ "$behind_commits" -gt 0 ]; then
-        echo "ℹ️  Main branch has $behind_commits new commits that are not in your branch! Update your branch before committing."
-        echo "ℹ️  [⏩]Run: git stash && git merge origin/main && git stash pop"
+        echo "⚠️ Main branch has $behind_commits new commits!"
+        echo "💡 Run: git pull origin main"
         exit 1
-    else
-        echo "✅ Your branch is up to date with main"
     fi
+    echo "✅ Branch is up to date with main"
 
-# Check if remote branch has new commits
-    remote_commits=$(git rev-list --count $current_branch..origin/$current_branch 2>/dev/null)
-    if [ "$remote_commits" -gt 0 ]; then
-        echo "❗ Remote branch has $remote_commits new commits! Pull changes before committing."
-        echo "ℹ️  [⏩]Run: git stash && git merge origin/$current_branch && git stash pop"
-        exit 1
-    else
-        echo "✅ Your branch is up to date with remote"
-
-        # Check if husky:pre-commit script exists
-        if yarn run --list | grep -q "husky:pre-commit"; then
-            yarn husky:pre-commit
-        else
-            echo "⚠️  Warning: husky:pre-commit script not found in package.json"
-            echo "ℹ️  Add 'husky:pre-commit' script to your package.json to run additional checks"
+    # Check remote branch updates
+    if git ls-remote --heads origin $current_branch | grep -q $current_branch; then
+        remote_commits=$(git rev-list --count $current_branch..origin/$current_branch 2>/dev/null)
+        if [ "$remote_commits" -gt 0 ]; then
+            echo "⚠️ Remote branch has $remote_commits new commits!"
+            echo "💡 Run: git pull origin $current_branch"
+            exit 1
         fi
+        echo "✅ Branch is up to date with remote"
+    else
+        echo "ℹ️ No remote branch found (new branch)"
     fi
 fi
 
-echo \[🐶 Husky] Done ✅ pre-commit hook...\
+# Run sync script and handle changes
+echo "🔄 Running sync script..."
+yarn build
 
+if [ $? -eq 0 ]; then
+    if [ -n "$(git status --porcelain)" ]; then
+        echo "📝 Changes detected, adding to commit..."
+        git add .
+    else
+        echo "✅ No changes to sync"
+    fi
+else
+    echo "❌ Sync script failed"
+    exit 1
+fi
+
+# Run husky pre-commit script if exists
+if yarn run --list 2>/dev/null | grep -q "husky:pre-commit"; then
+    echo "🔍 Running pre-commit checks..."
+    yarn husky:pre-commit
+else
+    echo "ℹ️ No husky:pre-commit script found"
+fi
+
+echo "[🐶 Husky] Done ✅"
 exit 0

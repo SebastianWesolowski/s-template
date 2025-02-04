@@ -1,5 +1,5 @@
 {
-  "projectCatalog": "./templates/mockTemplateWithImageWithConfig",
+  "projectCatalog": "./templates/mocks/mockTemplateWithImageWithConfig",
   "templateCatalogName": "templateCatalog",
   "templateCatalogPath": "./templates/mockTemplateWithImageWithConfig/templateCatalog",
   "repositoryMapFileName": "repositoryMap.json",
@@ -7,27 +7,9 @@
   "bumpVersion": true,
   "isDebug": true,
   "_": [],
-  "templateVersion": "1.0.14",
-  "fileMap": [
-    "templateCatalog/.gitignore-default.md",
-    "templateCatalog/package.json-default.md",
-    "templateCatalog/tsconfig.json-default.md",
-    "templateCatalog/yarn.lock-default.md"
-  ],
-  "templateFileList": [
-    "./.gitignore",
-    "./package.json",
-    "./srcReadme/heroImageReposytory.png",
-    "./tsconfig.json",
-    "./yarn.lock"
-  ],
-  "rootPathFileList": [
-    "./templates/mockTemplateWithImageWithConfig/.gitignore",
-    "./templates/mockTemplateWithImageWithConfig/package.json",
-    "./templates/mockTemplateWithImageWithConfig/tsconfig.json",
-    "./templates/mockTemplateWithImageWithConfig/yarn.lock"
-  ],
-  "redOnlyFileList": [
-    "srcReadme/heroImageReposytory.png"
-  ]
+  "templateVersion": "1.0.15",
+  "fileMap": [],
+  "templateFileList": [],
+  "rootPathFileList": [],
+  "redOnlyFileList": []
 }
