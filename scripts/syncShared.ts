@@ -168,13 +168,14 @@ function syncSharedFiles(): void {
 
       // Improved exclude files check
       const isExcluded = excludeFiles.some((excluded) => {
-        // Get the file/dir name from the shared path
-        const sharedName = path.basename(sharedPath);
-        return sharedName === excluded;
+        // Check if the excluded file exists in the source path
+        const excludedPath = path.join(srcPath, excluded);
+        const exists = fs.existsSync(excludedPath);
+        return exists;
       });
 
       if (isExcluded) {
-        console.log(`    ⏭️  Excluded - skipping`);
+        console.log(`    ⏭️  Found excluded files - skipping`);
         return;
       }
 
