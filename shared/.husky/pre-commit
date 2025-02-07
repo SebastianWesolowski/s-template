@@ -3,8 +3,10 @@ echo \[🐶 Husky] Running pre-commit hook...\
 # Get current branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# Check if we're not on main branch
-if [ "$current_branch" != "main" ]; then
+# Skip checks if on main branch
+if [ "$current_branch" = "main" ]; then
+    echo "✅ On main branch, skipping update checks"
+else
     echo "🔍 Checking for branch updates..."
 
 # Fetch all latest changes

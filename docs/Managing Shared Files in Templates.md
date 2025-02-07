@@ -1,4 +1,3 @@
-
 # **📖 Documentation: Managing Shared Files in Templates**
 
 ## **1. Directory Structure**
@@ -20,116 +19,151 @@ repository/
  ├── package.json             # npm configuration and scripts
  ├── tsconfig.json            # TypeScript configuration
 ```
-----------
 
-## **2. How to Add a New Shared Directory or File?**
+## **2. Configuration Formats**
 
-### **🔹 Step 1: Add a File or Directory to `shared/`**
+The `sync-config.yaml` supports two configuration formats depending on your needs:
 
-In the `shared/` directory, add a new file or directory.
+### **Simple Format**
 
-#### **✅ Example**: Adding a new directory `shared/vitest/`
-
-```sh
-mkdir -p shared/vitest
-echo "{}" > shared/vitest/vitest.config.js
-```
-
-----------
-
-### **🔹 Step 2: Register the File/Directory in `sync-config.yaml`**
-
-Open `sync-config.yaml` and add a new entry specifying which templates the file/directory should be copied to.
-
-#### **✅ Example**: Adding `shared/vitest/vitest.config.js` to the `NextJs` and `node` templates
+Use this when you want to copy an entire directory or file without special handling:
 
 ```yaml
-vitest/vitest.config.js:
-  - NextJs
-  - node`
+tools:
+  - NextJs/NextJs15
+  - node
+
+github-actions:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
 ```
 
-Each entry in the `sync-config.yaml` file contains:
+### **Advanced Format**
 
--   **Path to the directory or file** inside `shared/`
--   **List of templates** to which this element will be copied
+Use this when you need more control over the synchronization:
 
-----------
+```yaml
+.husky:
+  projects:
+    - NextJs/NextJs15
+    - node
+  excludeFiles:
+    - lint-staged-with-style.config.json
+    - lint-staged.config.json
+
+.husky/lint-staged.config.json:
+  projects:
+    - node
+
+.husky/lint-staged-with-style.config.json:
+  projects:
+    - NextJs/NextJs15
+  asName: lint-staged.config.json
+```
+
+### **Configuration Options:**
+
+- `projects`: List of target templates
+- `excludeFiles`: (optional) Files to skip during synchronization
+- `asName`: (optional) Alternative name for the destination file
+
+## **3. How to Add New Shared Files**
+
+### **🔹 Step 1: Add Files to `shared/`**
+
+Add your file or directory to the `shared/` directory:
+
+```sh
+mkdir -p shared/config
+touch shared/config/example.config.js
+```
+
+### **🔹 Step 2: Configure in `sync-config.yaml`**
+
+Add an entry to `sync-config.yaml` using either format:
+
+```yaml
+# Simple format
+config/example.config.js:
+  - NextJs/NextJs15
+  - node
+
+# Or advanced format
+config/example.config.js:
+  projects:
+    - NextJs/NextJs15
+    - node
+  asName: custom.config.js
+```
 
 ### **🔹 Step 3: Run Synchronization**
 
-To copy new files to the selected templates, run the script:
-
 ```sh
 npm run sync:shared
 ```
 
-----------
+## **4. Managing Files**
 
-## **3. How to Remove a File or Directory from Synchronization?**
+### **Preview Changes**
 
-If you want to **remove a file from synchronization**, follow these steps:
-
-1.  **Remove the entry from `sync-config.yaml`**
-2.  **Delete the file/directory from `shared/` (if no longer needed)**
-3.  **Run synchronization again**
-
-```sh
-npm run sync:shared
-```
-
-This **does not remove** files already copied to templates – if you want to delete them, do it manually.
-
-----------
-
-## **4. How to Preview Which Files Will Be Copied?**
-
-If you want to preview before synchronization, add the `--dry-run` option (we can add this functionality to the script).
+To see what would be synchronized without making changes:
 
 ```sh
 npm run sync:shared --dry-run
 ```
 
-----------
+### **Automatic Synchronization**
 
-## **5. Automatic Synchronization Before Commit**
-
-You can add automatic synchronization before committing to GitHub. In the `.husky/pre-commit` file, add:
+Add to `.husky/pre-commit` for automatic updates:
 
 ```sh
 npm run sync:shared
 ```
 
-This ensures that the files are updated before each commit.
+### **Remove from Synchronization**
 
-----------
+1. Remove the entry from `sync-config.yaml`
+2. Delete the file/directory from `shared/` if no longer needed
+3. Manually remove files from templates if desired
 
-## **6. Frequently Asked Questions (FAQ)**
+## **5. Best Practices**
 
-### ❓ **Can I copy an entire directory?**
+- Use the simple format when possible for better readability
+- Use the advanced format only when you need file renaming or exclusions
+- Keep shared files modular and focused
+- Document any special configurations or requirements
+- Use consistent naming conventions across templates
 
-Yes! In `sync-config.yaml`, specify the directory name:
+## **6. FAQ**
+
+### ❓ **When should I use the advanced format?**
+
+Use it when you need to:
+
+- Rename files in specific templates
+- Exclude certain files from synchronization
+- Have different versions of the same file for different templates
+
+### ❓ **Can I sync individual files from a directory?**
+
+Yes, specify the full path in the configuration:
 
 ```yaml
-github-actions:
-  - NextJs
-  - node`
+config/specific-file.js:
+  projects:
+    - NextJs/NextJs15
 ```
-This will copy the entire `shared/github-actions/` directory to `templates/NextJs/` and `templates/node/`.
 
-### ❓ **What if I manually modify a file in the template?**
+### ❓ **What happens to existing files?**
 
-Synchronization will **overwrite** the file during the next run.
+Files are overwritten if they differ from the source. Use `excludeFiles` to prevent overwriting specific files.
 
-### ❓ **Can I exclude certain files from a directory?**
-
-For now, **everything is copied**. We can add support for `.syncignore` if needed.
-
-----------
+---
 
 ## **Summary**
 
-✅ **Adding files** → Place them in `shared/` and update `sync-config.yaml`
-✅ **Synchronization** → `npm run sync:shared`
-✅ **Removal** → Remove the entry from `sync-config.yaml`, delete the file manually
-✅ **Automatic synchronization** → Add to `pre-commit`
+✅ **Two formats**: Simple for basic needs, Advanced for more control
+✅ **Easy synchronization**: `npm run sync:shared`
+✅ **Flexible configuration**: Support for file renaming and exclusions
+✅ **Automatic updates**: Can be integrated with git hooks
+✅ **Clear feedback**: Detailed logs of all synchronization actions

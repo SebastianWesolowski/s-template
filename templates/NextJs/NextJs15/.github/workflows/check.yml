@@ -29,11 +29,11 @@ jobs:
             - args: [--frozen-lockfile]
 
       - name: Lint check
-        run: pnpm run lint
+        run: pnpm run lint:check
       - name: Format check
-        run: pnpm run prettier
+        run: pnpm run prettier:check
       - name: Unit & Integration tests
-        run: pnpm run test
+        run: pnpm run test:check
       - name: Smoke & Acceptance tests
         run: |
           pnpm run build-storybook --quiet

@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.1",
+  "templateVersion": "1.0.3",
   "fileMap": [
     "templateCatalog/.all-contributorsrc-default.md",
     "templateCatalog/.github/nodejs.version-default.md",
@@ -50,6 +50,8 @@
     "templateCatalog/reset.d.ts-default.md",
     "templateCatalog/styles/tailwind.css-default.md",
     "templateCatalog/tailwind.config.js-default.md",
+    "templateCatalog/todo.md-default.md",
+    "templateCatalog/tools/customize/customize.config-default.md",
     "templateCatalog/tsconfig.json-default.md"
   ],
   "templateFileList": [
@@ -96,6 +98,8 @@
     "./reset.d.ts",
     "./styles/tailwind.css",
     "./tailwind.config.js",
+    "./todo.md",
+    "./tools/customize/customize.config",
     "./tsconfig.json"
   ],
   "rootPathFileList": [
@@ -140,6 +144,8 @@
     "./templates/NextJs/NextJs15/reset.d.ts",
     "./templates/NextJs/NextJs15/styles/tailwind.css",
     "./templates/NextJs/NextJs15/tailwind.config.js",
+    "./templates/NextJs/NextJs15/todo.md",
+    "./templates/NextJs/NextJs15/tools/customize/customize.config",
     "./templates/NextJs/NextJs15/tsconfig.json"
   ],
   "redOnlyFileList": [

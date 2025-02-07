@@ -7,7 +7,15 @@ const SHARED_DIR = path.join(__dirname, "../shared");
 const TEMPLATES_DIR = path.join(__dirname, "../templates");
 const CONFIG_PATH = path.join(__dirname, "../sync-config.yaml");
 
-type SyncConfig = Record<string, string[]>;
+type ProjectConfig = {
+  projects: string[];
+  excludeFiles?: string[];
+  asName?: string;
+};
+
+type SyncConfig = {
+  [key: string]: ProjectConfig | string[];
+};
 
 function loadConfig(): SyncConfig {
   if (!fs.existsSync(CONFIG_PATH)) {
@@ -98,19 +106,19 @@ function compareFiles(src: string, dest: string): boolean {
   }
 }
 
+function isProjectConfig(
+  value: ProjectConfig | string[]
+): value is ProjectConfig {
+  return (
+    typeof value === "object" && !Array.isArray(value) && "projects" in value
+  );
+}
+
 function syncSharedFiles(): void {
   const config = loadConfig();
   const templates = getAllTemplates(TEMPLATES_DIR);
 
-  // Collect all unique templates from config
-  const configTemplates = new Set<string>();
-  Object.values(config).forEach((templateArray) => {
-    templateArray.forEach((template) => configTemplates.add(template));
-  });
-
-  logTemplateComparison(templates, configTemplates);
-
-  Object.entries(config).forEach(([sharedPath, allowedTemplates]) => {
+  Object.entries(config).forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
 
     if (!fs.existsSync(srcPath)) {
@@ -118,27 +126,46 @@ function syncSharedFiles(): void {
       return;
     }
 
-    templates.forEach((template) => {
-      if (allowedTemplates.includes(template)) {
-        const destPath = path.join(TEMPLATES_DIR, template, sharedPath);
+    // Handle both simple array and complex configuration
+    const projects = Array.isArray(configValue)
+      ? configValue
+      : configValue.projects;
 
-        if (fs.existsSync(destPath)) {
-          const filesMatch = compareFiles(srcPath, destPath);
-          if (filesMatch) {
-            console.log(
-              `ℹ️ Skipping ${sharedPath} → ${template} (files identical)`
-            );
-            return;
-          }
-          console.log(
-            `🔄 Updating ${sharedPath} → ${template} (content differs)`
-          );
-        } else {
-          console.log(`✨ Creating ${sharedPath} → ${template}`);
-        }
+    const excludeFiles = isProjectConfig(configValue)
+      ? configValue.excludeFiles || []
+      : [];
 
-        fse.copySync(srcPath, destPath, { overwrite: true });
+    projects.forEach((template) => {
+      const destPath = path.join(TEMPLATES_DIR, template, sharedPath);
+
+      // Skip excluded files if they match
+      if (excludeFiles.some((excluded) => sharedPath.endsWith(excluded))) {
+        console.log(`⏭️ Skipping excluded file ${sharedPath} for ${template}`);
+        return;
       }
+
+      // Handle file renaming if asName is specified
+      const finalDestPath =
+        isProjectConfig(configValue) && configValue.asName
+          ? path.join(path.dirname(destPath), configValue.asName)
+          : destPath;
+
+      if (fs.existsSync(finalDestPath)) {
+        const filesMatch = compareFiles(srcPath, finalDestPath);
+        if (filesMatch) {
+          console.log(
+            `ℹ️ Skipping ${sharedPath} → ${template} (files identical)`
+          );
+          return;
+        }
+        console.log(
+          `🔄 Updating ${sharedPath} → ${template} (content differs)`
+        );
+      } else {
+        console.log(`✨ Creating ${sharedPath} → ${template}`);
+      }
+
+      fse.copySync(srcPath, finalDestPath, { overwrite: true });
     });
   });
 

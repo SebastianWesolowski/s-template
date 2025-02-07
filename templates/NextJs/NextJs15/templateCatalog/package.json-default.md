@@ -1,25 +1,40 @@
 {
-  "name": "next-enterprise",
-  "version": "0.0.0",
+  "name": "placeholder-repo-name",
+  "version": "0.0.0-development",
+  "description": "A template for creating ...",
   "private": true,
   "scripts": {
     "dev": "cross-env FORCE_COLOR=1 next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
-    "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "analyze": "cross-env ANALYZE=true pnpm run build",
     "storybook": "cross-env FORCE_COLOR=1 storybook dev -p 6006",
     "test-storybook": "cross-env FORCE_COLOR=1 test-storybook",
     "build-storybook": "cross-env FORCE_COLOR=1 storybook build",
-    "test": "cross-env FORCE_COLOR=1 jest --passWithNoTests",
     "e2e:headless": "playwright test",
     "e2e:ui": "playwright test --ui",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "npx patch-package -y",
-    "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js' --image graph.svg"
+    "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js' --image graph.svg",
+    "commit": "czg",
+    "prepare": "husky",
+    "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
+    "husky:pre-commit": "lint-staged -c ./.husky/lint-staged.config.json",
+    "husky:pre-push": "run-s lint:check test:check build:prod",
+    "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
+    "lint": "run-s lint:fix lint:check",
+    "lint:check": "run-s prettier:check eslint:check typescript:check",
+    "lint:fix": "run-s prettier:fix eslint:fix",
+    "prettier:check": "prettier --check '**/*.{js,jsx,ts,tsx,json}'",
+    "prettier:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}'",
+    "staged:lint:check": "eslint",
+    "staged:lint:fix": "eslint --fix",
+    "staged:prettier:check": "prettier --check",
+    "staged:prettier:fix": "prettier --write",
+    "test:check": "cross-env FORCE_COLOR=1 node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand --silent --passWithNoTests",
+    "test:watch": "cross-env FORCE_COLOR=1 node --experimental-vm-modules node_modules/jest/bin/jest.js --watch --passWithNoTests",
+    "typescript:check": "tsc --noEmit",
+    "eslint:check": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts|tsx)'",
+    "eslint:fix": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts|tsx)' --fix"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^15.1.6",
@@ -55,6 +70,19 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^3.2.5",
+    "s-prettier": "^1.1.0",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@ef-carbon/tspm": "^2.2.5",
+    "lint-staged": "^13.2.1",
+    "npm-run-all": "^4.1.5",
+    "@ryansonshine/commitizen": "^4.2.8",
+    "commitizen": "^4.3.0",
+    "husky": "^9.0.0",
+    "czg": "^1.9.4",
+    "@typescript-eslint/parser": "^5.54.1",
     "@babel/core": "^7.23.3",
     "@babel/plugin-syntax-flow": "^7.23.3",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
@@ -102,7 +130,6 @@
     "patch-package": "^8.0.0",
     "postcss": "^8",
     "postinstall-postinstall": "^2.1.0",
-    "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "^0.6.10",
     "semantic-release": "^22.0.8",
     "storybook": "^8.5.1",
@@ -114,8 +141,27 @@
     "typescript-eslint": "^8.21.0",
     "webpack": "5.89.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "PLACEHOLDER_FULL_NAME",
+    "email": "PLACEHOLDER_GITHUB_USER@users.noreply.github.com",
+    "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
+  },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=PLACEHOLDER_NODE_VERSION"
+  },
+  "bugs": {
+    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues"
+  },
+  "homepage": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME#readme",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "packageManager": "pnpm@9.1.0"
 }

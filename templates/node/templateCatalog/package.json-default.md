@@ -1,7 +1,7 @@
 {
   "name": "placeholder-repo-name",
   "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript",
+  "description": "A template for creating ...",
   "main": "./lib/index.js",
   "files": [
     "lib/**/*",
@@ -46,19 +46,8 @@
     "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
   },
   "engines": {
-    "node": ">=20.17.0"
+    "node": ">=0.0.0"
   },
-  "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
-  ],
   "bugs": {
     "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues"
   },
