@@ -1,0 +1,29 @@
+# Simple directory copies
+.github:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+
+tools:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+# Advanced configuration with file exclusions and renaming
+.husky:
+  projects:
+    - NextJs/NextJs15
+    - startetNpmPackage/node
+    - node
+  excludeFiles:
+    - lint-staged-with-style.config.json
+    - lint-staged.config.json
+
+.husky/lint-staged.config.json:
+  projects:
+    - startetNpmPackage/node
+    - node
+
+.husky/lint-staged-with-style.config.json:
+  projects:
+    - NextJs/NextJs15
+  asName: lint-staged.config.json
