@@ -1,3 +1,14 @@
+## [1.5.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.2...v1.5.0-dev.3) (February 07, 2025)
+
+
+### Other tasks
+
+- 🐛 [] sync process ([7183897](https://github.com/SebastianWesolowski/s-template/commit/7183897da61710f1732933e2a5a227b8b25c3ceb))
+- 🐛 [] sync shared ([8984ece](https://github.com/SebastianWesolowski/s-template/commit/8984ece19a2006aaee714e30d428e1a5b0bef3ab))
+- ✨ [] ignore file in sync ([27a47f3](https://github.com/SebastianWesolowski/s-template/commit/27a47f30106707a7f0c36bda6613df596a4adafe))
+- ✨ [] add syncConfig ([ba72e96](https://github.com/SebastianWesolowski/s-template/commit/ba72e96de6ece698d451ffb571efb640cdd8fc33))
+- ✨ [] improve syncShared and nextJs15 ([d237f50](https://github.com/SebastianWesolowski/s-template/commit/d237f50d86aec92d5106686fdd2e69ddcc2d0656))
+
 ## [1.5.0-dev.2](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.1...v1.5.0-dev.2) (February 04, 2025)
 
 
