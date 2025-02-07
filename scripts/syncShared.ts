@@ -83,15 +83,44 @@ function getAllTemplates(dir: string, baseDir: string = dir): string[] {
   return [...new Set(templates)]; // Remove duplicates
 }
 
-function compareFiles(src: string, dest: string): boolean {
+function compareFiles(src: string, dest: string, template: string): boolean {
   if (!fs.existsSync(dest)) return false;
   try {
+    const srcStat = fs.statSync(src);
+    const destStat = fs.statSync(dest);
+
     // Handle directories
-    if (fs.statSync(src).isDirectory()) {
-      return true; // Skip comparison for directories
+    if (srcStat.isDirectory() && destStat.isDirectory()) {
+      console.log(`  🔍 [${template}] Comparing directory ${src}`);
+
+      const srcFiles = fs.readdirSync(src);
+      const destFiles = fs.readdirSync(dest);
+
+      // Log directory contents
+      console.log(`    Source files: ${srcFiles.join(", ")}`);
+      console.log(`    Dest files: ${destFiles.join(", ")}`);
+
+      // Check if all source files exist in destination and are identical
+      for (const file of srcFiles) {
+        const srcFilePath = path.join(src, file);
+        const destFilePath = path.join(dest, file);
+
+        if (!fs.existsSync(destFilePath)) {
+          console.log(`    ❌ [${template}] Missing in destination: ${file}`);
+          return false;
+        }
+
+        if (!compareFiles(srcFilePath, destFilePath, template)) {
+          console.log(`    ❌ [${template}] Files differ: ${file}`);
+          return false;
+        }
+      }
+
+      return true;
     }
 
     // For files, compare content
+    console.log(`  🔍 [${template}] Comparing file ${src}`);
     const srcContent = fs.readFileSync(src, "utf8");
     const destContent = fs.readFileSync(dest, "utf8");
 
@@ -99,7 +128,14 @@ function compareFiles(src: string, dest: string): boolean {
     const normalizedSrc = srcContent.replace(/\r\n/g, "\n");
     const normalizedDest = destContent.replace(/\r\n/g, "\n");
 
-    return normalizedSrc === normalizedDest;
+    const areIdentical = normalizedSrc === normalizedDest;
+    console.log(
+      `    ${areIdentical ? "✅" : "❌"} [${template}] Files ${
+        areIdentical ? "match" : "differ"
+      }`
+    );
+
+    return areIdentical;
   } catch (error) {
     console.error(`Error comparing files ${src} and ${dest}:`, error);
     return false;
@@ -117,6 +153,9 @@ function isProjectConfig(
 function syncSharedFiles(): void {
   const config = loadConfig();
   const templates = getAllTemplates(TEMPLATES_DIR);
+
+  // Group logs by template
+  console.log("\n📦 Starting synchronization by template:\n");
 
   Object.entries(config).forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
@@ -140,7 +179,7 @@ function syncSharedFiles(): void {
 
       // Skip excluded files if they match
       if (excludeFiles.some((excluded) => sharedPath.endsWith(excluded))) {
-        console.log(`⏭️ Skipping excluded file ${sharedPath} for ${template}`);
+        console.log(`⏭️ [${template}] Skipping excluded file ${sharedPath}`);
         return;
       }
 
@@ -151,18 +190,18 @@ function syncSharedFiles(): void {
           : destPath;
 
       if (fs.existsSync(finalDestPath)) {
-        const filesMatch = compareFiles(srcPath, finalDestPath);
+        const filesMatch = compareFiles(srcPath, finalDestPath, template);
         if (filesMatch) {
           console.log(
-            `ℹ️ Skipping ${sharedPath} → ${template} (files identical)`
+            `ℹ️ [${template}] Skipping ${sharedPath} (files identical)`
           );
           return;
         }
         console.log(
-          `🔄 Updating ${sharedPath} → ${template} (content differs)`
+          `🔄 [${template}] Updating ${sharedPath} (content differs)`
         );
       } else {
-        console.log(`✨ Creating ${sharedPath} → ${template}`);
+        console.log(`✨ [${template}] Creating ${sharedPath}`);
       }
 
       fse.copySync(srcPath, finalDestPath, { overwrite: true });
