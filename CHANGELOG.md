@@ -1,3 +1,10 @@
+## [1.5.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.5...v1.5.0-dev.6) (February 09, 2025)
+
+
+### Other tasks
+
+- ✨ [] add nevver format on save ([33d4916](https://github.com/SebastianWesolowski/s-template/commit/33d4916dcdaf3f9a1a10e6a611fe76c3bf8b683a))
+
 ## [1.5.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.4...v1.5.0-dev.5) (February 09, 2025)
 
 
