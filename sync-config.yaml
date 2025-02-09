@@ -1,4 +1,14 @@
 # Simple directory copies
+LICENSE:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.nvmrc:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
 .github:
   - NextJs/NextJs15
   - startetNpmPackage/node

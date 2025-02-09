@@ -8,6 +8,6 @@
     "init": "s-init --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/main/templates/node'"
   },
   "dependencies": {
-    "s-update-manager": "^1.0.0-dev.28"
+    "s-update-manager": "^1.0.0-dev.48"
   }
 }

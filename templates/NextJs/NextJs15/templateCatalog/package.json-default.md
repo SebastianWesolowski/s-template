@@ -16,6 +16,7 @@
     "postinstall": "npx patch-package -y",
     "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js' --image graph.svg",
     "commit": "czg",
+    "customize": "tsx tools/customize/customize.ts",
     "prepare": "husky",
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
     "husky:pre-commit": "lint-staged -c ./.husky/lint-staged.config.json",
@@ -34,7 +35,9 @@
     "test:watch": "cross-env FORCE_COLOR=1 node --experimental-vm-modules node_modules/jest/bin/jest.js --watch --passWithNoTests",
     "typescript:check": "tsc --noEmit",
     "eslint:check": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts|tsx)'",
-    "eslint:fix": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts|tsx)' --fix"
+    "eslint:fix": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts|tsx)' --fix",
+    "s-update-manager": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/NextJs15'",
+    "s-update-manager-build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/NextJs15'"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^15.1.6",
@@ -70,23 +73,13 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^3.2.5",
-    "s-prettier": "^1.1.0",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@ef-carbon/tspm": "^2.2.5",
-    "lint-staged": "^13.2.1",
-    "npm-run-all": "^4.1.5",
-    "@ryansonshine/commitizen": "^4.2.8",
-    "commitizen": "^4.3.0",
-    "husky": "^9.0.0",
-    "czg": "^1.9.4",
-    "@typescript-eslint/parser": "^5.54.1",
     "@babel/core": "^7.23.3",
     "@babel/plugin-syntax-flow": "^7.23.3",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@babel/plugin-transform-react-jsx": "^7.23.4",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@ef-carbon/tspm": "^2.2.5",
     "@eslint/eslintrc": "^3",
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "15.1.6",
@@ -96,6 +89,7 @@
     "@opentelemetry/sdk-trace-node": "1.18.1",
     "@opentelemetry/semantic-conventions": "1.18.1",
     "@playwright/test": "^1.40.0",
+    "@ryansonshine/commitizen": "^4.2.8",
     "@storybook/addon-controls": "^8.5.1",
     "@storybook/addon-essentials": "^8.5.1",
     "@storybook/addon-interactions": "^8.5.1",
@@ -114,28 +108,39 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "8.21.0",
+    "@typescript-eslint/parser": "^5.54.1",
     "all-contributors-cli": "^6.26.1",
+    "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
+    "czg": "^1.9.4",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-storybook": "^0.11.2",
     "eslint-plugin-tailwindcss": "^3.18.0",
     "fetch-mock": "^9.11.0",
     "gzip-size": "6.0.0",
+    "husky": "^9.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^13.2.1",
     "mkdirp": "^3.0.1",
+    "npm-run-all": "^4.1.5",
     "patch-package": "^8.0.0",
     "postcss": "^8",
     "postinstall-postinstall": "^2.1.0",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.10",
+    "s-prettier": "^1.1.0",
+    "s-update-manager": "^1.0.0-dev.48",
     "semantic-release": "^22.0.8",
     "storybook": "^8.5.1",
     "tailwindcss": "^4.0.0",
     "ts-jest": "^29.1.1",
     "tsc": "^2.0.4",
+    "tsx": "^4.19.2",
     "typed-query-selector": "^2.12.0",
     "typescript": "^5",
     "typescript-eslint": "^8.21.0",
@@ -152,7 +157,7 @@
     "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
   },
   "engines": {
-    "node": ">=PLACEHOLDER_NODE_VERSION"
+    "node": ">=0.0.0"
   },
   "bugs": {
     "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues"
@@ -162,6 +167,5 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
-  },
-  "packageManager": "pnpm@9.1.0"
+  }
 }

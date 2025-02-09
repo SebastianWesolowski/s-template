@@ -1,29 +1,33 @@
+# PLACEHOLDER_REPO_NAME
 
-### Next.js Enterprise Boilerplate 
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="PLACEHOLDER_REPO_NAME package" src=".github/assets/heroImageReposytory.png"></a>
 
-</br>
+**Important Links**
 
-  [![GitHub Actions Workflow Status][check-workflow-badge]][check-workflow-badge-link] [![GitHub License][github-license-badge]][github-license-badge-link] [![GitHub contributors][github-contributors-badge]][github-contributors-badge-link] [![Discord][discord-badge]][discord-badge-link] [![Blazity][made-by-blazity-badge]][made-by-blazity-badge-link]
+- [![npm package][npm-img]][npm-url]
+- [![Build Status][build-img]][build-url]
+- [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
+- [Author page](PLACEHOLDER_PAGE_AUTHOR)
 
-Welcome to the _Next.js Enterprise Boilerplate_, an open-source template for enterprise projects! It's loaded with features that'll help you build a high-performance, maintainable, and enjoyable app. We've done all the heavy lifting for you, so sit back, relax, and get ready to conquer the world with your incredible app! 🌍
+<br/><br/>
 
-> [!NOTE]
-> **Blazity** is a group of Next.js/Headless experts. Contact us at [contact@blazity.com](https://blazity.com) if you’d like to talk about your project or just to have a chat with us
+**Remove before final release**
+- [Set up your repository](docs/HowToAutoDeploy.md)
+- [Way to work](docs/WayToWrok.md)
+- [Known issues](docs/knowProblems.md)
 
-### Feature Manager (nefi)
-<a href="https://github.com/blazity/nefi"><img width="250" align="right" alt="nefi-badge" src="https://github.com/user-attachments/assets/37941f8c-944f-44c0-b3c7-b1d322431871" /></a>
+---
 
-**nefi** (next-enterprise feature integrations) is an AI agent that will help configuring the boilerplate to your needs using natural language. It can remove/install dependencies, modify files and manage Git. 
+<br/>
 
-Simply set up the boilerplate, follow guide [in the getting started section](#getting-started) and type `npx nefi` in your terminal!
-
-Leave a ⭐ for [nefi on GitHub](https://github.com/blazity/nefi) and check out the [nefi.ai docs](https://nefi.ai/)!
-
+A template for creating ...
 
 ### Integrated features
 
 Don't worry, with this template you will anyways get all the awesomeness you need:
 
+- 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
+- 🎨 **[s-customize](https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/tools/customize)** - Customize your repozytory with one command
 - 🏎️ **[Next.js 15](https://nextjs.org/)** - Fast by default, with config optimized for performance (with **App Directory**)
 - 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
 - ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
@@ -49,8 +53,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 ## Table of Contents
 
-- [Next.js Enterprise Boilerplate](#nextjs-enterprise-boilerplate)
-  - [Features](#features)
+  - [Integrated features](#integrated-features)
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#-getting-started)
   - [Deployment](#-deployment)
@@ -76,72 +79,118 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 To get started with this boilerplate, follow these steps:
 
-1. Fork & clone repository:
+1. Install the dependencies:
 
 ```bash
-## Don't forget to ⭐ star and fork it first :)
-git clone https://github.com/<your_username>/next-enterprise.git
+yarn install
 ```
 
-2. Install the dependencies:
+2. Run the update witch s-update-manager:
 
 ```bash
-pnpm install --frozen-lockfile
+yarn s-update-manager
 ```
 
-3. Run the development server:
+3. Set up your repository
+
+Replace variable in the `./tools/customize/customize.config.ts` script with your own details to personalize your new package:
 
 ```bash
-pnpm run dev
+export const config: CustomizeConfig = {
+  replacements: [
+    {
+      placeholder: "PLACEHOLDER_FULL_NAME_EXAMPLE",
+      value: "Sebastian Wesolowski",
+      files: [
+        "package.json",
+        "README.md",
+        "./docs/HowToAutoDeploy.md",
+        ".github/FUNDING.yml",
+      ],
+    },
+    {
+      placeholder: "PLACEHOLDER_PAGE_AUTHOR_EXAMPLE",
+      value: "www.wesolowski.dev",
+      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
+    },
+    ...
+```
+You can look on example in `./tools/customize/customize.example.config.ts`
+
+Run script with:
+
+```bash
+yarn customize
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-5. This project uses a git hook to enforce [conventional commits](https://github.com/qoomon/git-conventional-commits). To install the git hook, run the following command in the root directory of the project:
-
-```sh
-brew install pre-commit
-pre-commit install -t commit-msg
+```bash
+tsx tools/customize/customize.ts
 ```
+
+
+4. Run the development server:
+
+```bash
+yarn dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 
 ## 🚀 Deployment
 
-Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=github&utm_campaign=next-enterprise) by clicking the button below:
+Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js) by clicking the button below:
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
 
 ## 📃 Scripts Overview
 
-The following scripts are available in the `package.json`:
+### 🧪 Testing
+- `test:*`: Runs unit and integration tests with coverage
+- `e2e:*`: Runs end-to-end tests (headless or with UI)
+- `test-storybook`: Runs Storybook tests
 
-- `dev`: Starts the development server with colorized output
+### 🔍 Linting & Formatting
+- `lint:*`: Lints and fixes code using ESLint
+- `prettier:*`: Checks and fixes code formatting
+- `eslint:*`: Runs ESLint checks and fixes
+- `staged:*`: Runs linting and formatting checks on git staged files
+- `typescript:check`: Runs TypeScript compiler checks
+
+### 🚀 Development
+- `dev`: Starts the development server
 - `build`: Builds the app for production
 - `start`: Starts the production server
-- `lint`: Lints the code using ESLint
-- `lint:fix`: Automatically fixes linting errors
-- `prettier`: Checks the code for proper formatting
-- `prettier:fix`: Automatically fixes formatting issues
-- `analyze`: Analyzes the bundle sizes for Client, Server and Edge environments
-- `storybook`: Starts the Storybook server
-- `build-storybook`: Builds the Storybook for deployment
-- `test`: Runs unit and integration tests
-- `e2e:headless`: Runs end-to-end tests in headless mode
-- `e2e:ui`: Runs end-to-end tests with UI
-- `format`: Formats the code with Prettier
-- `postinstall`: Applies patches to external dependencies
-- `coupling-graph`: **Generates a coupling and cohesion graph for the components**
+- `analyze`: Analyzes bundle sizes
+
+### 📚 Storybook
+- `storybook`: Starts Storybook server
+- `build-storybook`: Builds Storybook for deployment
+
+### 📝 Git Hooks & Commits
+- `commit`: Creates conventional commit messages
+- `prepare`: Sets up Husky git hooks
+- `husky:*`: Manages git hooks for commits and pushes
+
+### 🛠️ Tools
+- `coupling-graph`: Generates coupling and cohesion graph
+- `customize`: Runs project customization script
+- `postinstall`: Applies patches to dependencies
 
 ## 🔗 Coupling Graph
 
 The `coupling-graph` script is a useful tool that helps visualize the coupling and connections between your project's internal modules. It's built using the [Madge](https://github.com/pahen/madge) library. To generate the graph, simply run the following command:
 
 ```bash
-pnpm run coupling-graph
+yarn coupling-graph
 ```
 
 This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
-![graph](https://user-images.githubusercontent.com/28964599/233662744-3ba89713-8466-49cd-9be7-e6fb38191f58.png)
+![graph](.github/assets/couplingGraph.png)
+
 
 ## 🧪 Testing
 
@@ -149,11 +198,11 @@ This boilerplate comes with various testing setups to ensure your application's 
 
 ### Running Tests
 
-- **Unit and integration tests**: Run Jest tests using `pnpm run test`
-- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `pnpm run e2e:headless`
-- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `pnpm run e2e:ui`
+- **Unit and integration tests**: Run Jest tests using `yarn test`
+- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn e2e:headless`
+- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn e2e:ui`
 
-<img width="1392" alt="image" src="https://user-images.githubusercontent.com/28964599/233666655-93b7d08b-2fd8-406a-b43c-44d4d96cf387.png">
+![graph](.github/assets/runningTests.png)
 
 ### Acceptance Tests
 
@@ -193,7 +242,7 @@ export const FilledForm: Story = {
 
 ### Smoke Testing
 
-In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `pnpm run test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
+In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
 
 ## 🎨 Styling and Design System
 
@@ -227,7 +276,7 @@ Choose the library that best fits your requirements and project structure to ens
 
 ## 💻 Environment Variables handling
 
-[T3 Env](https://env.t3.gg/) is a library that provides environmental variables checking at build time, type validation and transforming. It ensures that your application is using the correct environment variables and their values are of the expected type. You’ll never again struggle with runtime errors caused by incorrect environment variable usage.
+[T3 Env](https://env.t3.gg/) is a library that provides environmental variables checking at build time, type validation and transforming. It ensures that your application is using the correct environment variables and their values are of the expected type. You'll never again struggle with runtime errors caused by incorrect environment variable usage.
 
 Config file is located at `env.mjs`. Simply set your client and server variables and import `env` from any file in your project.
 
@@ -255,70 +304,29 @@ If the required environment variables are not set, you'll get an error message:
   ❌ Invalid environment variables: { SECRET_KEY: [ 'Required' ] }
 ```
 
-## 🤝 Contribution
-
-Contributions are always welcome! To contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch with a descriptive name.
-3. Make your changes, and commit them using the [Conventional Commits](https://www.conventionalcommits.org/) format.
-4. Push your changes to the forked repository.
-5. Create a pull request, and we'll review your changes.
-
-## Support
-
-If you're looking for help or simply want to share your thoughts about the project, we encourage you to join our Discord community. Here's the link: [https://blazity.com/discord](https://blazity.com/discord). It's a space where we exchange ideas and help one another. Everyone's input is appreciated, and we look forward to welcoming you.
-
-<br />
-<a href="https://discord.gg/fyWtyNKmfX" style="width: 100%; display: flex; justify-content: center;">
-  <img src="https://discordapp.com/api/guilds/1111676875782234175/widget.png?style=banner2" alt="Blazity Discord Banner"/>
-</a>
-<br />
+## Badges
+[![Downloads][downloads-img]][downloads-url]
+[![Issues][issues-img]][issues-url]
+[![Commitizen Friendly][commitizen-img]][commitizen-url]
+[![Semantic Release][semantic-release-img]][semantic-release-url]
+[![GitHub License][github-license-badge]][github-license-badge-link]
 
 
-## 📜 License
+[build-img]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml/badge.svg
+[build-url]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml
+[downloads-img]: https://img.shields.io/npm/dt/PLACEHOLDER_REPO_NAME
+[downloads-url]: https://www.npmtrends.com/PLACEHOLDER_REPO_NAME
+[npm-img]: https://img.shields.io/npm/v/PLACEHOLDER_REPO_NAME
+[npm-url]: https://www.npmjs.com/package/PLACEHOLDER_REPO_NAME
+[issues-img]: https://img.shields.io/github/issues/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
+[issues-url]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues
+[semantic-release-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
+[commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+[github-license-badge]: https://img.shields.io/github/license/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
+[github-license-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/blob/main/LICENSE
 
-This project is licensed under the MIT License. For more information, see the [LICENSE](./LICENSE) file.
 
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://bstefanski.com/"><img src="https://avatars.githubusercontent.com/u/28964599?v=4?s=100" width="100px;" alt="Bart Stefanski"/><br /><sub><b>Bart Stefanski</b></sub></a><br /><a href="https://github.com/Blazity/next-enterprise/commits?author=bmstefanski" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jjablonski-it"><img src="https://avatars.githubusercontent.com/u/51968772?v=4?s=100" width="100px;" alt="Jakub Jabłoński"/><br /><sub><b>Jakub Jabłoński</b></sub></a><br /><a href="#infra-jjablonski-it" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://neg4n.dev/"><img src="https://avatars.githubusercontent.com/u/57688858?v=4?s=100" width="100px;" alt="Igor Klepacki"/><br /><sub><b>Igor Klepacki</b></sub></a><br /><a href="https://github.com/Blazity/next-enterprise/commits?author=neg4n" title="Documentation">📖</a></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td align="center" size="13px" colspan="7">
-        <img src="https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg">
-          <a href="https://all-contributors.js.org/docs/en/bot/usage">Add your contributions</a>
-        </img>
-      </td>
-    </tr>
-  </tfoot>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- Badges and links -->
-
-[check-workflow-badge]: https://img.shields.io/github/actions/workflow/status/blazity/next-enterprise/check.yml?label=check
-[github-license-badge]: https://img.shields.io/github/license/blazity/next-enterprise?link=https%3A%2F%2Fgithub.com%2FBlazity%2Fnext-enterprise%2Fblob%2Fmain%2FLICENSE
-[github-contributors-badge]: https://img.shields.io/github/contributors/blazity/next-enterprise?link=https%3A%2F%2Fgithub.com%2FBlazity%2Fnext-enterprise%2Fgraphs%2Fcontributors
-[discord-badge]: https://img.shields.io/discord/1111676875782234175?color=7b8dcd&link=https%3A%2F%2Fblazity.com%2Fdiscord
-[made-by-blazity-badge]: https://img.shields.io/badge/made_by-Blazity-blue?color=FF782B&link=https://blazity.com/
-
-[check-workflow-badge-link]: https://github.com/Blazity/next-enterprise/actions/workflows/check.yml
-[github-license-badge-link]: https://github.com/Blazity/next-enterprise/blob/main/LICENSE
-[github-contributors-badge-link]: https://github.com/Blazity/next-enterprise/graphs/contributors
-[discord-badge-link]: https://blazity.com/discord
-[made-by-blazity-badge-link]: https://blazity.com/?utm_source=nextenterprise&utm_medium=github
+[github-contributors-badge]: https://img.shields.io/github/contributors/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
+[github-contributors-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/graphs/contributors

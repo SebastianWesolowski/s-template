@@ -1,14 +1,15 @@
 # PLACEHOLDER_REPO_NAME
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="PLACEHOLDER_REPO_NAME package" src="srcReadme/heroImageReposytory.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="PLACEHOLDER_REPO_NAME package" src=".github/assets/heroImageReposytory.png"></a>
 
-## Important Links
+**Important Links**
 
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
+- [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
 - [Author page](PLACEHOLDER_PAGE_AUTHOR)
 
-<br>
+<br/><br/>
 
 **Remove before final release**
 - [Set up your repository](docs/HowToAutoDeploy.md)
@@ -19,7 +20,7 @@
 
 <br/>
 
-A template for creating npm packages using TypeScript
+A template for creating ...
 
 ## Install
 
@@ -72,6 +73,7 @@ Lorem ipsum.
 [![Issues][issues-img]][issues-url]
 [![Commitizen Friendly][commitizen-img]][commitizen-url]
 [![Semantic Release][semantic-release-img]][semantic-release-url]
+[![GitHub License][github-license-badge]][github-license-badge-link]
 
 
 [build-img]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml/badge.svg
@@ -86,3 +88,9 @@ Lorem ipsum.
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
 [commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
+[github-license-badge]: https://img.shields.io/github/license/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
+[github-license-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/blob/main/LICENSE
+
+
+[github-contributors-badge]: https://img.shields.io/github/contributors/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
+[github-contributors-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/graphs/contributors

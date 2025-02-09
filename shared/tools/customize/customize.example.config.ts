@@ -5,17 +5,12 @@ export const config: CustomizeConfig = {
     {
       placeholder: "PLACEHOLDER_FULL_NAME",
       value: "Sebastian Wesolowski",
-      files: [
-        "package.json",
-        "README.md",
-        "./docs/HowToAutoDeploy.md",
-        ".github/FUNDING.yml",
-      ],
+      files: ["package.json", "README.md"],
     },
     {
       placeholder: "PLACEHOLDER_PAGE_AUTHOR",
       value: "www.wesolowski.dev",
-      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
+      files: [".github/FUNDING.yml", "LICENSE"],
     },
     {
       placeholder: "PLACEHOLDER_GITHUB_USER",
@@ -30,7 +25,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: "PLACEHOLDER_NODE_VERSION",
       value: "20.17.0",
-      files: ["package.json", ".nvmrc", ".github/nodejs.version"],
+      files: [".nvmrc", ".github/nodejs.version"],
     },
     {
       placeholder: ">=0.0.0",
@@ -55,12 +50,17 @@ export const config: CustomizeConfig = {
     {
       placeholder: "PLACEHOLDER_NPM_USER",
       value: "sebastian.wesolowski.sw",
-      files: ["README.md", "./docs/HowToAutoDeploy.md"],
+      files: ["./docs/HowToAutoDeploy.md"],
     },
     {
       placeholder: "A template for creating ...",
       value: "A template for creating npm packages using TypeScript",
       files: ["README.md", "package.json"],
+    },
+    {
+      placeholder: "PLACEHOLDER_CURRENT_YEAR",
+      value: new Date().getFullYear().toString(),
+      files: ["LICENSE"],
     },
   ],
   cleanupExtensions: [".mybak"],
