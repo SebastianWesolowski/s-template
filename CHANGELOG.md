@@ -1,3 +1,10 @@
+## [1.5.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.6...v1.5.0-dev.7) (February 09, 2025)
+
+
+### Other tasks
+
+- 🐛 [] customize placeholders ([35958ee](https://github.com/SebastianWesolowski/s-template/commit/35958eeae90ca1b5eaad077d92ae81ba5e3ec1c1))
+
 ## [1.5.0-dev.6](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.5...v1.5.0-dev.6) (February 09, 2025)
 
 
