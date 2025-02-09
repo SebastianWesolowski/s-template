@@ -1,3 +1,10 @@
+## [1.5.0-dev.8](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.7...v1.5.0-dev.8) (February 09, 2025)
+
+
+### Other tasks
+
+- ✨ [] add sting in addDependency ([99d0c89](https://github.com/SebastianWesolowski/s-template/commit/99d0c896bd32878cb4de5ab6ae4c4fd6d7a3639a))
+
 ## [1.5.0-dev.7](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.6...v1.5.0-dev.7) (February 09, 2025)
 
 
