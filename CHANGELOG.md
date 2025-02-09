@@ -1,3 +1,11 @@
+## [1.5.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.3...v1.5.0-dev.4) (February 09, 2025)
+
+
+### Other tasks
+
+- ✨ [] improve placeholders ([e4a0b83](https://github.com/SebastianWesolowski/s-template/commit/e4a0b8335bdce45f44591dbb487d716f1460a51e))
+- ✨ [] normalize repos ([0f9b258](https://github.com/SebastianWesolowski/s-template/commit/0f9b2588c5162c97d2cb0b93fcc6bc0d587c4d02))
+
 ## [1.5.0-dev.3](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.2...v1.5.0-dev.3) (February 07, 2025)
 
 
