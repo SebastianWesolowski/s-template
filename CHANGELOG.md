@@ -1,3 +1,10 @@
+## [1.5.0-dev.5](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.4...v1.5.0-dev.5) (February 09, 2025)
+
+
+### Other tasks
+
+- 🐛 [] add .husky/_ in to ignore ([668b00b](https://github.com/SebastianWesolowski/s-template/commit/668b00bcd59e0384aec4b47a9a9ae9a36722612c))
+
 ## [1.5.0-dev.4](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.3...v1.5.0-dev.4) (February 09, 2025)
 
 
