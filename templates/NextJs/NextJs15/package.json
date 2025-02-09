@@ -1,7 +1,7 @@
 {
   "name": "placeholder-repo-name",
   "version": "0.0.0-development",
-  "description": "A template for creating ...",
+  "description": "{{A template for creating ...}}",
   "private": true,
   "scripts": {
     "dev": "cross-env FORCE_COLOR=1 next dev --turbo",
@@ -148,21 +148,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME.git"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}.git"
   },
   "license": "MIT",
   "author": {
-    "name": "PLACEHOLDER_FULL_NAME",
-    "email": "PLACEHOLDER_GITHUB_USER@users.noreply.github.com",
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
+    "name": "{{PLACEHOLDER_FULL_NAME}}",
+    "email": "{{PLACEHOLDER_GITHUB_USER}}@users.noreply.github.com",
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}"
   },
   "engines": {
     "node": ">=0.0.0"
   },
   "bugs": {
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/issues"
   },
-  "homepage": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME#readme",
+  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}#readme",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"

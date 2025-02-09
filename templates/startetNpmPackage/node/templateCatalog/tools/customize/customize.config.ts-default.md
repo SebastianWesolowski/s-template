@@ -3,7 +3,7 @@ import { CustomizeConfig } from "./type";
 export const config: CustomizeConfig = {
   replacements: [
     {
-      placeholder: "PLACEHOLDER_FULL_NAME",
+      placeholder: "{{PLACEHOLDER_FULL_NAME}}",
       value: "Sebastian Wesolowski",
       files: [
         "package.json",
@@ -13,12 +13,12 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "PLACEHOLDER_PAGE_AUTHOR",
+      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR}}",
       value: "www.wesolowski.dev",
       files: [".github/FUNDING.yml", "package.json", "LICENSE"],
     },
     {
-      placeholder: "PLACEHOLDER_GITHUB_USER",
+      placeholder: "{{PLACEHOLDER_GITHUB_USER}}",
       value: "SebastianWesolowski",
       files: [
         "package.json",
@@ -28,7 +28,7 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "PLACEHOLDER_NODE_VERSION",
+      placeholder: "{{PLACEHOLDER_NODE_VERSION}}",
       value: "20.17.0",
       files: ["package.json", ".nvmrc", ".github/nodejs.version"],
     },
@@ -53,7 +53,7 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "PLACEHOLDER_NPM_USER",
+      placeholder: "{{PLACEHOLDER_NPM_USER}}",
       value: "sebastian.wesolowski.sw",
       files: ["README.md", "./docs/HowToAutoDeploy.md"],
     },

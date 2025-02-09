@@ -1,5 +1,5 @@
 # Reusable workflow for PRs; to eject, you can replace this file with
-# https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_GITHUB_USER/blob/main/.github/workflows/pr.yml
+# https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_GITHUB_USER}}/blob/main/.github/workflows/pr.yml
 name: Pull Request
 
 on: [pull_request]

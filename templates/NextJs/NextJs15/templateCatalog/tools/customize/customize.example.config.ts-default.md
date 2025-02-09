@@ -3,17 +3,17 @@ import { CustomizeConfig } from "./type";
 export const config: CustomizeConfig = {
   replacements: [
     {
-      placeholder: "PLACEHOLDER_FULL_NAME",
+      placeholder: "{{PLACEHOLDER_FULL_NAME}}",
       value: "Sebastian Wesolowski",
       files: ["package.json", "README.md"],
     },
     {
-      placeholder: "PLACEHOLDER_PAGE_AUTHOR",
+      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR}}",
       value: "www.wesolowski.dev",
       files: [".github/FUNDING.yml", "LICENSE"],
     },
     {
-      placeholder: "PLACEHOLDER_GITHUB_USER",
+      placeholder: "{{PLACEHOLDER_GITHUB_USER}}",
       value: "SebastianWesolowski",
       files: [
         "package.json",
@@ -23,7 +23,7 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "PLACEHOLDER_NODE_VERSION",
+      placeholder: "{{PLACEHOLDER_NODE_VERSION}}",
       value: "20.17.0",
       files: [".nvmrc", ".github/nodejs.version"],
     },
@@ -38,7 +38,7 @@ export const config: CustomizeConfig = {
       files: ["package.json"],
     },
     {
-      placeholder: "PLACEHOLDER_REPO_NAME",
+      placeholder: "{{PLACEHOLDER_REPO_NAME}}",
       value: "s-template",
       files: [
         "package.json",
@@ -48,17 +48,17 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "PLACEHOLDER_NPM_USER",
+      placeholder: "{{PLACEHOLDER_NPM_USER}}",
       value: "sebastian.wesolowski.sw",
       files: ["./docs/HowToAutoDeploy.md"],
     },
     {
-      placeholder: "A template for creating ...",
+      placeholder: "{{A template for creating ...}}",
       value: "A template for creating npm packages using TypeScript",
       files: ["README.md", "package.json"],
     },
     {
-      placeholder: "PLACEHOLDER_CURRENT_YEAR",
+      placeholder: "{{PLACEHOLDER_CURRENT_YEAR}}",
       value: new Date().getFullYear().toString(),
       files: ["LICENSE"],
     },

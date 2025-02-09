@@ -1,7 +1,7 @@
 {
   "name": "placeholder-repo-name",
   "version": "0.0.0-development",
-  "description": "A template for creating ...",
+  "description": "{{A template for creating ...}}",
   "main": "./lib/index.js",
   "files": [
     "lib/**/*",
@@ -37,21 +37,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME.git"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME.git"
   },
   "license": "MIT",
   "author": {
-    "name": "PLACEHOLDER_FULL_NAME",
-    "email": "PLACEHOLDER_GITHUB_USER@users.noreply.github.com",
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER"
+    "name": "{{PLACEHOLDER_FULL_NAME}}",
+    "email": "{{PLACEHOLDER_GITHUB_USER}}@users.noreply.github.com",
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}"
   },
   "engines": {
     "node": ">=0.0.0"
   },
   "bugs": {
-    "url": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/issues"
   },
-  "homepage": "https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME#readme",
+  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@semantic-release/changelog": "^6.0.3",

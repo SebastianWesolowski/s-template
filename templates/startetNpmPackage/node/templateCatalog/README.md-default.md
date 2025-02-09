@@ -7,7 +7,7 @@
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
-- [Author page](PLACEHOLDER_PAGE_AUTHOR)
+- [Author page]({{PLACEHOLDER_PAGE_AUTHOR}})
 
 <br/><br/>
 
@@ -20,7 +20,7 @@
 
 <br/>
 
-A template for creating ...
+{{A template for creating ...}}
 
 ## Install
 
@@ -76,21 +76,21 @@ Lorem ipsum.
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
 
-[build-img]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml/badge.svg
-[build-url]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml
+[build-img]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml/badge.svg
+[build-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/actions/workflows/release.yml
 [downloads-img]: https://img.shields.io/npm/dt/PLACEHOLDER_REPO_NAME
 [downloads-url]: https://www.npmtrends.com/PLACEHOLDER_REPO_NAME
 [npm-img]: https://img.shields.io/npm/v/PLACEHOLDER_REPO_NAME
 [npm-url]: https://www.npmjs.com/package/PLACEHOLDER_REPO_NAME
-[issues-img]: https://img.shields.io/github/issues/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
-[issues-url]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/issues
+[issues-img]: https://img.shields.io/github/issues/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME
+[issues-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/issues
 [semantic-release-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
 [commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
-[github-license-badge]: https://img.shields.io/github/license/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
-[github-license-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/blob/main/LICENSE
+[github-license-badge]: https://img.shields.io/github/license/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME
+[github-license-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/blob/main/LICENSE
 
 
-[github-contributors-badge]: https://img.shields.io/github/contributors/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME
-[github-contributors-badge-link]: https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/graphs/contributors
+[github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME
+[github-contributors-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/graphs/contributors
