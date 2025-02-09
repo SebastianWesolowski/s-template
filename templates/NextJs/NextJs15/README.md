@@ -99,7 +99,7 @@ Replace variable in the `./tools/customize/customize.config.ts` script with your
 export const config: CustomizeConfig = {
   replacements: [
     {
-      placeholder: "{{PLACEHOLDER_FULL_NAME}}_EXAMPLE",
+      placeholder: "{{PLACEHOLDER_FULL_NAME_EXAMPLE}}",
       value: "Sebastian Wesolowski",
       files: [
         "package.json",
@@ -109,7 +109,7 @@ export const config: CustomizeConfig = {
       ],
     },
     {
-      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR}}_EXAMPLE",
+      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR_EXAMPLE}}",
       value: "www.wesolowski.dev",
       files: [".github/FUNDING.yml", "package.json", "LICENSE"],
     },

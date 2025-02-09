@@ -46,19 +46,19 @@ Add permission to edit `chmod +x ./tools/customize.sh` and rund it `./tools/cust
 Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
 
 - Set `GH_TOKEN` - https://github.com/settings/tokens/new
-- Set `NPM_TOKEN`, set automation type - https://www.npmjs.com/settings/PLACEHOLDER_NPM_USER/tokens/new
+- Set `NPM_TOKEN`, set automation type - https://www.npmjs.com/settings/{{PLACEHOLDER_NPM_USER}}/tokens/new
 
 > **Reused tokens:**
 > if you have any token form npm you can reuse it. It is not necessary to create new one for every repository. In my csae, I use one token for a group based on functionality.
 
 ![npm.png](npm.png)
 
-- in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/settings/secrets/actions as new repo secret
+- in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/settings/secrets/actions as new repo secret
   ![actions-secrets.png](actions-secrets.png)
 
 ### Setup repository
 
-Semantic release need read and write permissions to https://github.com/PLACEHOLDER_GITHUB_USER/PLACEHOLDER_REPO_NAME/settings/actions - > Workflow permissions -> check
+Semantic release need read and write permissions to https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/settings/actions - > Workflow permissions -> check
 Read and write permissions
 
 ![gh.png](gh.png)
