@@ -31,7 +31,7 @@ npm install PLACEHOLDER_REPO_NAME
 ## Usage
 
 ```ts
-import { myPackage } from "PLACEHOLDER_REPO_NAME";
+import { myPackage } from "{{PLACEHOLDER_REPO_NAME}}";
 
 // Default value is 'Watermelon 🍉'
 getFavoriteFruit();

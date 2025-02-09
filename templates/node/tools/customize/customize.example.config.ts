@@ -38,7 +38,7 @@ export const config: CustomizeConfig = {
       files: ["package.json"],
     },
     {
-      placeholder: "PLACEHOLDER_REPO_NAME",
+      placeholder: "{{PLACEHOLDER_REPO_NAME}}",
       value: "s-template",
       files: [
         "package.json",
