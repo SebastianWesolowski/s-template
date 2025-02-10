@@ -1,3 +1,14 @@
+## [1.5.0-dev.9](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.8...v1.5.0-dev.9) (February 10, 2025)
+
+
+### [SC-103](https://linear.app/wesolowskidev/issue/SC-103)
+
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] configure prettier ([6ce1d58](https://github.com/SebastianWesolowski/s-template/commit/6ce1d58681b68311f27e597bc89ee8c7c42a79f8))
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] configure typescript and lint ([587431e](https://github.com/SebastianWesolowski/s-template/commit/587431e9040867678bcf30682f3c66a06c7973fd))
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] configure storybook ([fe12ab3](https://github.com/SebastianWesolowski/s-template/commit/fe12ab3ad1dfe417b69b9d4e7d1304162744e362))
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] add ngrok ([1764741](https://github.com/SebastianWesolowski/s-template/commit/1764741d0c32cf162b11c9849081ca667846e0b1))
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] add vscode setting and fix example confiug for customize ([841cf29](https://github.com/SebastianWesolowski/s-template/commit/841cf29c49d76fe612506e4b26e079cad5f617e4))
+
 ## [1.5.0-dev.8](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.7...v1.5.0-dev.8) (February 09, 2025)
 
 
