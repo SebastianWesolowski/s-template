@@ -7,7 +7,6 @@ export const config: CustomizeConfig = {
       value: "Sebastian Wesolowski",
       files: [
         "package.json",
-        "README.md",
       ],
     },
     {
