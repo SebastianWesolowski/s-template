@@ -1,4 +1,9 @@
 # Simple directory copies
+.vscode:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
 LICENSE:
   - NextJs/NextJs15
   - startetNpmPackage/node
