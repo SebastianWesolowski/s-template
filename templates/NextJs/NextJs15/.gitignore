@@ -36,3 +36,7 @@ storybook-static/
 /.npm-only-allow
 
 .husky/_
+
+.env*
+!.env.mjs
+!.env.example

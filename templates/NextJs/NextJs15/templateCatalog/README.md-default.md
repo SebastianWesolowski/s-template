@@ -12,6 +12,7 @@
 <br/><br/>
 
 **Remove before final release**
+
 - [Set up your repository](docs/HowToAutoDeploy.md)
 - [Way to work](docs/WayToWrok.md)
 - [Known issues](docs/knowProblems.md)
@@ -28,6 +29,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 - 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
 - 🎨 **[s-customize](https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/tools/customize)** - Customize your repozytory with one command
+- 🌐 **[ngrok](https://ngrok.com/)** - For local development with remote services
 - 🏎️ **[Next.js 15](https://nextjs.org/)** - Fast by default, with config optimized for performance (with **App Directory**)
 - 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
 - ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
@@ -53,27 +55,27 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 ## Table of Contents
 
-  - [Integrated features](#integrated-features)
-  - [Table of Contents](#table-of-contents)
-  - [Getting Started](#-getting-started)
-  - [Deployment](#-deployment)
-  - [Scripts Overview](#-scripts-overview)
-  - [Coupling Graph](#-coupling-graph)
-  - [Testing](#-testing)
-    - [Running Tests](#running-tests)
-    - [Acceptance Tests](#acceptance-tests)
-    - [Smoke Testing](#smoke-testing)
-  - [Styling and Design System](#-styling-and-design-system)
-    - [CVA - A New Approach to Variants](#cva---a-new-approach-to-variants)
-  - [State Management](#-state-management)
-    - [Zustand](#zustand)
-    - [Jotai](#jotai)
-    - [Recoil](#recoil)
-  - [Environment Variables handling](#-environment-variables-handling)
-  - [Contribution](#-contribution)
-  - [Support](#support)
-  - [License](#-license)
-  - [Contributors](#contributors)
+- [Integrated features](#integrated-features)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [Scripts Overview](#-scripts-overview)
+- [Coupling Graph](#-coupling-graph)
+- [Testing](#-testing)
+  - [Running Tests](#running-tests)
+  - [Acceptance Tests](#acceptance-tests)
+  - [Smoke Testing](#smoke-testing)
+- [Styling and Design System](#-styling-and-design-system)
+  - [CVA - A New Approach to Variants](#cva---a-new-approach-to-variants)
+- [State Management](#-state-management)
+  - [Zustand](#zustand)
+  - [Jotai](#jotai)
+  - [Recoil](#recoil)
+- [Environment Variables handling](#-environment-variables-handling)
+- [Contribution](#-contribution)
+- [Support](#support)
+- [License](#-license)
+- [Contributors](#contributors)
 
 ## 🎯 Getting Started
 
@@ -115,6 +117,7 @@ export const config: CustomizeConfig = {
     },
     ...
 ```
+
 You can look on example in `./tools/customize/customize.example.config.ts`
 
 Run script with:
@@ -129,15 +132,29 @@ or
 tsx tools/customize/customize.ts
 ```
 
+4. Optional
 
-4. Run the development server:
+- 4.1. Add ngrok token in .env file for local development
+
+  ```bash
+   NGROK_AUTH_TOKEN=your_ngrok_token
+  ```
+
+  after that you can run ngrok to expose your local server to the internet:
+
+  ```bash
+    yarn dev:tunnel
+  ```
+
+  [![ngrok](./.github/assets/ngrok.png)](https://dashboard.ngrok.com/get-started/setup/macos)
+
+5. Run the development server:
 
 ```bash
 yarn dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
+6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🚀 Deployment
 
@@ -148,11 +165,13 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 ## 📃 Scripts Overview
 
 ### 🧪 Testing
+
 - `test:*`: Runs unit and integration tests with coverage
 - `e2e:*`: Runs end-to-end tests (headless or with UI)
 - `test-storybook`: Runs Storybook tests
 
 ### 🔍 Linting & Formatting
+
 - `lint:*`: Lints and fixes code using ESLint
 - `prettier:*`: Checks and fixes code formatting
 - `eslint:*`: Runs ESLint checks and fixes
@@ -160,21 +179,25 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 - `typescript:check`: Runs TypeScript compiler checks
 
 ### 🚀 Development
+
 - `dev`: Starts the development server
 - `build`: Builds the app for production
 - `start`: Starts the production server
 - `analyze`: Analyzes bundle sizes
 
 ### 📚 Storybook
+
 - `storybook`: Starts Storybook server
 - `build-storybook`: Builds Storybook for deployment
 
 ### 📝 Git Hooks & Commits
+
 - `commit`: Creates conventional commit messages
 - `prepare`: Sets up Husky git hooks
 - `husky:*`: Manages git hooks for commits and pushes
 
 ### 🛠️ Tools
+
 - `coupling-graph`: Generates coupling and cohesion graph
 - `customize`: Runs project customization script
 - `postinstall`: Applies patches to dependencies
@@ -190,7 +213,6 @@ yarn coupling-graph
 This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
 ![graph](.github/assets/couplingGraph.png)
-
 
 ## 🧪 Testing
 
@@ -215,29 +237,29 @@ To write acceptance tests, we leverage Storybook's [`play` function](https://sto
  */
 export const FilledForm: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
+    const canvas = within(canvasElement);
 
-    const emailInput = canvas.getByLabelText("email", {
-      selector: "input",
-    })
+    const emailInput = canvas.getByLabelText('email', {
+      selector: 'input',
+    });
 
-    await userEvent.type(emailInput, "example-email@email.com", {
+    await userEvent.type(emailInput, 'example-email@email.com', {
       delay: 100,
-    })
+    });
 
-    const passwordInput = canvas.getByLabelText("password", {
-      selector: "input",
-    })
+    const passwordInput = canvas.getByLabelText('password', {
+      selector: 'input',
+    });
 
-    await userEvent.type(passwordInput, "ExamplePassword", {
+    await userEvent.type(passwordInput, 'ExamplePassword', {
       delay: 100,
-    })
+    });
     // See https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
-    const submitButton = canvas.getByRole("button")
+    const submitButton = canvas.getByRole('button');
 
-    await userEvent.click(submitButton)
+    await userEvent.click(submitButton);
   },
-}
+};
 ```
 
 ### Smoke Testing
@@ -295,7 +317,7 @@ export const env = createEnv({
     SECRET_KEY: process.env.SECRET_KEY,
     API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-})
+});
 ```
 
 If the required environment variables are not set, you'll get an error message:
@@ -305,6 +327,7 @@ If the required environment variables are not set, you'll get an error message:
 ```
 
 ## Badges
+
 [![Downloads][downloads-img]][downloads-url]
 [![Issues][issues-img]][issues-url]
 [![Commitizen Friendly][commitizen-img]][commitizen-url]
