@@ -49,6 +49,10 @@ const config = typescriptEslint.config(
       },
     },
     rules: {
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/explicit-function-return-type': 'warn',
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {

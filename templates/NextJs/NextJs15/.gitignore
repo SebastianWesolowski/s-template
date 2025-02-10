@@ -40,3 +40,13 @@ storybook-static/
 .env*
 !.env.mjs
 !.env.example
+
+# TypeScript
+*.tsbuildinfo
+.tsbuildinfo
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/

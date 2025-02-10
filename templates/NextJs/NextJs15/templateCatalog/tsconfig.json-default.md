@@ -36,7 +36,8 @@
     "strictFunctionTypes": true,
     "strictBindCallApply": true,
     "verbatimModuleSyntax": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo"
   },
   "include": [
     "next-env.d.ts",
