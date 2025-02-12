@@ -1,3 +1,10 @@
+## [1.5.0-dev.10](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.9...v1.5.0-dev.10) (February 12, 2025)
+
+
+### [SC-103](https://linear.app/wesolowskidev/issue/SC-103)
+
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] move into src, style, test, quality - nextjs ([cc888ad](https://github.com/SebastianWesolowski/s-template/commit/cc888ad59a3c2412bf78a85d31d56971d1ce6a5c))
+
 ## [1.5.0-dev.9](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.8...v1.5.0-dev.9) (February 10, 2025)
 
 
