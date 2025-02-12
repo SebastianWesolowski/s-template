@@ -5,7 +5,7 @@ import { resolve } from 'path';
 const publicDirExists = existsSync(resolve(__dirname, '../public'));
 
 const config: StorybookConfig = {
-  stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
@@ -38,7 +38,12 @@ const config: StorybookConfig = {
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-      include: ['../components/**/*.{ts,tsx}', '../app/**/*.{ts,tsx}'],
+      include: [
+        '../src/components/**/*.{ts,tsx}',
+        '../src/app/**/*.{ts,tsx}',
+        '../src/utils/**/*.{ts,tsx}',
+        '../src/lib/**/*.{ts,tsx}',
+      ],
     },
   },
   features: {
@@ -47,6 +52,26 @@ const config: StorybookConfig = {
     viewportStoryGlobals: true,
     backgroundsStoryGlobals: true,
     legacyDecoratorFileOrder: false,
+  },
+  webpackFinal: async (config) => {
+    config.module?.rules?.push({
+      test: /\.(css|scss|sass)$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: ['tailwindcss', 'autoprefixer'],
+            },
+          },
+        },
+        'sass-loader',
+      ],
+    });
+
+    return config;
   },
 };
 

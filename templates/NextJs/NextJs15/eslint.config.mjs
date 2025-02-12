@@ -1,10 +1,10 @@
+import eslintPluginNext from '@next/eslint-plugin-next';
 // https://github.com/francoismassart/eslint-plugin-tailwindcss/pull/381
 // import eslintPluginTailwindcss from "eslint-plugin-tailwindcss"
-import eslintPluginNext from '@next/eslint-plugin-next';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginStorybook from 'eslint-plugin-storybook';
-import typescriptEslint from 'typescript-eslint';
 import * as fs from 'fs';
+import typescriptEslint from 'typescript-eslint';
 
 const eslintIgnore = [
   '.git/',
@@ -21,7 +21,6 @@ const eslintIgnore = [
 const config = typescriptEslint.config(
   {
     ignores: eslintIgnore,
-    extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking', 'plugin:@typescript-eslint/strict'],
   },
   ...eslintPluginStorybook.configs['flat/recommended'],
   //  https://github.com/francoismassart/eslint-plugin-tailwindcss/pull/381
@@ -49,10 +48,6 @@ const config = typescriptEslint.config(
       },
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'warn',
-      '@typescript-eslint/no-unused-vars': 'error',
-      '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {

@@ -20,10 +20,12 @@
     "baseUrl": ".",
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
-      "@/*": ["./*"],
-      "@/components/*": ["./components/*"],
-      "@/styles/*": ["./styles/*"],
-      "@/app/*": ["./app/*"]
+      "@/*": ["./src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/app/*": ["src/app/*"]
     },
     "plugins": [
       {
@@ -39,17 +41,6 @@
     "experimentalDecorators": true,
     "tsBuildInfoFile": "./tsconfig.tsbuildinfo"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.mjs",
-    "@types/**/*.d.ts",
-    "jest.config.js",
-    ".next/types/**/*.ts",
-    "eslint.config.mjs",
-    "*.config.ts",
-    "*.config.js"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "@types", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules/**"]
 }

@@ -50,3 +50,8 @@ storybook-static/
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea/
+
+# Public
+/public/assets
+/public/sitemap*
+/public/robots.txt
