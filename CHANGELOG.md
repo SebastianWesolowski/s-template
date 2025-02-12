@@ -1,3 +1,10 @@
+## [1.5.0-dev.11](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.10...v1.5.0-dev.11) (February 12, 2025)
+
+
+### [SC-103](https://linear.app/wesolowskidev/issue/SC-103)
+
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] add releaserc ([cfbf24c](https://github.com/SebastianWesolowski/s-template/commit/cfbf24c844f73b9c470967d3901cfa9dfe1b80fa))
+
 ## [1.5.0-dev.10](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.9...v1.5.0-dev.10) (February 12, 2025)
 
 
