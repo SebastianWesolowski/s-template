@@ -16,6 +16,8 @@ const eslintIgnore = [
   '*.min.js',
   '*.config.js',
   '*.d.ts',
+  'tools/*',
+  'sum/*',
 ];
 
 const config = typescriptEslint.config(

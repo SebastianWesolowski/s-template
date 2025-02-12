@@ -11,23 +11,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "📥 Read Node.js version"
+      - name: '📥 Read Node.js version'
         run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
 
-      - name: "🟢 Setup Node.js ${{ env.node_version }}"
+      - name: '🟢 Setup Node.js ${{ env.node_version }}'
         uses: actions/setup-node@v4
         with:
-          node-version: "${{ env.node_version }}"
-          cache: "yarn"
+          node-version: '${{ env.node_version }}'
+          cache: 'yarn'
 
-      - name: "📦 Install dependencies"
+      - name: '📦 Install dependencies'
         run: yarn install --frozen-lockfile --ignore-scripts
 
-      - name: "🔍 Lint"
+      - name: '🔍 Lint'
         run: yarn lint:check
 
-      - name: "🏗️ Build"
+      - name: '🏗️ Build'
         run: yarn build:prod --if-present
 
-      - name: "🧪 Test"
-        run: yarn test:check
+      - name: '🧪 Test'
+        run: yarn test:unit

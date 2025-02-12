@@ -1,39 +1,52 @@
 name: Playwright Tests
 on:
   push:
-    branches:
-      - main
-      - master
-      - develop
-  pull_request: null
-  workflow_dispatch: null
+    branches: [main, master, develop]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
+    env:
+      FORCE_COLOR: true
+      NODE_ENV: test
+
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
-      - name: "use node ${{ env.node_version }}"
-        uses: actions/setup-node@v3
+      - name: '📝 Checkout'
+        uses: actions/checkout@v4
+
+      - name: '📥 Read Node.js version'
+        run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+
+      - name: '🟢 Setup Node.js ${{ env.node_version }}'
+        uses: actions/setup-node@v4
         with:
-          node-version: "${{ env.node_version }}"
+          node-version: '${{ env.node_version }}'
+          cache: 'yarn'
 
-      - name: "Install pnpm & dependencies"
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: |
-            - recursive: true
-            - args: [--frozen-lockfile]
+      - name: '📦 Install dependencies'
+        run: |
+          yarn config set network-timeout 300000
+          yarn install --frozen-lockfile
 
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
+      - name: '🎭 Install Playwright'
+        run: yarn playwright:install
 
-      - name: Run Playwright tests
-        run: pnpm playwright test
+      - name: '🤖 Run Playwright tests (headless)'
+        run: yarn test:e2e
 
-      - uses: actions/upload-artifact@v4
+      - name: '📊 Upload test results'
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
