@@ -18,11 +18,6 @@ export const env = createEnv({
       .transform((value) => value === '1'),
     NODE_ENV: z.enum(['development', 'production']).optional(),
     NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'production']).optional(),
-    OTEL_SERVICE_NAME: z.string().optional(),
-    OTEL_EXPORTER_OTLP_ENDPOINT: z.string().optional(),
-    OTEL_EXPORTER_OTLP_HEADERS: z.string().optional(),
-    OTEL_SAMPLING_PROBABILITY: z.string().optional(),
-    OTEL_API_KEY: z.string().min(1, 'OTEL_API_KEY is required for OpenTelemetry').optional(),
   },
   client: {},
   runtimeEnv: {
@@ -32,10 +27,5 @@ export const env = createEnv({
     FORCE_COLOR: process.env.FORCE_COLOR,
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
-    OTEL_SERVICE_NAME: process.env.OTEL_SERVICE_NAME,
-    OTEL_EXPORTER_OTLP_ENDPOINT: process.env.OTEL_EXPORTER_OTLP_ENDPOINT,
-    OTEL_EXPORTER_OTLP_HEADERS: process.env.OTEL_EXPORTER_OTLP_HEADERS,
-    OTEL_SAMPLING_PROBABILITY: process.env.OTEL_SAMPLING_PROBABILITY,
-    OTEL_API_KEY: process.env.OTEL_API_KEY,
   },
 });

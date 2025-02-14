@@ -39,7 +39,6 @@ const config: NextConfig = {
     },
     scrollRestoration: true,
   },
-  instrumentationHook: true,
   reactStrictMode: true,
   logging: {
     fetches: {
