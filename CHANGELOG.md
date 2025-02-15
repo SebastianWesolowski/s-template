@@ -1,3 +1,15 @@
+## [1.5.0-dev.12](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.11...v1.5.0-dev.12) (February 15, 2025)
+
+
+### [SC-103](https://linear.app/wesolowskidev/issue/SC-103)
+
+- ✨ [[SC-103](https://linear.app/wesolowskidev/issue/SC-103)] remove telemetry ([69da2d8](https://github.com/SebastianWesolowski/s-template/commit/69da2d89dfebd156122815c0ed3f713806b6c606))
+
+
+### [SC-104](https://linear.app/wesolowskidev/issue/SC-104)
+
+- ✨ [[SC-104](https://linear.app/wesolowskidev/issue/SC-104)] improve s-config ([bb4ca8d](https://github.com/SebastianWesolowski/s-template/commit/bb4ca8d03e6bf78b08bb031e702bc007f720a6fa))
+
 ## [1.5.0-dev.11](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.10...v1.5.0-dev.11) (February 12, 2025)
 
 
