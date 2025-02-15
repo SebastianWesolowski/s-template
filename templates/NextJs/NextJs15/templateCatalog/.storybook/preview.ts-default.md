@@ -6,9 +6,8 @@ import '@fontsource/inter/900.css';
 import '@fontsource/lexend/400.css';
 import '@fontsource/lexend/500.css';
 import type { Preview } from '@storybook/react';
-
-import '@/styles/global.scss';
-import '@/styles/tailwind.scss';
+import '@styles/global.scss';
+import '@styles/tailwind.scss';
 
 const preview: Preview = {
   parameters: {

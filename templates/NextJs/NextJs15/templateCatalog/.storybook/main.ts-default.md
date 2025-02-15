@@ -43,6 +43,8 @@ const config: StorybookConfig = {
         '../src/app/**/*.{ts,tsx}',
         '../src/utils/**/*.{ts,tsx}',
         '../src/lib/**/*.{ts,tsx}',
+        '../src/configs/**/*.{ts,tsx}',
+        '../src/assets/**/*.{ts,tsx}',
       ],
     },
   },

@@ -10,7 +10,7 @@
     "dev:tunnel": "run-p ngrok:auth dev ngrok",
     "ℹ️ info:Production": "ℹ️",
     "build": "cross-env NODE_ENV=production next build",
-    "build:start": "run-s build:prod next:start",
+    "build:start": "cross-env NODE_ENV=production run-s build:prod next:start",
     "build:analyze": "cross-env ANALYZE=true run-s build",
     "build:prod": "run-s build build:postbuild",
     "build:postbuild": "next-sitemap",
@@ -67,6 +67,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
     "@fontsource/lexend": "^5.1.2",
+    "@headlessui/react": "^2.2.0",
     "@next/bundle-analyzer": "^15.1.6",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -96,9 +97,11 @@
     "lodash": "^4.17.21",
     "next": "^15.1.7",
     "next-sitemap": "^4.2.3",
+    "next-themes": "^0.4.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
+    "react-hotjar": "^6.3.1",
     "tailwind-merge": "^2.3.0",
     "zod": "^3.23.8"
   },

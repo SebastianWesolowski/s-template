@@ -1,15 +1,14 @@
-import { formatPrice } from '@/utils';
-import { type FC } from 'react';
+import { formatPrice } from '@utils';
 
-interface PriceDisplayProps {
+export interface PriceDisplayProps {
   price: number;
   className?: string;
 }
 
-export const PriceDisplay: FC<PriceDisplayProps> = ({ price, className }) => {
+export function PriceDisplay({ price, className }: PriceDisplayProps) {
   return (
-    <span className={className} data-testid="price-display">
+    <span className={className} data-testid='price-display'>
       {formatPrice(price)}
     </span>
   );
-};
+}

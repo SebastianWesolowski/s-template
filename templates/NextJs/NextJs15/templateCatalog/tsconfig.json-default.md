@@ -21,11 +21,20 @@
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/lib/*": ["src/lib/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/app/*": ["src/app/*"]
+      "@lib/*": ["./src/lib/*"],
+      "@lib": ["./src/lib"],
+      "@styles/*": ["./src/styles/*"],
+      "@styles": ["./src/styles"],
+      "@utils/*": ["./src/utils/*"],
+      "@utils": ["./src/utils"],
+      "@app/*": ["./src/app/*"],
+      "@app": ["./src/app"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@configs": ["./src/configs"],
+      "@configs/*": ["./src/configs/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@assets": ["./src/assets"]
     },
     "plugins": [
       {
@@ -41,6 +50,13 @@
     "experimentalDecorators": true,
     "tsBuildInfoFile": "./tsconfig.tsbuildinfo"
   },
-  "include": ["next-env.d.ts", "@types", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "@types",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/Button/Button/index.ts"
+  ],
   "exclude": ["node_modules/**"]
 }
