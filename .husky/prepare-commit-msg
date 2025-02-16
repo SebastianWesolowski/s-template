@@ -3,6 +3,10 @@ echo "[🐶 Husky] Running prepare-commit-msg hook..."
 commit_msg_file="$1"
 commit_source="$2"
 
+# Debug information
+echo "Debug: commit_source='$commit_source'"
+echo "Debug: commit_msg_file='$commit_msg_file'"
+
 # Extract emoji from commit message
 get_emoji() {
     [[ $1 =~ [✨🐛📚️💄♻️⚡🚨📦🎡🔧⏪] ]] && echo "${BASH_REMATCH[0]}"
