@@ -13,8 +13,8 @@ interface HeaderProps {
 }
 
 export function Header({
-  menuContent = config.content.menu.headerMenu,
-  menuRightContent = config.content.menu.headerCTAMenu,
+  menuContent = config.content.menu['headerMenu'],
+  menuRightContent = config.content.menu['headerCTAMenu'],
 }: HeaderProps): React.ReactElement {
   return (
     <header className='py-10'>

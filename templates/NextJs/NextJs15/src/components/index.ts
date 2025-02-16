@@ -7,4 +7,3 @@ export * from './Footer';
 export * from './Header';
 export * from './PriceDisplay';
 export * from './Seo';
-export * from './Tooltip';

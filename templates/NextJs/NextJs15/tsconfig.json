@@ -48,7 +48,12 @@
     "strictBindCallApply": true,
     "verbatimModuleSyntax": true,
     "experimentalDecorators": true,
-    "tsBuildInfoFile": "./tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "useUnknownInCatchVariables": true
   },
   "include": [
     "next-env.d.ts",
