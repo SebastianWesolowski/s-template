@@ -53,7 +53,7 @@ export function Tooltip({
   side = 'top',
   className,
   withArrow,
-}: TooltipProps) {
+}: TooltipProps): React.ReactElement {
   return (
     <RadixTooltip.Provider>
       <RadixTooltip.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange} delayDuration={200}>

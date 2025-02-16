@@ -58,3 +58,6 @@ storybook-static/
 
 # styles
 .stylelintcache
+.eslintcache
+.prettier-cache
+.stylelintcache

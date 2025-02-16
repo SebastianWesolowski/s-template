@@ -22,7 +22,7 @@ const HOTJAR_SCRIPT = `
           })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
 `;
 
-function HotJar() {
+function HotJar(): React.ReactElement {
   return (
     <Script
       id='hotjar-script'

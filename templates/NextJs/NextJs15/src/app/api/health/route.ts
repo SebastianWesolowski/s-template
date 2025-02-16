@@ -1,3 +1,5 @@
-export async function GET() {
-  return Response.json({ status: 'ok', imestamp: Date.now() });
+import { NextResponse } from 'next/server';
+
+export function GET(): NextResponse {
+  return NextResponse.json({ status: 'ok', imestamp: Date.now() });
 }

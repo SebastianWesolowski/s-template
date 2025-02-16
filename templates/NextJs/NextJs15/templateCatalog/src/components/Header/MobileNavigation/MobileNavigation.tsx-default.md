@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { type IMenuItem } from '@configs';
 import { Fragment } from 'react';
 
-
-export function MobileNavigation({ menuContent }: { menuContent: IMenuItem[] }) {
+export function MobileNavigation({ menuContent }: { menuContent: IMenuItem[] }): React.ReactElement {
   return (
     <Popover className='relative'>
       {({ open, close }) => (
@@ -46,7 +45,7 @@ export function MobileNavigation({ menuContent }: { menuContent: IMenuItem[] }) 
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'
           >
-            <PopoverPanel className='absolute inset-x-0 top-full mt-4 origin-top space-y-4 rounded-2xl light:bg-white dark:bg-gray-900 p-6 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5'>
+            <PopoverPanel className='light:bg-white absolute inset-x-0 top-full mt-4 origin-top space-y-4 rounded-2xl p-6 text-lg tracking-tight text-slate-900 ring-1 shadow-xl ring-slate-900/5 dark:bg-gray-900'>
               <ul className='space-y-4'>
                 {menuContent.map(({ title, url, id, button }) => {
                   if (button) {

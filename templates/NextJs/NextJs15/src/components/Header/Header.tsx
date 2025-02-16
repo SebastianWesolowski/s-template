@@ -15,7 +15,7 @@ interface HeaderProps {
 export function Header({
   menuContent = config.content.menu.headerMenu,
   menuRightContent = config.content.menu.headerCTAMenu,
-}: HeaderProps) {
+}: HeaderProps): React.ReactElement {
   return (
     <header className='py-10'>
       <Container>

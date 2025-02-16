@@ -1,7 +1,7 @@
 import { RiAlarmWarningFill } from 'react-icons/ri';
 import { BasicLayout, Seo } from '@components';
 
-export default function NotFound() {
+export default function NotFound(): React.ReactElement {
   return (
     <BasicLayout>
       <Seo templateTitle='Not Found' />

@@ -11,7 +11,7 @@ import '@fontsource/lexend/500.css';
 import '@styles/global.scss';
 import '@styles/tailwind.scss';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }): React.ReactElement {
   return (
     <html
       lang={config.SEO.locale}

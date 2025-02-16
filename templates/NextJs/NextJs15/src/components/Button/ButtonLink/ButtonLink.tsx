@@ -42,7 +42,14 @@ export interface ButtonLinkProps extends VariantProps<typeof buttonLink> {
   underline?: boolean;
 }
 
-export function ButtonLink({ className, intent, size, underline, href, children }: ButtonLinkProps) {
+export function ButtonLink({
+  className,
+  intent,
+  size,
+  underline,
+  href,
+  children,
+}: ButtonLinkProps): React.ReactElement {
   return (
     <Link href={href} className={twMerge(buttonLink({ intent, size, className, underline }))}>
       {children}

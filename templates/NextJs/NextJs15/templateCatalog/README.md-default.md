@@ -167,7 +167,7 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 - `test:*`: Runs unit and integration tests with coverage
 - `e2e:*`: Runs end-to-end tests (headless or with UI)
-- `test-storybook`: Runs Storybook tests
+- `test:typescript`: Runs TypeScript compiler checks
 
 ### 🔍 Linting & Formatting
 
@@ -175,7 +175,6 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 - `prettier:*`: Checks and fixes code formatting
 - `eslint:*`: Runs ESLint checks and fixes
 - `staged:*`: Runs linting and formatting checks on git staged files
-- `typescript:check`: Runs TypeScript compiler checks
 
 ### 🚀 Development
 
@@ -187,7 +186,8 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 ### 📚 Storybook
 
 - `storybook`: Starts Storybook server
-- `build-storybook`: Builds Storybook for deployment
+- `storybook:build`: Builds Storybook for deployment
+- `storybook:build`: Builds Storybook for deployment
 
 ### 📝 Git Hooks & Commits
 
@@ -220,8 +220,9 @@ This boilerplate comes with various testing setups to ensure your application's 
 ### Running Tests
 
 - **Unit and integration tests**: Run Jest tests using `yarn test`
-- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn e2e:headless`
-- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn e2e:ui`
+- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn test:e2e`
+- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn test:e2e:ui`
+
 
 ![graph](.github/assets/runningTests.png)
 
@@ -263,7 +264,7 @@ export const FilledForm: Story = {
 
 ### Smoke Testing
 
-In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
+In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test:smoke` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
 
 ## 🎨 Styling and Design System
 

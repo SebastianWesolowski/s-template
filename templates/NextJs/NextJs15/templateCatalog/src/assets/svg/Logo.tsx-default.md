@@ -3,7 +3,7 @@ import type { SVGProps } from 'react';
 
 const Logo = (props: SVGProps<SVGSVGElement>): React.JSX.Element => {
   return (
-    <div className='flex text-3xl font-extrabold tracking-tight text-gray-700 '>
+    <div className='flex text-3xl font-extrabold tracking-tight text-gray-700'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'

@@ -28,7 +28,7 @@ type SeoProps = {
 } & Partial<typeof defaultMeta>;
 
 // TODO [SC-127]
-export function Seo(props: SeoProps) {
+export function Seo(props: SeoProps): React.ReactElement {
   const pathname = usePathname();
   const currentUrl = `${config.url.production}${pathname}`;
 

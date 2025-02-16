@@ -5,7 +5,7 @@ export interface PriceDisplayProps {
   className?: string;
 }
 
-export function PriceDisplay({ price, className }: PriceDisplayProps) {
+export function PriceDisplay({ price, className }: PriceDisplayProps): React.ReactElement {
   return (
     <span className={className} data-testid='price-display'>
       {formatPrice(price)}

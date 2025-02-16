@@ -27,7 +27,7 @@ declare global {
   }
 }
 
-function GAScript() {
+function GAScript(): React.ReactElement {
   return (
     <>
       <Script

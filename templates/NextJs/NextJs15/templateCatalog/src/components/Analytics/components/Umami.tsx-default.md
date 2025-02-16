@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import config from '@configs';
 
-function UmamiScript() {
+function UmamiScript(): React.JSX.Element | null {
   if (!config.analytics.umamiWebsiteId) {
     console.warn('[Umami] Missing website ID configuration');
     return null;

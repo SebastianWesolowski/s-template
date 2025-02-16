@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export function Footer() {
+export function Footer(): React.ReactElement {
   return (
     <footer>
       <div className='flex flex-col items-center border-t border-slate-800/50 py-10 sm:flex-row-reverse sm:justify-between'>
@@ -12,7 +12,7 @@ export function Footer() {
             </svg>
           </Link>
         </div>
-        <p className='mt-6 text-sm text-slate-800 sm:mr-4 sm:mt-0'>
+        <p className='mt-6 text-sm text-slate-800 sm:mt-0 sm:mr-4'>
           Copyright&nbsp;&copy;&nbsp;{new Date().getFullYear()}&nbsp;Wesolowski. All&nbsp;rights&nbsp;reserved.
         </p>
       </div>

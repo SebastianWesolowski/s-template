@@ -6,7 +6,7 @@ import Umami from './components/Umami';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-export function Analytics() {
+export function Analytics(): React.ReactElement | null {
   if (!isProduction) {
     return null;
   }
