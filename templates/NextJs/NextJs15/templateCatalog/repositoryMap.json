@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.39",
+  "templateVersion": "1.0.40",
   "fileMap": [
     "templateCatalog/.browserslistrc-default.md",
     "templateCatalog/.commitlintrc.js-default.md",
@@ -146,6 +146,7 @@
     "templateCatalog/tools/ngrok-auth.js-default.md",
     "templateCatalog/tools/snapshotUtils.ts-default.md",
     "templateCatalog/tools/transform-browser-list/index.js-default.md",
+    "templateCatalog/tools/updateVSCodeColors.ts-default.md",
     "templateCatalog/tsconfig.json-default.md",
     "templateCatalog/yarn.lock-default.md"
   ],
@@ -314,6 +315,7 @@
     "./tools/ngrok-auth.js",
     "./tools/snapshotUtils.ts",
     "./tools/transform-browser-list/index.js",
+    "./tools/updateVSCodeColors.ts",
     "./tsconfig.json",
     "./yarn.lock"
   ],
@@ -455,6 +457,7 @@
     "./templates/NextJs/NextJs15/tools/ngrok-auth.js",
     "./templates/NextJs/NextJs15/tools/snapshotUtils.ts",
     "./templates/NextJs/NextJs15/tools/transform-browser-list/index.js",
+    "./templates/NextJs/NextJs15/tools/updateVSCodeColors.ts",
     "./templates/NextJs/NextJs15/tsconfig.json",
     "./templates/NextJs/NextJs15/yarn.lock"
   ],

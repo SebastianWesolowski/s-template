@@ -51,6 +51,7 @@
     "commit": "czg",
     "prepare": "husky",
     "ℹ️ info:Tools": "ℹ️",
+    "update-vscode-colors": "tsx tools/updateVSCodeColors.ts",
     "mkdir:reports": "mkdir -p reports",
     "next": "next dev --turbo",
     "next:start": "next start",
