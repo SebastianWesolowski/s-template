@@ -63,5 +63,5 @@
     ".next/types/**/*.ts",
     "src/components/Button/Button/index.ts"
   ],
-  "exclude": ["node_modules/**", "tools/**"]
+  "exclude": ["node_modules/**", "tools/**", "eslint.config.mjs", "eslint.config.strict.mjs"]
 }
