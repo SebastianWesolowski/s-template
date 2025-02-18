@@ -2,14 +2,14 @@ import eslintPluginNext from '@next/eslint-plugin-next';
 // https://github.com/francoismassart/eslint-plugin-tailwindcss/pull/381
 // import eslintPluginTailwindcss from "eslint-plugin-tailwindcss"
 import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginSecurity from 'eslint-plugin-security';
 import eslintPluginStorybook from 'eslint-plugin-storybook';
-import typescriptEslint from 'typescript-eslint';
+import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import * as fs from 'fs';
 import path from 'path';
-import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
-import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
-import eslintPluginSecurity from 'eslint-plugin-security';
+import typescriptEslint from 'typescript-eslint';
 
 const eslintIgnore = [
   '.git/',
@@ -36,6 +36,17 @@ const config = typescriptEslint.config(
       parserOptions: {
         project: true,
         tsconfigRootDir: process.cwd(),
+      },
+    },
+  },
+  {
+    files: ['*.js'],
+    ignores: ['eslint.config.mjs', 'next-sitemap.config.js', 'src/configs/configBasic.js'],
+    languageOptions: {
+      parser: 'espree', // Use the default JavaScript parser for .js files
+      parserOptions: {
+        ecmaVersion: 'latest', // Specify the ECMAScript version to use
+        sourceType: 'module', // Specify the source type (module or script)
       },
     },
   },
