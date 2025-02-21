@@ -24,7 +24,6 @@ const config = typescriptEslint.config(
   },
   {
     languageOptions: {
-      ignores: eslintIgnore,
       parser: typescriptEslint.parser,
       parserOptions: {
         project: true,

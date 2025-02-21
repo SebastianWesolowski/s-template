@@ -163,8 +163,21 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 ## 📃 Scripts Overview
 
+### Development
+
+- `dev`: Starts the development server
+- `dev:storybook`: Starts development server with storybook server
+- `dev:tunnel`: Starts the development server with **[ngrok](https://ngrok.com/)**
+- `dev:build`: Builds localy the app for production
+
+### Production
+
+- `build`: Builds the app for production
+- `build:prod`: Builds the app for production
+
 ### 🧪 Testing
 
+- `build:analyze`: Builds the app for production and analyzes the bundle size
 - `test:*`: Runs unit and integration tests with coverage
 - `e2e:*`: Runs end-to-end tests (headless or with UI)
 - `test:typescript`: Runs TypeScript compiler checks
@@ -175,13 +188,6 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 - `prettier:*`: Checks and fixes code formatting
 - `eslint:*`: Runs ESLint checks and fixes
 - `staged:*`: Runs linting and formatting checks on git staged files
-
-### 🚀 Development
-
-- `dev`: Starts the development server
-- `build`: Builds the app for production
-- `start`: Starts the production server
-- `analyze`: Analyzes bundle sizes
 
 ### 📚 Storybook
 

@@ -16,8 +16,6 @@ export const env = createEnv({
       .enum(['1', '0'])
       .optional()
       .transform((value) => value === '1'),
-    NODE_ENV: z.enum(['development', 'production']).optional(),
-    NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'production']).optional(),
   },
   client: {},
   runtimeEnv: {
@@ -25,8 +23,6 @@ export const env = createEnv({
     NGROK_AUTH_TOKEN: process.env.NGROK_AUTH_TOKEN,
     STRICT_RULES: process.env.STRICT_RULES,
     FORCE_COLOR: process.env.FORCE_COLOR,
-    NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
     DEBUG: process.env.DEBUG,
     ENV_VARIABLE: process.env.ENV_VARIABLE,
     NEXT_PUBLIC_ENV_VARIABLE: process.env.NEXT_PUBLIC_ENV_VARIABLE,

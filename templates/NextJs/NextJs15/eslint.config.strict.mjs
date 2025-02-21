@@ -23,8 +23,7 @@ const config = typescriptEslint.config(
     files: ['./src/**/*.+(js|jsx|ts|tsx)', './**/*.test.+(js|jsx|ts|tsx)'],
   },
   {
-    languageOptions: {.
-      ignores: eslintIgnore,
+    languageOptions: {
       parser: typescriptEslint.parser,
       parserOptions: {
         project: true,
