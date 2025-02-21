@@ -11,51 +11,88 @@ import * as fs from 'fs';
 import path from 'path';
 import typescriptEslint from 'typescript-eslint';
 
-const eslintIgnore = fs
-  .readFileSync('.eslinti-gnore', 'utf8')
-  .split('\n')
-  .filter(Boolean)
-  .filter((line) => !line.startsWith('#'));
+export const eslintIgnore = [
+  '.git/',
+  '.next/',
+  'node_modules/',
+  'dist/',
+  'build/',
+  'coverage/',
+  '*.min.js',
+  '*.config.js',
+  '*.d.ts',
+  'tools/*',
+  'sum/*',
+  'eslint.config.mjs',
+  'eslint.config.strict.mjs',
+];
+export const eslintFiles = ['./src/**/*.+(js|jsx|ts|tsx)', './**/*.test.+(js|jsx|ts|tsx)'];
+export const typescriptEslintConfig = {
+  languageOptions: {
+    parser: typescriptEslint.parser,
+    parserOptions: {
+      project: true,
+      tsconfigRootDir: process.cwd(),
+    },
+  },
+  ignores: eslintIgnore,
+};
+
+export const jsEslint = {
+  files: ['*.js', '*.mjs'],
+  ignores: ['eslint.config.mjs', 'eslint.config.strict.mjs', 'next-sitemap.config.js', 'src/configs/configBasic.js'],
+  languageOptions: {
+    parser: 'espree',
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+    },
+  },
+};
+
+export const eslintStorybookConfig = eslintPluginStorybook.configs['flat/recommended'];
+
+export const eslintPluginImportConfig = {
+  ...eslintPluginImport.flatConfigs.recommended,
+};
+
+export const eslintPluginsConfig = {
+  '@next/next': eslintPluginNext,
+  'react-hooks': eslintPluginReactHooks,
+  'jsx-a11y': eslintPluginJsxA11y,
+  'unused-imports': eslintPluginUnusedImports,
+  security: eslintPluginSecurity,
+};
+
+export const eslintSettings = {
+  tailwindcss: {
+    callees: ['classnames', 'clsx', 'ctl', 'cn', 'cva'],
+  },
+
+  'import/resolver': {
+    typescript: true,
+    node: true,
+  },
+};
+
+export const typescriptEslintConfigRecommended = typescriptEslint.configs.recommended;
+export const typescriptEslintConfigRecommendedTypeChecked = typescriptEslint.configs.recommendedTypeChecked;
 
 const config = typescriptEslint.config(
   {
     ignores: eslintIgnore,
-    files: ['./src/**/*.+(js|jsx|ts|tsx)', './**/*.test.+(js|jsx|ts|tsx)'],
+    files: eslintFiles,
   },
-  {
-    languageOptions: {
-      parser: typescriptEslint.parser,
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: process.cwd(),
-      },
-    },
-  },
-  {
-    files: ['*.js'],
-    ignores: ['eslint.config.mjs', 'next-sitemap.config.js', 'src/configs/configBasic.js'],
-    languageOptions: {
-      parser: 'espree', // Use the default JavaScript parser for .js files
-      parserOptions: {
-        ecmaVersion: 'latest', // Specify the ECMAScript version to use
-        sourceType: 'module', // Specify the source type (module or script)
-      },
-    },
-  },
-  ...eslintPluginStorybook.configs['flat/recommended'],
+  { ...typescriptEslintConfig },
+  typescriptEslintConfigRecommended,
+  typescriptEslintConfigRecommendedTypeChecked,
+  jsEslint,
+  ...eslintStorybookConfig,
   //  https://github.com/francoismassart/eslint-plugin-tailwindcss/pull/381
   // ...eslintPluginTailwindcss.configs["flat/recommended"],
-  typescriptEslint.configs.recommended,
-  typescriptEslint.configs.recommendedTypeChecked,
-  eslintPluginImport.flatConfigs.recommended,
+  eslintPluginImportConfig,
   {
-    plugins: {
-      '@next/next': eslintPluginNext,
-      'react-hooks': eslintPluginReactHooks,
-      'jsx-a11y': eslintPluginJsxA11y,
-      'unused-imports': eslintPluginUnusedImports,
-      security: eslintPluginSecurity,
-    },
+    plugins: eslintPluginsConfig,
     rules: {
       // Next.js specific rules
       '@next/next/no-img-element': 'warn',
@@ -100,11 +137,15 @@ const config = typescriptEslint.config(
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
 
+      // JSX rules
       'jsx-a11y/anchor-is-valid': 'off',
       'jsx-a11y/no-static-element-interactions': 'off',
       'jsx-a11y/click-events-have-key-events': 'off',
 
+      // Console rules
       'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
+
+      // TypeScript rules
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-misused-promises': 'warn',
       '@typescript-eslint/await-thenable': 'warn',
@@ -123,16 +164,7 @@ const config = typescriptEslint.config(
     },
   },
   {
-    settings: {
-      tailwindcss: {
-        callees: ['classnames', 'clsx', 'ctl', 'cn', 'cva'],
-      },
-
-      'import/resolver': {
-        typescript: true,
-        node: true,
-      },
-    },
+    settings: eslintSettings,
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -142,7 +174,7 @@ const config = typescriptEslint.config(
         },
       ],
       'sort-imports': [
-        'error',
+        'warn',
         {
           ignoreCase: true,
           ignoreDeclarationSort: true,
@@ -182,7 +214,7 @@ const config = typescriptEslint.config(
   }
 );
 
-function getDirectoriesToSort() {
+export function getDirectoriesToSort() {
   const ignoredSortingDirectories = ['.git', '.next', '.vscode', 'node_modules', '.cache', 'public'];
 
   try {
@@ -192,14 +224,14 @@ function getDirectoriesToSort() {
         try {
           return fs.statSync(path.join(process.cwd(), file)).isDirectory();
         } catch (error) {
-          console.warn(`Błąd podczas sprawdzania katalogu ${file}:`, error);
+          console.warn(`Error checking directory ${file}:`, error);
           return false;
         }
       })
 
       .filter((f) => !ignoredSortingDirectories.includes(f));
   } catch (error) {
-    console.error('Błąd podczas listowania katalogów:', error);
+    console.error('Error listing directories:', error);
     return [];
   }
 }

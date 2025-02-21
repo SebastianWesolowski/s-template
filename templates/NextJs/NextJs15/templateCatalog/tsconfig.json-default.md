@@ -12,7 +12,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -55,13 +55,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "useUnknownInCatchVariables": true
   },
-  "include": [
-    "next-env.d.ts",
-    "@types",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/components/Button/Button/index.ts"
-  ],
-  "exclude": ["node_modules/**", "tools/**", "eslint.config.mjs", "eslint.config.strict.mjs"]
+  "include": ["next-env.d.ts", "@types", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules/**", "tools/**", "./eslint.config.mjs", "./eslint.config.strict.mjs"]
 }
