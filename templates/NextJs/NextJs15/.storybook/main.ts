@@ -18,15 +18,14 @@ const config: StorybookConfig = {
     options: {
       builder: {
         useSWC: true,
-        fsCache: true,
-        lazyCompilation: true,
+        fsCache: false,
       },
     },
   },
   docs: {
     autodocs: 'tag',
   },
-  ...(publicDirExists && { staticDirs: ['../public'] }),
+  staticDirs: ['../public'],
   typescript: {
     check: true,
     checkOptions: {
@@ -55,24 +54,26 @@ const config: StorybookConfig = {
     backgroundsStoryGlobals: true,
     legacyDecoratorFileOrder: false,
   },
+  core: {
+    disableTelemetry: true,
+    enableCrashReports: false,
+  },
   webpackFinal: async (config) => {
-    config.module?.rules?.push({
-      test: /\.(css|scss|sass)$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions: {
-              plugins: ['tailwindcss', 'autoprefixer'],
+    // Find and modify the sass-loader configuration
+    config.module?.rules?.forEach((rule: any) => {
+      if (rule?.test?.toString().includes('sass') || rule?.test?.toString().includes('scss')) {
+        const sassLoader = rule.use?.find((loader: any) => loader?.loader?.includes('sass-loader'));
+        if (sassLoader) {
+          sassLoader.options = {
+            ...sassLoader.options,
+            sassOptions: {
+              ...sassLoader.options?.sassOptions,
+              silenceDeprecations: ['legacy-js-api'],
             },
-          },
-        },
-        'sass-loader',
-      ],
+          };
+        }
+      }
     });
-
     return config;
   },
 };

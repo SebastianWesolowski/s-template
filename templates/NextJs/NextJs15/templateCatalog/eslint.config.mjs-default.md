@@ -25,6 +25,7 @@ export const eslintIgnore = [
   'sum/*',
   'eslint.config.mjs',
   'eslint.config.strict.mjs',
+  '.storybook/*.ts',
 ];
 export const eslintFiles = ['./src/**/*.+(js|jsx|ts|tsx)', './**/*.test.+(js|jsx|ts|tsx)'];
 export const typescriptEslintConfig = {
