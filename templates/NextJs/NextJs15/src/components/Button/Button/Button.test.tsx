@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react';
 
-import { maybeSnapshot } from '../../../../tools/snapshotUtils';
+import { maybeSnapshot } from '@utils';
 import { Button } from '.';
 
 describe('Button', () => {

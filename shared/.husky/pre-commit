@@ -31,6 +31,19 @@ else
     else
         echo "✅ Your branch is up to date with remote"
         yarn husky:pre-commit
+
+        # Update Jest snapshots before committing
+        echo "🧪 Checking for test:dev script..."
+        if grep -q "\"test:dev\":" package.json; then
+            echo "🧪 Updating test snapshots..."
+            yarn test:dev
+
+            # Add updated snapshots to the commit
+            echo "📝 Adding updated snapshots to commit..."
+            git add "**/__snapshots__/**"
+        else
+            echo "⚠️ test:dev script not found in package.json, skipping snapshot updates"
+        fi
     fi
 fi
 

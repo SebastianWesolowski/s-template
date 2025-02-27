@@ -22,9 +22,9 @@ const config: StorybookConfig = {
       },
     },
   },
-  docs: {
-    autodocs: 'tag',
-  },
+  // docs: {
+  //   autodocs: 'tag',
+  // },
   staticDirs: ['../public'],
   typescript: {
     check: true,
@@ -33,19 +33,19 @@ const config: StorybookConfig = {
         configFile: 'tsconfig.json',
       },
     },
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-      include: [
-        '../src/components/**/*.{ts,tsx}',
-        '../src/app/**/*.{ts,tsx}',
-        '../src/utils/**/*.{ts,tsx}',
-        '../src/lib/**/*.{ts,tsx}',
-        '../src/configs/**/*.{ts,tsx}',
-        '../src/assets/**/*.{ts,tsx}',
-      ],
-    },
+    // reactDocgen: 'react-docgen-typescript',
+    // reactDocgenTypescriptOptions: {
+    //   shouldExtractLiteralValuesFromEnum: true,
+    //   propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    //   include: [
+    //     '../src/components/**/*.{ts,tsx}',
+    //     '../src/app/**/*.{ts,tsx}',
+    //     '../src/utils/**/*.{ts,tsx}',
+    //     '../src/lib/**/*.{ts,tsx}',
+    //     '../src/configs/**/*.{ts,tsx}',
+    //     '../src/assets/**/*.{ts,tsx}',
+    //   ],
+    // },
   },
   features: {
     argTypeTargetsV7: true,

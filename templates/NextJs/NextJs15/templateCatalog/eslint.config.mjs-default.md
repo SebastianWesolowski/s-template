@@ -109,6 +109,7 @@ const config = typescriptEslint.config(
       'security/detect-eval-with-expression': 'warn',
       'security/detect-no-csrf-before-method-override': 'warn',
       'security/detect-possible-timing-attacks': 'warn',
+      'security/detect-non-literal-regexp': 'warn',
 
       // Import rules
       'import/no-duplicates': 'warn',

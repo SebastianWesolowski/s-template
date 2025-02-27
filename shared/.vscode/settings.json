@@ -4,10 +4,6 @@
   ],
   // Editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
-  },
   "editor.rulers": [100],
   "editor.detectIndentation": false,
   "editor.bracketPairColorization.enabled": true,
@@ -89,6 +85,6 @@
   },
   "tailwindCSS.validate": true,
   "workbench.colorCustomizations": {
-    "sideBar.border": "#0FFF00"
+    "sideBar.border": "#0ea5FF"
   }
 }

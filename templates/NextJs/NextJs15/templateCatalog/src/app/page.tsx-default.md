@@ -2,7 +2,6 @@ import { BasicLayout, Seo } from '@components';
 import React from 'react';
 
 export default function Web(): React.ReactElement {
-
   return (
     <BasicLayout>
       <Seo />
