@@ -8,6 +8,7 @@
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
 - [Author page]({{PLACEHOLDER_PAGE_AUTHOR}})
+- [Git Hooks Documentation](.husky/README.md)
 
 <br/><br/>
 
@@ -51,6 +52,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 - **Components coupling and cohesion graph** - A tool for managing component relationships
 - **[Semantic Release](https://github.com/semantic-release/semantic-release)** - for automatic changelog
 - **[T3 Env](https://env.t3.gg/)** - Manage your environment variables with ease
+- **[Husky](https://typicode.github.io/husky/)** - Git hooks made easy (see [Git Hooks Documentation](.husky/README.md))
 
 ## Table of Contents
 

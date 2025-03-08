@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { maybeSnapshot } from '@utils';
+import { maybeSnapshot } from '@tools/snapshotUtils';
 import { BasicLayout } from './BasicLayout';
 
 // Mock the dependencies

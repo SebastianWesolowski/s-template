@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.67",
+  "templateVersion": "1.0.68",
   "fileMap": [
     "templateCatalog/.gitignore-default.md",
     "templateCatalog/.husky/.gitignore-default.md",

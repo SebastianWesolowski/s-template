@@ -27,6 +27,8 @@
       "@styles": ["./src/styles"],
       "@utils/*": ["./src/utils/*"],
       "@utils": ["./src/utils"],
+      "@tools/*": ["./tools/*"],
+      "@tools": ["./tools"],
       "@app/*": ["./src/app/*"],
       "@app": ["./src/app"],
       "@components/*": ["./src/components/*"],
@@ -55,6 +57,13 @@
     "noPropertyAccessFromIndexSignature": true,
     "useUnknownInCatchVariables": true
   },
-  "include": ["next-env.d.ts", "@types", "src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules/**", "tools/**", "./eslint.config.mjs", "./eslint.config.strict.mjs"]
+  "include": [
+    "next-env.d.ts",
+    "@types",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts",
+    "tools/snapshotUtils.ts"
+  ],
+  "exclude": ["node_modules/**", "tools/**", "./eslint.config.mjs", "./eslint.config.strict.mjs", "next.config.ts"]
 }

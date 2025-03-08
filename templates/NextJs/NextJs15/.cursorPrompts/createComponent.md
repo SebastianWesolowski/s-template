@@ -250,7 +250,7 @@ export const WithContext = stories.WithContext;
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
-import { maybeSnapshot } from '@utils';
+import { maybeSnapshot } from '@tools/snapshotUtils';
 import { [ComponentName] } from './[ComponentName]';
 
 describe('[ComponentName]', () => {

@@ -15,8 +15,12 @@ LICENSE:
   - node
 
 .github:
-  - NextJs/NextJs15
   - startetNpmPackage/node
+
+.github-advanced:
+  projects:
+  - NextJs/NextJs15
+  asName: .github
 
 tools:
   - NextJs/NextJs15

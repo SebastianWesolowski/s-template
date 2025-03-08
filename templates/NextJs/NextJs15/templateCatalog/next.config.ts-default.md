@@ -1,8 +1,8 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { type NextConfig } from 'next';
 import path from 'path';
-
 import { env } from './env.mjs';
+const isProd = process.env.NODE_ENV === 'production';
 
 // Security headers configuration
 const securityHeaders = [
@@ -34,9 +34,6 @@ const securityHeaders = [
 
 const config: NextConfig = {
   experimental: {
-    turbo: {
-      resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
-    },
     scrollRestoration: true,
   },
   reactStrictMode: true,
@@ -62,12 +59,16 @@ const config: NextConfig = {
     { source: '/health', destination: '/api/health' },
     { source: '/ping', destination: '/api/health' },
   ],
-  pageExtensions: ['mdx', 'md', 'tsx', 'jsx'],
+  typescript: {
+    tsconfigPath: isProd ? './tsconfig.build.json' : './tsconfig.json',
+  },
+  pageExtensions: ['mdx', 'md', 'tsx', 'ts', 'jsx', 'js'],
   sassOptions: {
     includePaths: [path.join(process.cwd(), './src/styles')],
   },
   eslint: {
     dirs: ['src/components', 'src/lib', 'src/pages', 'src/styles', 'src/app'],
+    ignoreDuringBuilds: isProd,
   },
   async headers() {
     return [
