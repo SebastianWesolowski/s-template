@@ -35,7 +35,9 @@
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "customize": "tsx tools/customize/customize.ts",
-    "postinstall": "npx patch-package -y"
+    "postinstall": "npx patch-package -y",
+    "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/node'",
+    "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/'"
   },
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
