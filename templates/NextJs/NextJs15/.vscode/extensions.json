@@ -15,6 +15,10 @@
     "austenc.tailwind-docs",
     "Orta.vscode-jest",
     "formulahendry.auto-rename-tag",
-    "humao.rest-client"
+    "humao.rest-client",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "davidanson.vscode-markdownlint",
+    "christian-kohler.path-intellisense"
   ]
 }

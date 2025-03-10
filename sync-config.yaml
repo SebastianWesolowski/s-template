@@ -35,6 +35,7 @@ tools:
   excludeFiles:
     - lint-staged-with-style.config.json
     - lint-staged.config.json
+
 .husky/lint-staged.config.json:
   projects:
     - startetNpmPackage/node
