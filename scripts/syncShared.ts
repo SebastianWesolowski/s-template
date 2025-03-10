@@ -136,11 +136,18 @@ function isProjectConfig(
 
 function syncSharedFiles(): void {
   const config = loadConfig();
-  const templates = getAllTemplates(TEMPLATES_DIR);
 
   console.log("\n📦 Starting synchronization:\n");
 
-  Object.entries(config).forEach(([sharedPath, configValue]) => {
+  // Najpierw posortuj ścieżki od najbardziej szczegółowych do ogólnych
+  const sortedEntries = Object.entries(config).sort((a, b) => {
+    return b[0].split('/').length - a[0].split('/').length;
+  });
+
+  // Śledź już przetworzone ścieżki dla każdego template
+  const processedPaths = new Map<string, Set<string>>();
+
+  sortedEntries.forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
     console.log(`\n📁 Processing: ${sharedPath}`);
 
@@ -149,54 +156,72 @@ function syncSharedFiles(): void {
       return;
     }
 
-    // Handle both simple array and complex configuration
-    const projects = Array.isArray(configValue)
-      ? configValue
-      : configValue.projects;
-
-    const excludeFiles = isProjectConfig(configValue)
-      ? configValue.excludeFiles || []
-      : [];
+    const projects = Array.isArray(configValue) ? configValue : configValue.projects;
+    const excludeFiles = isProjectConfig(configValue) ? configValue.excludeFiles || [] : [];
+    const asName = isProjectConfig(configValue) ? configValue.asName : undefined;
 
     if (excludeFiles.length > 0) {
       console.log(`  🚫 Excluded files:`, excludeFiles);
     }
 
     projects.forEach((template) => {
+      // Inicjalizuj Set dla template jeśli nie istnieje
+      if (!processedPaths.has(template)) {
+        processedPaths.set(template, new Set());
+      }
+      const templateProcessedPaths = processedPaths.get(template)!;
+
       console.log(`\n  📌 Template: ${template}`);
-      const destPath = path.join(TEMPLATES_DIR, template, sharedPath);
 
-      // Improved exclude files check
-      const isExcluded = excludeFiles.some((excluded) => {
-        // Check if the excluded file exists in the source path
-        const excludedPath = path.join(srcPath, excluded);
-        const exists = fs.existsSync(excludedPath);
-        return exists;
-      });
+      // Określ ścieżkę docelową
+      const destPath = asName
+        ? path.join(TEMPLATES_DIR, template, path.dirname(sharedPath), asName)
+        : path.join(TEMPLATES_DIR, template, sharedPath);
 
-      if (isExcluded) {
-        console.log(`    ⏭️  Found excluded files - skipping`);
+      // Sprawdź czy ta ścieżka (lub jej nadrzędna) została już przetworzona
+      const isAlreadyProcessed = Array.from(templateProcessedPaths).some(
+        processed => destPath.startsWith(processed)
+      );
+
+      if (isAlreadyProcessed) {
+        console.log(`    ⏭️  Already processed in more specific configuration - skipping`);
         return;
       }
 
-      // Handle file renaming if asName is specified
-      const finalDestPath =
-        isProjectConfig(configValue) && configValue.asName
-          ? path.join(path.dirname(destPath), configValue.asName)
-          : destPath;
+      const shouldCopyFile = (src: string): boolean => {
+        const relativePath = path.relative(srcPath, src);
+        if (!relativePath) return true;
 
-      if (fs.existsSync(finalDestPath)) {
-        const filesMatch = compareFiles(srcPath, finalDestPath, template);
-        if (filesMatch) {
-          console.log(`    ℹ️  Files identical - skipping`);
-          return;
+        const isExcluded = excludeFiles.some(excludedFile => {
+          return relativePath === excludedFile ||
+                 path.basename(src) === excludedFile;
+        });
+
+        if (isExcluded) {
+          console.log(`    🚫 Excluding file: ${relativePath}`);
+          return false;
         }
-        console.log(`    🔄 Content differs - updating`);
-      } else {
-        console.log(`    ✨ Creating new file/directory`);
-      }
+        return true;
+      };
 
-      fse.copySync(srcPath, finalDestPath, { overwrite: true });
+      try {
+        if (fs.statSync(srcPath).isDirectory()) {
+          fse.copySync(srcPath, destPath, {
+            filter: shouldCopyFile,
+            overwrite: true
+          });
+        } else {
+          if (shouldCopyFile(srcPath)) {
+            fse.copySync(srcPath, destPath, { overwrite: true });
+          }
+        }
+
+        // Dodaj przetworzoną ścieżkę do Set
+        templateProcessedPaths.add(destPath);
+
+      } catch (error) {
+        console.error(`Error processing ${srcPath}:`, error);
+      }
     });
   });
 

@@ -7,10 +7,11 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.69",
+  "templateVersion": "1.0.70",
   "fileMap": [
     "templateCatalog/.gitignore-default.md",
     "templateCatalog/.husky/.gitignore-default.md",
+    "templateCatalog/.husky/README.md-default.md",
     "templateCatalog/.husky/_/husky.sh-default.md",
     "templateCatalog/.husky/lint-staged.config.json-default.md",
     "templateCatalog/.husky/post-merge-default.md",
@@ -48,6 +49,7 @@
   "templateFileList": [
     "./.gitignore",
     "./.husky/.gitignore",
+    "./.husky/README.md",
     "./.husky/_/husky.sh",
     "./.husky/lint-staged.config.json",
     "./.husky/post-merge",
@@ -91,6 +93,7 @@
   "rootPathFileList": [
     "./templates/node/.gitignore",
     "./templates/node/.husky/.gitignore",
+    "./templates/node/.husky/README.md",
     "./templates/node/.husky/_/husky.sh",
     "./templates/node/.husky/lint-staged.config.json",
     "./templates/node/.husky/post-merge",
