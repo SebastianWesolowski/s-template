@@ -5,6 +5,44 @@
   and (hopefully) merge of your change.
 -->
 
+## Description
+
+<!-- Describe your changes in detail -->
+
+## Type of change
+
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Breaking change
+- [ ] Documentation update
+
+## Quality Checklist
+
+- [ ] My code follows the project's coding standards
+- [ ] I have added tests that prove my fix/feature works
+- [ ] New and existing unit tests pass locally
+- [ ] I have updated the documentation accordingly
+- [ ] My changes generate no new TypeScript errors
+- [ ] I have added appropriate error handling
+- [ ] I have reviewed my own code
+- [ ] I have removed all console.logs and debugging code
+
+## Performance Considerations
+
+- [ ] No unnecessary re-renders in React components
+- [ ] Optimized imports and dependencies
+- [ ] Efficient data structures and algorithms used
+
+## Security Checklist
+
+- [ ] Input validation implemented
+- [ ] No sensitive data exposed
+- [ ] Security best practices followed
+
+## Additional Notes
+
+<!-- Add any additional notes for reviewers -->
+
 ### Description of change
 
 <!--

@@ -5,7 +5,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: "{{PLACEHOLDER_FULL_NAME}}",
       value: "Sebastian Wesolowski",
-      files: ["package.json", "README.md"],
+      files: ["package.json"],
     },
     {
       placeholder: "{{PLACEHOLDER_PAGE_AUTHOR}}",

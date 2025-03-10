@@ -14,19 +14,37 @@ LICENSE:
   - startetNpmPackage/node
   - node
 
-.github:
-  - startetNpmPackage/node
-
-.github-advanced:
-  projects:
-  - NextJs/NextJs15
-  asName: .github
-
 tools:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+
 # Advanced configuration with file exclusions and renaming
+.github:
+  projects:
+    - NextJs/NextJs15
+    - startetNpmPackage/node
+    - node
+  excludeFiles:
+    - workflows
+    - workflows-v2
+    - nodejs.version
+
+.github/workflows-v2:
+  projects:
+    - NextJs/NextJs15
+  asName: workflows
+
+.github/nodejs.version:
+  projects:
+    - startetNpmPackage/node
+    - node
+
+.github/workflows:
+  projects:
+    - startetNpmPackage/node
+    - node
+
 .husky:
   projects:
     - NextJs/NextJs15
