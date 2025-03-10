@@ -1,3 +1,10 @@
+## [1.5.0-dev.15](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.14...v1.5.0-dev.15) (March 10, 2025)
+
+
+### Other tasks
+
+- ✨ [] add SUM scripts in node template ([b110660](https://github.com/SebastianWesolowski/s-template/commit/b110660ba1807ebfdc77320846da7fa8f61c3aaa))
+
 ## [1.5.0-dev.14](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.13...v1.5.0-dev.14) (March 10, 2025)
 
 
