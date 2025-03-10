@@ -33,25 +33,10 @@
     "cm": "cz",
     "prepare": "husky install",
     "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "postpack": "clean-package restore",
+    "customize": "tsx tools/customize/customize.ts",
+    "postinstall": "npx patch-package -y"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "{{PLACEHOLDER_FULL_NAME}}",
-    "email": "{{PLACEHOLDER_GITHUB_USER}}@users.noreply.github.com",
-    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}"
-  },
-  "engines": {
-    "node": ">=0.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/issues"
-  },
-  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@semantic-release/changelog": "^6.0.3",
@@ -82,11 +67,30 @@
     "semantic-release": "^21.0.1",
     "ts-jest": "29.2.5",
     "ts-node": "^10.2.1",
+    "tsx": "^4.19.3",
     "typescript": "5.2.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "{{PLACEHOLDER_FULL_NAME}}",
+    "email": "{{PLACEHOLDER_GITHUB_USER}}@users.noreply.github.com",
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}"
+  },
+  "engines": {
+    "node": ">=0.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/issues"
+  },
+  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}#readme",
   "config": {
     "commitizen": {
-      "path": "git-cz"
-    }
+      "path": "node_modules/cz-git"
+    },
+    "issueTag": "SC"
   }
 }

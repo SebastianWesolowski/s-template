@@ -7,8 +7,12 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.70",
+  "templateVersion": "1.0.71",
   "fileMap": [
+    "templateCatalog/.github/FUNDING.yml-default.md",
+    "templateCatalog/.github/ISSUE_TEMPLATE/bug_report.md-default.md",
+    "templateCatalog/.github/ISSUE_TEMPLATE/feature_request.md-default.md",
+    "templateCatalog/.github/PULL_REQUEST_TEMPLATE.md-default.md",
     "templateCatalog/.gitignore-default.md",
     "templateCatalog/.husky/.gitignore-default.md",
     "templateCatalog/.husky/README.md-default.md",
@@ -47,6 +51,16 @@
     "templateCatalog/yarn.lock-default.md"
   ],
   "templateFileList": [
+    "./.github/FUNDING.yml",
+    "./.github/ISSUE_TEMPLATE/bug_report.md",
+    "./.github/ISSUE_TEMPLATE/feature_request.md",
+    "./.github/PULL_REQUEST_TEMPLATE.md",
+    "./.github/assets/couplingGraph.png",
+    "./.github/assets/heroImageReposytory.png",
+    "./.github/assets/ngrok.png",
+    "./.github/assets/project-logo-vertical.png",
+    "./.github/assets/project-logo.png",
+    "./.github/assets/runningTests.png",
     "./.gitignore",
     "./.husky/.gitignore",
     "./.husky/README.md",
@@ -91,6 +105,10 @@
     "./yarn.lock"
   ],
   "rootPathFileList": [
+    "./templates/node/.github/FUNDING.yml",
+    "./templates/node/.github/ISSUE_TEMPLATE/bug_report.md",
+    "./templates/node/.github/ISSUE_TEMPLATE/feature_request.md",
+    "./templates/node/.github/PULL_REQUEST_TEMPLATE.md",
     "./templates/node/.gitignore",
     "./templates/node/.husky/.gitignore",
     "./templates/node/.husky/README.md",
@@ -129,6 +147,12 @@
     "./templates/node/yarn.lock"
   ],
   "redOnlyFileList": [
+    ".github/assets/couplingGraph.png",
+    ".github/assets/heroImageReposytory.png",
+    ".github/assets/ngrok.png",
+    ".github/assets/project-logo-vertical.png",
+    ".github/assets/project-logo.png",
+    ".github/assets/runningTests.png",
     "docs/actions-secrets.png",
     "docs/cz-problem.png",
     "docs/fetchUpstream.png",
