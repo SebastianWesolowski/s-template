@@ -1,3 +1,12 @@
+## [1.5.0-dev.14](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.13...v1.5.0-dev.14) (March 10, 2025)
+
+
+### Other tasks
+
+- 🐛 [] fix sync script ([8bceb9f](https://github.com/SebastianWesolowski/s-template/commit/8bceb9fd8e71a27c3df386c94e8525d9eed7e67f))
+- ✨ [] alignment node scaffold ([14bc0ca](https://github.com/SebastianWesolowski/s-template/commit/14bc0ca27f39a38a125174745aaad2695fac8546))
+- ✨ [] use sync ([7f7d3a1](https://github.com/SebastianWesolowski/s-template/commit/7f7d3a1533b9df5ddce94fc84e9d599dbe0db3c4))
+
 ## [1.5.0-dev.13](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.12...v1.5.0-dev.13) (March 10, 2025)
 
 
