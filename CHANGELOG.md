@@ -1,3 +1,66 @@
+## [1.5.0-dev.13](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.12...v1.5.0-dev.13) (March 10, 2025)
+
+
+### [SC-106](https://linear.app/wesolowskidev/issue/SC-106)
+
+- ✨ [[SC-106](https://linear.app/wesolowskidev/issue/SC-106)] giignore improve ([6130550](https://github.com/SebastianWesolowski/s-template/commit/6130550c86550fafa1c5e73d3f0ec9eaba41f2f3))
+
+
+### [SC-109](https://linear.app/wesolowskidev/issue/SC-109)
+
+- 🐛 [[SC-109](https://linear.app/wesolowskidev/issue/SC-109)] eslint config ([1ddbf91](https://github.com/SebastianWesolowski/s-template/commit/1ddbf91e45640366d935673859a2a0f9066c4e58))
+- ✨ [[SC-109](https://linear.app/wesolowskidev/issue/SC-109)] improve eslint and prettier config ([8394c05](https://github.com/SebastianWesolowski/s-template/commit/8394c05142954016ad3babc92bb5e8947c6445a1))
+
+
+### [SC-112](https://linear.app/wesolowskidev/issue/SC-112)
+
+- ✨ [[SC-112](https://linear.app/wesolowskidev/issue/SC-112)] fix tools ([5d6069a](https://github.com/SebastianWesolowski/s-template/commit/5d6069a14d8ba7fe87885df499eac30e8227a762))
+
+
+### [SC-113](https://linear.app/wesolowskidev/issue/SC-113)
+
+- ✨ [[SC-113](https://linear.app/wesolowskidev/issue/SC-113)] add env for next ([79d394a](https://github.com/SebastianWesolowski/s-template/commit/79d394a43bf7311521a9734571aa68f9f8f022b1))
+
+
+### [SC-115](https://linear.app/wesolowskidev/issue/SC-115)
+
+- ✨ [[SC-115](https://linear.app/wesolowskidev/issue/SC-115)] add github actions ([9fb29ec](https://github.com/SebastianWesolowski/s-template/commit/9fb29ecc917917e6da136195835363ddf85c4686))
+
+
+### [SC-117](https://linear.app/wesolowskidev/issue/SC-117)
+
+- ✨ [[SC-117](https://linear.app/wesolowskidev/issue/SC-117)] add npmrc ([0cae1ff](https://github.com/SebastianWesolowski/s-template/commit/0cae1ff0f06449c5fefa4450cc9756ab13585d52))
+
+
+### [SC-119](https://linear.app/wesolowskidev/issue/SC-119)
+
+- ✨ [[SC-119](https://linear.app/wesolowskidev/issue/SC-119)] add settings for vscode ([edc86be](https://github.com/SebastianWesolowski/s-template/commit/edc86be4510baf2a9b908491097a3b68c7e66e3e))
+
+
+### [SC-122](https://linear.app/wesolowskidev/issue/SC-122)
+
+- ✨ [[SC-122](https://linear.app/wesolowskidev/issue/SC-122)] update tsconfig ([ce5d0b1](https://github.com/SebastianWesolowski/s-template/commit/ce5d0b126317f0f73dd1298e2de81384719a5d50))
+
+
+### [SC-124](https://linear.app/wesolowskidev/issue/SC-124)
+
+- ✨ [[SC-124](https://linear.app/wesolowskidev/issue/SC-124)] rewrite build scripts ([8987d7a](https://github.com/SebastianWesolowski/s-template/commit/8987d7a74f1eace986d06e9c7ab87600953e5b36))
+
+
+### [SC-129](https://linear.app/wesolowskidev/issue/SC-129)
+
+- ✨ [[SC-129](https://linear.app/wesolowskidev/issue/SC-129)] strict rules for eslint ([abe8ecb](https://github.com/SebastianWesolowski/s-template/commit/abe8ecba09c47b2480bf8f75fba8011fde841845))
+
+
+### [SC-130](https://linear.app/wesolowskidev/issue/SC-130)
+
+- ✨ [[SC-130](https://linear.app/wesolowskidev/issue/SC-130)] cleanup components ([a2cb954](https://github.com/SebastianWesolowski/s-template/commit/a2cb954b36b460f4e1a55174a5e5ec824cf58776))
+
+
+### Other tasks
+
+- ✨ [] storybook improve ([b6f0249](https://github.com/SebastianWesolowski/s-template/commit/b6f0249cc2d9195ff96d775099db808995711197))
+
 ## [1.5.0-dev.12](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.11...v1.5.0-dev.12) (February 15, 2025)
 
 
