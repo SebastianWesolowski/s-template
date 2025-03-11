@@ -4,12 +4,59 @@
   - startetNpmPackage/node
   - node
 
-LICENSE:
+
+.commitlintrc.js:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.cursorignore:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.editorconfig:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.gitattributes:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.npmrc:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
 
 .nvmrc:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.prettierignore:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.quokka:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+
+.releaserc.js:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+LICENSE:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+prettier.config.js:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node

@@ -22,7 +22,7 @@ export const eslintIgnore = [
   '*.config.js',
   '*.d.ts',
   'tools/*',
-  'sum/*',
+  '.sum/*',
   'eslint.config.mjs',
   'eslint.config.strict.mjs',
   '.storybook/*.ts',
@@ -136,6 +136,7 @@ const config = typescriptEslint.config(
 
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/ban-ts-comment': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
 
