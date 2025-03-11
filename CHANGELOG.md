@@ -1,3 +1,17 @@
+## [1.5.0-dev.16](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.15...v1.5.0-dev.16) (March 11, 2025)
+
+
+### [SC-132](https://linear.app/wesolowskidev/issue/SC-132)
+
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] add node dependency ([c65e4e9](https://github.com/SebastianWesolowski/s-template/commit/c65e4e90e2eee22977465b2184dca6049bbf5831))
+
+
+### Other tasks
+
+- ✨ [] improve shared file ([d97c67a](https://github.com/SebastianWesolowski/s-template/commit/d97c67a343ce95f3d63f1c810d6aab8a6fdb752c))
+- ✨ [] change eslint in nextjs ([a6ccd34](https://github.com/SebastianWesolowski/s-template/commit/a6ccd349d7def3bfa4c5f62c47eb7ce9c35d19a6))
+- ✨ [] connect shared/.github ([f80d9dc](https://github.com/SebastianWesolowski/s-template/commit/f80d9dc0563f20877d86db63182b882f58722203))
+
 ## [1.5.0-dev.15](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.14...v1.5.0-dev.15) (March 10, 2025)
 
 
