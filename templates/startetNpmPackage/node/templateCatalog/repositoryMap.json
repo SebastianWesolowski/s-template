@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": true,
   "_": [],
-  "templateVersion": "1.0.73",
+  "templateVersion": "1.0.74",
   "fileMap": [
     "templateCatalog/.commitlintrc.js-default.md",
     "templateCatalog/.cursorignore-default.md",
@@ -67,7 +67,6 @@
     "templateCatalog/tools/customize/customize.example.config.ts-default.md",
     "templateCatalog/tools/customize/customize.ts-default.md",
     "templateCatalog/tools/customize/type.ts-default.md",
-    "templateCatalog/tools/transform-browser-list/index.js-default.md",
     "templateCatalog/tsconfig.build.json-default.md",
     "templateCatalog/tsconfig.json-default.md",
     "templateCatalog/yarn.lock-default.md"
@@ -145,7 +144,6 @@
     "./tools/customize/customize.example.config.ts",
     "./tools/customize/customize.ts",
     "./tools/customize/type.ts",
-    "./tools/transform-browser-list/index.js",
     "./tsconfig.build.json",
     "./tsconfig.json",
     "./yarn.lock"
@@ -209,7 +207,6 @@
     "./templates/startetNpmPackage/node/tools/customize/customize.example.config.ts",
     "./templates/startetNpmPackage/node/tools/customize/customize.ts",
     "./templates/startetNpmPackage/node/tools/customize/type.ts",
-    "./templates/startetNpmPackage/node/tools/transform-browser-list/index.js",
     "./templates/startetNpmPackage/node/tsconfig.build.json",
     "./templates/startetNpmPackage/node/tsconfig.json",
     "./templates/startetNpmPackage/node/yarn.lock"

@@ -8,12 +8,14 @@
     "CHANGELOG.md"
   ],
   "scripts": {
+    "start:dev": "cross-env SDEBUG=true tsx watch ./src/index.ts",
     "build": "run-s build:clean && tsc --project tsconfig.build.json",
     "build:clean": "rm -rf ./lib/",
     "build:prod": "run-s build && cpy 'src/index.json' 'lib' --parents",
     "build:package": "[ -d ./dist ] || mkdir ./dist && npm pack --pack-destination ./dist &&  tar -xvzf \"$(ls -t ./dist/*.tgz | head -n 1)\" -C ./dist/",
-    "eslint:check": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts)'",
-    "eslint:fix": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|jsx|ts)' --fix",
+    "eslint:check": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|ts)' --config eslint.config.mjs",
+    "eslint:fix": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|ts)' --config eslint.config.mjs --fix",
+    "eslint:strict": "eslint --no-error-on-unmatched-pattern './src/**/*.+(js|ts)' --config eslint.config.strict.mjs",
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
     "husky:pre-commit": "lint-staged -c ./.husky/lint-staged.config.json",
     "husky:pre-push": "run-s lint:check test:check build:prod",

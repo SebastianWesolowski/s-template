@@ -4,9 +4,16 @@ module.exports = {
   testEnvironmentOptions: {
     experimentalVmModules: true,
   },
-  testMatch: ['**/*.spec.ts', '**/*.test.ts'],
+  testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts','<rootDir>/test/**/*.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts?(x)',
+    '!<rootDir>/src/**/*.d.ts',
+    '!<rootDir>/src/**/index.ts',
+    '!<rootDir>/src/**/*.interface.ts',
+    '!<rootDir>/src/**/*.enum.ts',
+    '!<rootDir>/src/**/*.constant.ts',
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
@@ -23,7 +30,11 @@ module.exports = {
     ],
   },
   moduleDirectories: ['node_modules', 'src'],
-  roots: ['<rootDir>/src', '<rootDir>/test'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/lib/'],
+  roots: ['<rootDir>/src'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/lib/', '/coverage/'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  clearMocks: true,
+  resetMocks: true,
+  restoreMocks: true,
+  maxWorkers: '50%',
 };

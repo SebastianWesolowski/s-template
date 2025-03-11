@@ -59,12 +59,32 @@ prettier.config.js:
   - startetNpmPackage/node
   - node
 
-tools:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
 # Advanced configuration with file exclusions and renaming
+
+tools:
+  projects:
+    - NextJs/NextJs15
+    - startetNpmPackage/node
+    - node
+  excludeFiles:
+    - transform-browser-list
+    - addDependency
+    - addModuleType
+
+tools/transform-browser-list:
+  projects:
+    - NextJs/NextJs15
+
+tools/addDependency:
+  projects:
+    - startetNpmPackage/node
+    - node
+
+tools/addModuleType:
+  projects:
+    - startetNpmPackage/node
+    - node
+
 .github:
   projects:
     - NextJs/NextJs15
