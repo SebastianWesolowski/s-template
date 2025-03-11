@@ -36,7 +36,6 @@
   - node
 
 .prettierignore:
-  - NextJs/NextJs15
   - startetNpmPackage/node
   - node
 
@@ -57,7 +56,6 @@ LICENSE:
   - node
 
 prettier.config.js:
-  - NextJs/NextJs15
   - startetNpmPackage/node
   - node
 
