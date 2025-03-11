@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.59",
+  "templateVersion": "1.0.60",
   "fileMap": [
     "templateCatalog/.browserslistrc-default.md",
     "templateCatalog/.commitlintrc.js-default.md",
@@ -196,6 +196,7 @@
     "./.github/PULL_REQUEST_TEMPLATE.md",
     "./.github/assets/couplingGraph.png",
     "./.github/assets/githubActions.png",
+    "./.github/assets/heroImageReposytory-next.png",
     "./.github/assets/heroImageReposytory.png",
     "./.github/assets/ngrok.png",
     "./.github/assets/project-logo-vertical.png",
@@ -552,6 +553,7 @@
   "redOnlyFileList": [
     ".github/assets/couplingGraph.png",
     ".github/assets/githubActions.png",
+    ".github/assets/heroImageReposytory-next.png",
     ".github/assets/heroImageReposytory.png",
     ".github/assets/ngrok.png",
     ".github/assets/project-logo-vertical.png",
