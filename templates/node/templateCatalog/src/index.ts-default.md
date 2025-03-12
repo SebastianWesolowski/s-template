@@ -1,1 +1,8 @@
-export const myPackage = (content = ''): string => `${content} from my package`;
+import { getFavoriteFruit } from './getFavoriteFruit';
+
+if (process.env.SDEBUG) {
+  const fruit = getFavoriteFruit('Apple 🍎');
+  console.log(fruit);
+}
+
+export { getFavoriteFruit };

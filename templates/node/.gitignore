@@ -24,11 +24,9 @@ yarn-error.log*
 
 # env files
 .env*
-!.env.example
-!.env.*.example
+!.env.mjs
+!.env.*example
 
-# vercel
-.vercel
 
 # husky
 .husky/_
@@ -53,3 +51,6 @@ tsconfig.tsbuildinfo
 logs
 *.log
 npm-debug.log*
+
+# build
+lib/*

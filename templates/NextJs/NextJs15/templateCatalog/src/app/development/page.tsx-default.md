@@ -17,7 +17,7 @@ const DevelopmentPage = (): React.ReactElement => {
   // Using the variables below in the browser will return `undefined`.
   // Next.js doesn't expose environment variables unless they start with `NEXT_PUBLIC_`.
   console.info('[Node.js only] ENV_VARIABLE:', process.env.ENV_VARIABLE);
-  console.info('[Node.js only] ENV_LOCAL_VARIABLE:', process.env.ENV_LOCAL_VARIABLE);
+  console.info('[Node.js only] LOCAL_ENV_VARIABLE:', process.env.LOCAL_ENV_VARIABLE);
 
   // Redirect to home page if not in development
   // if (process.env.NODE_ENV === 'production') {
@@ -54,8 +54,8 @@ const DevelopmentPage = (): React.ReactElement => {
                 </td>
               </tr>
               <tr>
-                <td className='border border-[#eaeaea] p-3.5 text-sm'>NEXT_PUBLIC_ENV_LOCAL_VARIABLE</td>
-                <td className='border border-[#eaeaea] p-3.5 text-sm'>{process.env.NEXT_PUBLIC_ENV_LOCAL_VARIABLE}</td>
+                <td className='border border-[#eaeaea] p-3.5 text-sm'>NEXT_PUBLIC_LOCAL_ENV_VARIABLE</td>
+                <td className='border border-[#eaeaea] p-3.5 text-sm'>{process.env.NEXT_PUBLIC_LOCAL_ENV_VARIABLE}</td>
                 <td className='border border-[#eaeaea] p-3.5 text-sm'>
                   <Code>.env.local</Code>
                 </td>

@@ -71,7 +71,10 @@ export const eslintSettings = {
   },
 
   'import/resolver': {
-    typescript: true,
+    typescript: {
+      alwaysTryTypes: true,
+      project: './tsconfig.json',
+    },
     node: true,
   },
 };
