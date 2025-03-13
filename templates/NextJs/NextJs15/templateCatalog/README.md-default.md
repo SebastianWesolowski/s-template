@@ -83,85 +83,49 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 To get started with this boilerplate, follow these steps:
 
 1. Install the dependencies:
-
 ```bash
 yarn install
 ```
 
-2. Run the update witch s-update-manager:
-
+2. Run the update with s-update-manager:
 ```bash
 yarn s-update-manager
 ```
 
-3. Set up your repository
+3. Customize your repository:
 
-Replace variable in the `./tools/customize/customize.config.ts` script with your own details to personalize your new package:
-
-```bash
-export const config: CustomizeConfig = {
-  replacements: [
-    {
-      placeholder: "{{PLACEHOLDER_FULL_NAME_EXAMPLE}}",
-      value: "Sebastian Wesolowski",
-      files: [
-        "package.json",
-        "README.md",
-        "./docs/HowToAutoDeploy.md",
-        ".github/FUNDING.yml",
-      ],
-    },
-    {
-      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR_EXAMPLE}}",
-      value: "www.wesolowski.dev",
-      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
-    },
-    ...
-```
-
-You can look on example in `./tools/customize/customize.example.config.ts`
-
-Run script with:
+> [Repository Customization](./docs/WayToWrok.md#set-up-your-repository) - Personalize your project with custom details
 
 ```bash
 yarn customize
 ```
 
-or
-
-```bash
-tsx tools/customize/customize.ts
-```
-
-4. Optional
-
-- 4.1. Add ngrok token in .env file for local development
-
-  ```bash
-   NGROK_AUTH_TOKEN=your_ngrok_token
-  ```
-
-  after that you can run ngrok to expose your local server to the internet:
-
-  ```bash
-    yarn dev:tunnel
-  ```
-
-  [![ngrok](./.github/assets/ngrok.png)](https://dashboard.ngrok.com/get-started/setup/macos)
-
-5. Run the development server:
-
+4. Run the development server:
 ```bash
 yarn dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+- [Ngrok Integration](./docs/WayToWrok.md#optional) - Expose your local server to the internet
+- [Local Preview](./docs/WayToWrok.md#check-local-preview-package) - Test your build locally
+
+## 🔗 Detailed Documentation
+
+For detailed instructions and advanced options, please refer to [How to Work with Template](./docs/WayToWrok.md):
+
+
 
 ## 🚀 Deployment
 
 Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js) by clicking the button below:
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
+
+- [Development Workflow](./docs/WayToWrok.md#-development-and-setup) - Complete setup instructions
+- [Pre-release Process](./docs/WayToWrok.md#pre-release) - From feature and dev branches
+- [Pre-production Setup](./docs/WayToWrok.md#pre-production) - Via pull requests to main
+- [Release Workflow](./docs/WayToWrok.md#release) - Automated with GitHub Actions
 
 ## 📃 Scripts Overview
 

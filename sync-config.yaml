@@ -1,90 +1,3 @@
-# Simple directory copies
-.vscode:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-
-.commitlintrc.js:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.cursorignore:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.editorconfig:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.gitattributes:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.npmrc:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.nvmrc:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-.prettierignore:
-  - startetNpmPackage/node
-  - node
-
-.quokka:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-
-.releaserc.js:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-LICENSE:
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
-prettier.config.js:
-  - startetNpmPackage/node
-  - node
-
-# Advanced configuration with file exclusions and renaming
-
-tools:
-  projects:
-    - NextJs/NextJs15
-    - startetNpmPackage/node
-    - node
-  excludeFiles:
-    - transform-browser-list
-    - addDependency.js
-    - addModuleType.js
-
-tools/transform-browser-list:
-  projects:
-    - NextJs/NextJs15
-
-tools/addDependency:
-  projects:
-    - startetNpmPackage/node
-    - node
-
-tools/addModuleType:
-  projects:
-    - startetNpmPackage/node
-    - node
-
 .github:
   projects:
     - NextJs/NextJs15
@@ -130,3 +43,90 @@ tools/addModuleType:
   projects:
     - NextJs/NextJs15
   asName: lint-staged.config.json
+
+.vscode:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+'@types':
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+tools:
+  projects:
+    - NextJs/NextJs15
+    - startetNpmPackage/node
+    - node
+  excludeFiles:
+    - transform-browser-list
+    - addDependency.js
+    - addModuleType.js
+
+tools/transform-browser-list:
+  projects:
+    - NextJs/NextJs15
+
+tools/addDependency:
+  projects:
+    - startetNpmPackage/node
+    - node
+
+tools/addModuleType:
+  projects:
+    - startetNpmPackage/node
+    - node
+
+.commitlintrc.js:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.cursorignore:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.editorconfig:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.gitattributes:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.npmrc:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.nvmrc:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.prettierignore:
+  - startetNpmPackage/node
+  - node
+
+.quokka:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+.releaserc.js:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+LICENSE:
+  - NextJs/NextJs15
+  - startetNpmPackage/node
+  - node
+
+prettier.config.js:
+  - startetNpmPackage/node
+  - node
