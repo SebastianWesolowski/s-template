@@ -98,7 +98,10 @@ tools/addModuleType:
 .github/workflows-v2:
   projects:
     - NextJs/NextJs15
+    - node
   asName: workflows
+  excludeFiles:
+    - ci.yml
 
 .github/nodejs.version:
   projects:
@@ -108,7 +111,6 @@ tools/addModuleType:
 .github/workflows:
   projects:
     - startetNpmPackage/node
-    - node
 
 .husky:
   projects:
