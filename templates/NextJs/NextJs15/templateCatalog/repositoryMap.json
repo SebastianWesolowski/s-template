@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.70",
+  "templateVersion": "1.0.71",
   "fileMap": [
     "templateCatalog/.browserslistrc-default.md",
     "templateCatalog/.commitlintrc.js-default.md",
@@ -192,7 +192,7 @@
     "./.github/ISSUE_TEMPLATE/bug_report.md",
     "./.github/ISSUE_TEMPLATE/feature_request.md",
     "./.github/PULL_REQUEST_TEMPLATE.md",
-    "./.github/assets/couplingGraph.png",
+    "./.github/assets/couplingGraph-react.png",
     "./.github/assets/githubActions.png",
     "./.github/assets/heroImageReposytory-next.png",
     "./.github/assets/heroImageReposytory.png",
@@ -545,7 +545,7 @@
     "./templates/NextJs/NextJs15/yarn.lock"
   ],
   "redOnlyFileList": [
-    ".github/assets/couplingGraph.png",
+    ".github/assets/couplingGraph-react.png",
     ".github/assets/githubActions.png",
     ".github/assets/heroImageReposytory-next.png",
     ".github/assets/heroImageReposytory.png",

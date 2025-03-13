@@ -68,8 +68,8 @@ tools:
     - node
   excludeFiles:
     - transform-browser-list
-    - addDependency
-    - addModuleType
+    - addDependency.js
+    - addModuleType.js
 
 tools/transform-browser-list:
   projects:

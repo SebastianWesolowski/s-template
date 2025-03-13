@@ -219,7 +219,7 @@ yarn coupling-graph
 
 This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
-![graph](.github/assets/couplingGraph.png)
+![graph](.github/assets/couplingGraph-react.png)
 
 ## 🧪 Testing
 
