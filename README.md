@@ -1,6 +1,6 @@
 # s-template
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="s-update-manager package" src="srcReadme/heroImageReposytory.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="s-update-manager package" src=".github/assets/heroImageReposytory.png"></a>
 
 ## Important Links
 

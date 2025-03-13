@@ -5,6 +5,7 @@
   "scripts": {
     "init:shared": "ts-node scripts/initShared.ts",
     "sync:shared": "ts-node scripts/syncShared.ts",
+    "clean:shared": "ts-node scripts/cleanShared.ts",
     "commit": "czg",
     "prepare": "husky",
     "husky:commit-msg": "commitlint --edit $GIT_PARAMS",
