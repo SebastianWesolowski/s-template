@@ -64,6 +64,7 @@
     "ngrok": "ngrok http 3000",
     "ngrok:auth": "node tools/ngrok-auth.js",
     "customize": "tsx tools/customize/customize.ts",
+    "customize:clean": "echo TODO [SC-148]",
     "playwright:install": "yarn playwright install --with-deps",
     "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/NextJs15'",
     "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/NextJs/NextJs15'",

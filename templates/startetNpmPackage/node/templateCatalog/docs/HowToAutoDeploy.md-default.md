@@ -25,23 +25,10 @@
 
 6. [known problems](knownProblem.md)
 
-### Set up your repository
+### Set up Tokens
 
-Replace variable in the `./tools/customize.json` script with your own details to personalize your new package:
 
-```bash
-FULL_NAME="John Smith"
-GITHUB_USER="johnsmith"
-REPO_NAME="my-cool-package"
-NODE_VERSION="18.17.1"
-NPM_USER="johnsmith"
-```
-
-or look on example in `./tools/customize.example.json`
-
-Add permission to edit `chmod +x ./tools/customize.sh` and rund it `./tools/customize.sh`
-
-### Add Tokens for NPM(**Automation**), Github
+#### Add Tokens for NPM(**Automation**), Github
 
 Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
 
@@ -53,23 +40,20 @@ Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
 
 ![npm.png](npm.png)
 
-- in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/settings/secrets/actions as new repo secret
+- in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/settings/secrets/actions as new repo secret
   ![actions-secrets.png](actions-secrets.png)
 
-### Setup repository
+#### Setup github repository
 
-Semantic release need read and write permissions to https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/settings/actions - > Workflow permissions -> check
+Semantic release need read and write permissions to https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/settings/actions - > Workflow permissions -> check
 Read and write permissions
 
 ![gh.png](gh.png)
 
-### Start publish
-
-start publish from dev brnach !
 
 ### Before final publish
 
-remove unnecessary files:
+use `use customize:clean` it
 
 - remove `docs` folder
 - remove `mock` folder if it is not used
@@ -77,4 +61,13 @@ remove unnecessary files:
 - remove `__tests__` folder if it is not used
   - remove occurrence of `__tests__/*` in `.eslintignore`
 
-Add permission to edit `chmod +x ./tools/cleanCustomize.sh` and rund it `./tools/cleanCustomize.sh`
+### Publish
+
+#### Pre-release
+Pre-release is prepared from feature and dev branches.
+
+#### Pre-production
+Pre-production should be created with a pull request to the main branch.
+
+#### Release
+Release is created on the main branch and prepared by GitHub Actions.

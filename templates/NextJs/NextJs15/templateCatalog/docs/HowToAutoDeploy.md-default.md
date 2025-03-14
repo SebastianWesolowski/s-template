@@ -25,33 +25,11 @@
 
 6. [known problems](knownProblem.md)
 
-### Set up your repository
+#### Add Token for Github
 
-Replace variable in the `./tools/customize.json` script with your own details to personalize your new package:
-
-```bash
-FULL_NAME="John Smith"
-GITHUB_USER="johnsmith"
-REPO_NAME="my-cool-package"
-NODE_VERSION="18.17.1"
-NPM_USER="johnsmith"
-```
-
-or look on example in `./tools/customize.example.json`
-
-Add permission to edit `chmod +x ./tools/customize.sh` and rund it `./tools/customize.sh`
-
-### Add Tokens for NPM(**Automation**), Github
-
-Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
+Add your GH token to your GitHub repository `GH_TOKEN`
 
 - Set `GH_TOKEN` - https://github.com/settings/tokens/new
-- Set `NPM_TOKEN`, set automation type - https://www.npmjs.com/settings/{{PLACEHOLDER_NPM_USER}}/tokens/new
-
-> **Reused tokens:**
-> if you have any token form npm you can reuse it. It is not necessary to create new one for every repository. In my csae, I use one token for a group based on functionality.
-
-![npm.png](npm.png)
 
 - in Repository secrets Add `GH_TOKEN` and `NPM_TOKEN` it on https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/settings/secrets/actions as new repo secret
   ![actions-secrets.png](actions-secrets.png)
@@ -63,13 +41,9 @@ Read and write permissions
 
 ![gh.png](gh.png)
 
-### Start publish
-
-start publish from dev brnach !
-
 ### Before final publish
 
-remove unnecessary files:
+use `use customize:clean` it
 
 - remove `docs` folder
 - remove `mock` folder if it is not used
@@ -77,4 +51,13 @@ remove unnecessary files:
 - remove `__tests__` folder if it is not used
   - remove occurrence of `__tests__/*` in `.eslintignore`
 
-Add permission to edit `chmod +x ./tools/cleanCustomize.sh` and rund it `./tools/cleanCustomize.sh`
+### Publish
+
+#### Pre-release
+Pre-release is prepared from feature and dev branches.
+
+#### Pre-production
+Pre-production should be created with a pull request to the main branch.
+
+#### Release
+Release is created on the main branch and prepared by GitHub Actions.

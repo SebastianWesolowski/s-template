@@ -52,6 +52,7 @@
     "ngrok": "ngrok http 3000",
     "ngrok:auth": "node tools/ngrok-auth.js",
     "customize": "tsx tools/customize/customize.ts",
+    "customize:clean": "echo TODO [SC-148]",
     "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/node'",
     "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/node'"
   },
