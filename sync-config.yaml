@@ -49,6 +49,17 @@
   - startetNpmPackage/node
   - node
 
+'[next]':
+  projects:
+    - NextJs/NextJs15
+  asName: ./
+
+'[node]':
+  projects:
+    - startetNpmPackage/node
+    - node
+  asName: ./
+
 '@types':
   - NextJs/NextJs15
   - startetNpmPackage/node
@@ -61,15 +72,15 @@ docs:
     - node
   excludeFiles:
     - npm.png
-    - web
-    - npm
+    - '[web]'
+    - '[npm]'
 
-docs/web/HowToAutoDeploy.md:
+docs/[web]/HowToAutoDeploy.md:
   projects:
     - NextJs/NextJs15
   asName: ../HowToAutoDeploy.md
 
-docs/npm/HowToAutoDeploy.md:
+docs/[npm]/HowToAutoDeploy.md:
   projects:
     - startetNpmPackage/node
     - node

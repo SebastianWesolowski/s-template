@@ -18,6 +18,13 @@ export const eslintIgnore = [
   '.sum/*',
   'eslint.config.mjs',
   'eslint.config.strict.mjs',
+  'clean-package.config.json',
+  'lib/',
+  'package.json',
+  'prettier.config.js',
+  'tsconfig.json',
+  '.eslintrc.js',
+  '.husky',
 ];
 
 export const eslintFiles = ['./src/**/*.+(js|ts)', './**/*.test.+(js|ts)'];
