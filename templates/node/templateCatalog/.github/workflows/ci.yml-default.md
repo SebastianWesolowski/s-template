@@ -26,7 +26,7 @@ jobs:
     uses: ./.github/workflows/reusable-setup.yml
     with:
       node_version: '22.x'
-      setup_playwright: true
+      setup_playwright: false
 
   lint:
     name: Lint
@@ -39,7 +39,7 @@ jobs:
       install_deps: ${{ needs.setup.outputs.install_deps }}
       node_version: ${{ needs.setup.outputs.node_version }}
       prettier_check: true
-      stylelint_check: true
+      stylelint_check: false
       typescript_check: true
       upload_artifacts: true
 
@@ -53,8 +53,8 @@ jobs:
       node_version: ${{ needs.setup.outputs.node_version }}
       install_deps: ${{ needs.setup.outputs.install_deps }}
       install_playwright: ${{ needs.setup.outputs.install_playwright }}
-      smoke_tests: true
-      storybook_build: true
+      smoke_tests: false
+      storybook_build: false
       test_matrix: '{"browser": ["chromium", "firefox"]}'
       unit_tests: true
       upload_artifacts: true

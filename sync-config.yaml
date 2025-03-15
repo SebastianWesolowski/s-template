@@ -5,25 +5,14 @@
     - node
   excludeFiles:
     - workflows
-    - workflows-v2
-    - nodejs.version
-
-.github/workflows-v2:
-  projects:
-    - NextJs/NextJs15
-    - node
-  asName: workflows
-  excludeFiles:
-    - ci.yml
-
-.github/nodejs.version:
-  projects:
-    - startetNpmPackage/node
-    - node
 
 .github/workflows:
   projects:
+    - NextJs/NextJs15
     - startetNpmPackage/node
+    - node
+  excludeFiles:
+    - ci.yml
 
 .husky:
   projects:

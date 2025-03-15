@@ -25,7 +25,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: "{{PLACEHOLDER_NODE_VERSION}}",
       value: "20.17.0",
-      files: [".nvmrc", ".github/nodejs.version"],
+      files: [".nvmrc"],
     },
     {
       placeholder: ">=0.0.0",
