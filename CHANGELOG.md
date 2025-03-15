@@ -1,3 +1,30 @@
+## [1.5.0-dev.17](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.16...v1.5.0-dev.17) (March 15, 2025)
+
+
+### [SC-132](https://linear.app/wesolowskidev/issue/SC-132)
+
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] cleanup node projects ([7d4c06f](https://github.com/SebastianWesolowski/s-template/commit/7d4c06fe68be69daeb32d3d67011dc9ae2c3d6b6))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] resync eslin and docs ([b86cbb7](https://github.com/SebastianWesolowski/s-template/commit/b86cbb7b9cea9bd7bfa1cc4ea35fc1cb5fa1d52f))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] sync docs ([1f33579](https://github.com/SebastianWesolowski/s-template/commit/1f33579cfb8b97256b1f89b13c1120fec531cb13))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] add cleanShared script and sync uused file ([0f5ca0a](https://github.com/SebastianWesolowski/s-template/commit/0f5ca0a116668b22ce82ba316b86371f76bcb752))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] sync ga actions-v ([eb0d5f9](https://github.com/SebastianWesolowski/s-template/commit/eb0d5f939ba4381bec127809f4c0ae67f0eff131))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] refresh dependency shared ([da4003a](https://github.com/SebastianWesolowski/s-template/commit/da4003af1747fd4d63d77a7ea15c9b332ed32ae9))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] expand node template ([bbe031a](https://github.com/SebastianWesolowski/s-template/commit/bbe031a3cbf3e006c43d995935cacf8a86bdbf70))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] add eslint ([1fbfed2](https://github.com/SebastianWesolowski/s-template/commit/1fbfed20251a9a202a04eae01024272de4be8113))
+- ✨ [[SC-132](https://linear.app/wesolowskidev/issue/SC-132)] sync node template ([43c2783](https://github.com/SebastianWesolowski/s-template/commit/43c27835e164577e387e902c4a4b1a18f76256ff))
+
+
+### [SC-146](https://linear.app/wesolowskidev/issue/SC-146)
+
+- ✨ [[SC-146](https://linear.app/wesolowskidev/issue/SC-146)] remove nodejs.version ([2e20d46](https://github.com/SebastianWesolowski/s-template/commit/2e20d46f0ef226eb1592877a8e58a07827f33923))
+
+
+### Other tasks
+
+- 🐛 [] sync-config na add copyToRoot ([980b909](https://github.com/SebastianWesolowski/s-template/commit/980b909e9e8b8b5912891dc475e5d0294e42c70a))
+- ✨ [] improve docs for nextjs ([bc3a347](https://github.com/SebastianWesolowski/s-template/commit/bc3a3478b4a47034c572a1f8e18a5febd936a465))
+- ✨ [] aligment node ([b26197a](https://github.com/SebastianWesolowski/s-template/commit/b26197a88d1388f9f93aaebb896c03e82efe6f01))
+
 ## [1.5.0-dev.16](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.15...v1.5.0-dev.16) (March 11, 2025)
 
 
