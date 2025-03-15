@@ -1,3 +1,10 @@
+## [1.5.0-dev.18](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.17...v1.5.0-dev.18) (March 15, 2025)
+
+
+### Other tasks
+
+- ✨ [] update SNP template ([8644c8d](https://github.com/SebastianWesolowski/s-template/commit/8644c8d3d4e4bf2835a4aad42232c523f47ea5b5))
+
 ## [1.5.0-dev.17](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.16...v1.5.0-dev.17) (March 15, 2025)
 
 
