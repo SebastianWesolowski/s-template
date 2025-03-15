@@ -1,71 +1,15 @@
 import * as fs from "fs";
 import * as path from "path";
-import * as yaml from "js-yaml";
 import * as fse from "fs-extra";
-
-const SHARED_DIR = path.join(__dirname, "../shared");
-const TEMPLATES_DIR = path.join(__dirname, "../templates");
-const CONFIG_PATH = path.join(__dirname, "../sync-config.yaml");
-
-type ProjectConfig = {
-  projects: string[];
-  excludeFiles?: string[];
-  asName?: string;
-};
-
-type SyncConfig = {
-  [key: string]: ProjectConfig | string[];
-};
-
-function loadConfig(): SyncConfig {
-  if (!fs.existsSync(CONFIG_PATH)) {
-    console.error("❌ Brak pliku sync-config.yaml");
-    process.exit(1);
-  }
-  const fileContent = fs.readFileSync(CONFIG_PATH, "utf8");
-  return yaml.load(fileContent) as SyncConfig;
-}
-
-function isProjectConfig(
-  value: ProjectConfig | string[]
-): value is ProjectConfig {
-  return (
-    typeof value === "object" && !Array.isArray(value) && "projects" in value
-  );
-}
-
-function getFilesInDirectory(directory: string): string[] {
-  if (!fs.existsSync(directory) || !fs.statSync(directory).isDirectory()) {
-    return [];
-  }
-
-  const result: string[] = [];
-
-  function traverseDirectory(dir: string, baseDir: string) {
-    const items = fs.readdirSync(dir);
-
-    for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const relativePath = path.relative(baseDir, fullPath);
-
-      if (fs.statSync(fullPath).isDirectory()) {
-        traverseDirectory(fullPath, baseDir);
-      } else {
-        result.push(relativePath);
-      }
-    }
-  }
-
-  traverseDirectory(directory, directory);
-  return result;
-}
-
-function shouldRemoveFile(file: string, excludeFiles: string[]): boolean {
-  // Sprawdź, czy plik jest na liście wykluczeń
-  return !excludeFiles.some(excludedFile => {
-    return file === excludedFile || path.basename(file) === excludedFile;
-  });
-}
+import {
+  SHARED_DIR,
+  TEMPLATES_DIR,
+  loadConfig,
+  isProjectConfig,
+  getFilesInDirectory,
+  shouldRemoveFile,
+  printJsonSummary
+} from "./utils";
 
 function cleanSharedFiles(): void {
   const config = loadConfig();
@@ -79,6 +23,9 @@ function cleanSharedFiles(): void {
 
   // Śledź już przetworzone ścieżki dla każdego template
   const processedPaths = new Map<string, Set<string>>();
+
+  // Śledź usunięte pliki
+  const removedFiles: Record<string, string[]> = {};
 
   let errorCount = 0;
 
@@ -108,6 +55,11 @@ function cleanSharedFiles(): void {
     }
 
     projects.forEach((template) => {
+      // Inicjalizuj tablicę dla template jeśli nie istnieje
+      if (!removedFiles[template]) {
+        removedFiles[template] = [];
+      }
+
       // Inicjalizuj Set dla template jeśli nie istnieje
       if (!processedPaths.has(template)) {
         processedPaths.set(template, new Set());
@@ -121,9 +73,12 @@ function cleanSharedFiles(): void {
         ? path.join(TEMPLATES_DIR, template, path.dirname(sharedPath), asName)
         : path.join(TEMPLATES_DIR, template, sharedPath);
 
+      // Normalizuj ścieżkę, aby uniknąć problemów z './' i '/'
+      const normalizedDestPath = path.normalize(destBasePath);
+
       // Sprawdź czy ta ścieżka (lub jej nadrzędna) została już przetworzona
       const isAlreadyProcessed = Array.from(templateProcessedPaths).some(
-        processed => destBasePath.startsWith(processed)
+        processed => normalizedDestPath.startsWith(path.normalize(processed))
       );
 
       if (isAlreadyProcessed) {
@@ -131,8 +86,14 @@ function cleanSharedFiles(): void {
         return;
       }
 
-      if (!fs.existsSync(destBasePath)) {
-        console.log(`    ⚠️ Ścieżka nie istnieje - pomijam: ${destBasePath}`);
+      // Sprawdź, czy mamy specjalną flagę dla kopiowania do katalogu głównego
+      const copyToRoot = isProjectConfig(configValue) && configValue.copyToRoot === true;
+      const finalDestPath = copyToRoot
+        ? path.join(TEMPLATES_DIR, template)
+        : destBasePath;
+
+      if (!fs.existsSync(finalDestPath)) {
+        console.log(`    ⚠️ Ścieżka nie istnieje - pomijam: ${finalDestPath}`);
         return;
       }
 
@@ -142,12 +103,16 @@ function cleanSharedFiles(): void {
           let removedCount = 0;
 
           sharedFiles.forEach(file => {
-            const destFilePath = path.join(destBasePath, file);
+            // Jeśli kopiujemy do katalogu głównego, pliki są bezpośrednio w katalogu głównym
+            const destFilePath = copyToRoot
+              ? path.join(finalDestPath, file)
+              : path.join(destBasePath, file);
 
             if (fs.existsSync(destFilePath) && shouldRemoveFile(file, excludeFiles)) {
               try {
                 console.log(`    🗑️ Usuwam plik: ${destFilePath}`);
                 fs.unlinkSync(destFilePath);
+                removedFiles[template].push(destFilePath);
                 removedCount++;
               } catch (fileError) {
                 console.error(`    ❌ Nie można usunąć pliku ${destFilePath}:`, fileError);
@@ -160,14 +125,19 @@ function cleanSharedFiles(): void {
         } else {
           // Dla pojedynczego pliku, usuń go jeśli istnieje i nie jest wykluczony
           const fileName = path.basename(srcPath);
-          if (fs.existsSync(destBasePath) && shouldRemoveFile(fileName, excludeFiles)) {
-            console.log(`    🗑️ Usuwam plik: ${destBasePath}`);
-            fs.unlinkSync(destBasePath);
+          const destFilePath = copyToRoot
+            ? path.join(finalDestPath, fileName)
+            : destBasePath;
+
+          if (fs.existsSync(destFilePath) && shouldRemoveFile(fileName, excludeFiles)) {
+            console.log(`    🗑️ Usuwam plik: ${destFilePath}`);
+            fs.unlinkSync(destFilePath);
+            removedFiles[template].push(destFilePath);
           }
         }
 
         // Dodaj przetworzoną ścieżkę do Set
-        templateProcessedPaths.add(destBasePath);
+        templateProcessedPaths.add(normalizedDestPath);
 
       } catch (error) {
         console.error(`    ❌ Błąd podczas usuwania plików w ${destBasePath}:`, error);
@@ -181,6 +151,9 @@ function cleanSharedFiles(): void {
   }
 
   console.log("\n✅ Czyszczenie zakończone!\n");
+
+  // Wyświetl podsumowanie w formacie JSON
+  printJsonSummary("Podsumowanie usuniętych plików", removedFiles);
 }
 
 cleanSharedFiles();

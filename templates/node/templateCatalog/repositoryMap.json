@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.92",
+  "templateVersion": "1.0.93",
   "fileMap": [
     "templateCatalog/.commitlintrc.js-default.md",
     "templateCatalog/.cursorignore-default.md",
@@ -134,7 +134,6 @@
     "./docs/WayToWrok.md",
     "./docs/actions-secrets.png",
     "./docs/cz-problem.png",
-    "./docs/fetchUpstream.png",
     "./docs/gh.png",
     "./docs/gh_token_permission.png",
     "./docs/knowProblems.md",
@@ -240,7 +239,6 @@
     ".github/assets/runningTests.png",
     "docs/actions-secrets.png",
     "docs/cz-problem.png",
-    "docs/fetchUpstream.png",
     "docs/gh.png",
     "docs/gh_token_permission.png",
     "docs/npm.png"

@@ -1,30 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
-import * as yaml from "js-yaml";
 import * as fse from "fs-extra";
-
-const SHARED_DIR = path.join(__dirname, "../shared");
-const TEMPLATES_DIR = path.join(__dirname, "../templates");
-const CONFIG_PATH = path.join(__dirname, "../sync-config.yaml");
-
-type ProjectConfig = {
-  projects: string[];
-  excludeFiles?: string[];
-  asName?: string;
-};
-
-type SyncConfig = {
-  [key: string]: ProjectConfig | string[];
-};
-
-function loadConfig(): SyncConfig {
-  if (!fs.existsSync(CONFIG_PATH)) {
-    console.error("❌ Missing sync-config.yaml file");
-    process.exit(1);
-  }
-  const fileContent = fs.readFileSync(CONFIG_PATH, "utf8");
-  return yaml.load(fileContent) as SyncConfig;
-}
+import {
+  SHARED_DIR,
+  TEMPLATES_DIR,
+  loadConfig,
+  isProjectConfig,
+  printJsonSummary
+} from "./utils";
 
 function logTemplateComparison(
   templatesDir: string[],
@@ -126,14 +109,6 @@ function compareFiles(src: string, dest: string, template: string): boolean {
   }
 }
 
-function isProjectConfig(
-  value: ProjectConfig | string[]
-): value is ProjectConfig {
-  return (
-    typeof value === "object" && !Array.isArray(value) && "projects" in value
-  );
-}
-
 function syncSharedFiles(): void {
   const config = loadConfig();
 
@@ -146,6 +121,9 @@ function syncSharedFiles(): void {
 
   // Śledź już przetworzone ścieżki dla każdego template
   const processedPaths = new Map<string, Set<string>>();
+
+  // Śledź skopiowane pliki
+  const copiedFiles: Record<string, string[]> = {};
 
   sortedEntries.forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
@@ -165,6 +143,11 @@ function syncSharedFiles(): void {
     }
 
     projects.forEach((template) => {
+      // Inicjalizuj tablicę dla template jeśli nie istnieje
+      if (!copiedFiles[template]) {
+        copiedFiles[template] = [];
+      }
+
       // Inicjalizuj Set dla template jeśli nie istnieje
       if (!processedPaths.has(template)) {
         processedPaths.set(template, new Set());
@@ -178,15 +161,24 @@ function syncSharedFiles(): void {
         ? path.join(TEMPLATES_DIR, template, path.dirname(sharedPath), asName)
         : path.join(TEMPLATES_DIR, template, sharedPath);
 
+      // Normalizuj ścieżkę, aby uniknąć problemów z './' i '/'
+      const normalizedDestPath = path.normalize(destPath);
+
       // Sprawdź czy ta ścieżka (lub jej nadrzędna) została już przetworzona
       const isAlreadyProcessed = Array.from(templateProcessedPaths).some(
-        processed => destPath.startsWith(processed)
+        processed => normalizedDestPath.startsWith(path.normalize(processed))
       );
 
       if (isAlreadyProcessed) {
         console.log(`    ⏭️  Already processed in more specific configuration - skipping`);
         return;
       }
+
+      // Sprawdź, czy mamy specjalną flagę dla kopiowania do katalogu głównego
+      const copyToRoot = isProjectConfig(configValue) && configValue.copyToRoot === true;
+      const finalDestPath = copyToRoot
+        ? path.join(TEMPLATES_DIR, template)
+        : destPath;
 
       const shouldCopyFile = (src: string): boolean => {
         const relativePath = path.relative(srcPath, src);
@@ -201,23 +193,48 @@ function syncSharedFiles(): void {
           console.log(`    🚫 Excluding file: ${relativePath}`);
           return false;
         }
+
+        // Dodaj plik do listy skopiowanych
+        if (fs.statSync(src).isFile()) {
+          const destFile = copyToRoot
+            ? path.join(finalDestPath, relativePath)
+            : path.join(destPath, relativePath);
+          copiedFiles[template].push(destFile);
+        }
+
         return true;
       };
 
       try {
         if (fs.statSync(srcPath).isDirectory()) {
-          fse.copySync(srcPath, destPath, {
-            filter: shouldCopyFile,
-            overwrite: true
-          });
+          if (copyToRoot) {
+            // Kopiuj zawartość folderu do katalogu głównego projektu
+            const items = fs.readdirSync(srcPath);
+            for (const item of items) {
+              const itemSrcPath = path.join(srcPath, item);
+              const itemDestPath = path.join(finalDestPath, item);
+
+              if (shouldCopyFile(itemSrcPath)) {
+                fse.copySync(itemSrcPath, itemDestPath, { overwrite: true });
+              }
+            }
+            console.log(`    📦 Copied contents to root directory: ${finalDestPath}`);
+          } else {
+            // Standardowe kopiowanie
+            fse.copySync(srcPath, finalDestPath, {
+              filter: shouldCopyFile,
+              overwrite: true
+            });
+          }
         } else {
           if (shouldCopyFile(srcPath)) {
-            fse.copySync(srcPath, destPath, { overwrite: true });
+            fse.copySync(srcPath, finalDestPath, { overwrite: true });
+            copiedFiles[template].push(finalDestPath);
           }
         }
 
         // Dodaj przetworzoną ścieżkę do Set
-        templateProcessedPaths.add(destPath);
+        templateProcessedPaths.add(normalizedDestPath);
 
       } catch (error) {
         console.error(`Error processing ${srcPath}:`, error);
@@ -226,6 +243,9 @@ function syncSharedFiles(): void {
   });
 
   console.log("\n✅ Synchronization completed!\n");
+
+  // Wyświetl podsumowanie w formacie JSON
+  printJsonSummary("Podsumowanie skopiowanych plików", copiedFiles);
 }
 
 syncSharedFiles();

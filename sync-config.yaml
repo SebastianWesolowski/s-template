@@ -49,18 +49,18 @@
   - startetNpmPackage/node
   - node
 
-'[next]':
+"[next]":
   projects:
     - NextJs/NextJs15
-  asName: ./
+  copyToRoot: true
 
 '[node]':
   projects:
     - startetNpmPackage/node
     - node
-  asName: ./
+  copyToRoot: true
 
-'@types':
+"@types":
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
@@ -72,8 +72,8 @@ docs:
     - node
   excludeFiles:
     - npm.png
-    - '[web]'
-    - '[npm]'
+    - "[web]"
+    - "[npm]"
 
 docs/[web]/HowToAutoDeploy.md:
   projects:
@@ -100,12 +100,12 @@ tools/transform-browser-list:
   projects:
     - NextJs/NextJs15
 
-tools/addDependency:
+tools/addDependency.js:
   projects:
     - startetNpmPackage/node
     - node
 
-tools/addModuleType:
+tools/addModuleType.js:
   projects:
     - startetNpmPackage/node
     - node
