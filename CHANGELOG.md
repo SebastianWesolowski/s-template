@@ -1,3 +1,10 @@
+## [1.5.0-dev.20](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.19...v1.5.0-dev.20) (March 17, 2025)
+
+
+### Other tasks
+
+- ✨ [] update deoebndency ([afd2b54](https://github.com/SebastianWesolowski/s-template/commit/afd2b547297fe48fadfae500a43e2de4dc679b1d))
+
 ## [1.5.0-dev.19](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.18...v1.5.0-dev.19) (March 17, 2025)
 
 
