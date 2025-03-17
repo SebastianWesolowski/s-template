@@ -3,6 +3,7 @@
 This document provides detailed instructions on how to work with this template. For a quick start guide, see the [README.md](../README.md).
 
 ## Table of Contents
+
 - [Development and Setup](#-development-and-setup)
   - [Installation](#install-the-dependencies)
   - [Update Manager](#run-the-update-with-s-update-manager)
@@ -102,10 +103,13 @@ Just use `yarn dev:build` and look at the build version on local environment.
 ## Deployment Workflow
 
 ### Pre-release
+
 Pre-release is prepared from feature and dev branches.
 
 ### Pre-production
+
 Pre-production should be created with a pull request to the main branch.
 
 ### Release
+
 Release is created on the main branch and prepared by GitHub Actions.

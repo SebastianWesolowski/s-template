@@ -9,7 +9,6 @@ import {
   jsEslint,
   typescriptEslintConfig,
   typescriptEslintConfigRecommended,
-  typescriptEslintConfigRecommendedTypeChecked,
 } from './eslint.config.mjs';
 
 const config = typescriptEslint.config(
@@ -19,7 +18,6 @@ const config = typescriptEslint.config(
   },
   { ...typescriptEslintConfig },
   typescriptEslintConfigRecommended,
-  typescriptEslintConfigRecommendedTypeChecked,
   jsEslint,
   eslintPluginImportConfig,
   {

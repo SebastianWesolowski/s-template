@@ -27,7 +27,6 @@
 
 ### Set up Tokens
 
-
 #### Add Tokens for NPM(**Automation**), Github
 
 Add your npm token to your GitHub repository secrets as `NPM_TOKEN`, `GH_TOKEN`
@@ -50,7 +49,6 @@ Read and write permissions
 
 ![gh.png](gh.png)
 
-
 ### Before final publish
 
 use `use customize:clean` it
@@ -64,10 +62,13 @@ use `use customize:clean` it
 ### Publish
 
 #### Pre-release
+
 Pre-release is prepared from feature and dev branches.
 
 #### Pre-production
+
 Pre-production should be created with a pull request to the main branch.
 
 #### Release
+
 Release is created on the main branch and prepared by GitHub Actions.

@@ -1,7 +1,7 @@
-import fs from "fs/promises";
-import path from "path";
-import { config } from "./customize.config";
-import { ValidationResult } from "./type";
+import fs from 'fs/promises';
+import path from 'path';
+import { config } from './customize.config';
+import { ValidationResult } from './type';
 
 async function fileExists(filePath: string): Promise<boolean> {
   try {
@@ -30,18 +30,14 @@ async function validateConfig(): Promise<ValidationResult> {
     // Check if files exist and contain placeholders
     for (const filePath of replacement.files) {
       if (!(await fileExists(filePath))) {
-        errors.push(
-          `File not found: ${filePath} for ${replacement.placeholder}`
-        );
+        errors.push(`File not found: ${filePath} for ${replacement.placeholder}`);
         continue;
       }
 
       try {
-        const content = await fs.readFile(filePath, "utf-8");
+        const content = await fs.readFile(filePath, 'utf-8');
         if (!content.includes(replacement.placeholder)) {
-          errors.push(
-            `Placeholder "${replacement.placeholder}" not found in ${filePath}`
-          );
+          errors.push(`Placeholder "${replacement.placeholder}" not found in ${filePath}`);
         }
       } catch (error: unknown) {
         if (error instanceof Error) {
@@ -59,20 +55,14 @@ async function validateConfig(): Promise<ValidationResult> {
   };
 }
 
-async function replaceInFile(
-  filePath: string,
-  placeholder: string,
-  value: string
-): Promise<void> {
+async function replaceInFile(filePath: string, placeholder: string, value: string): Promise<void> {
   try {
-    const content = await fs.readFile(filePath, "utf-8");
-    const updatedContent = content.replace(new RegExp(placeholder, "g"), value);
+    const content = await fs.readFile(filePath, 'utf-8');
+    const updatedContent = content.replace(new RegExp(placeholder, 'g'), value);
     await fs.writeFile(filePath, updatedContent);
   } catch (error: unknown) {
     if (error instanceof Error) {
-      throw new Error(
-        `Failed to replace in file ${filePath}: ${error.message}`
-      );
+      throw new Error(`Failed to replace in file ${filePath}: ${error.message}`);
     }
     throw new Error(`Failed to replace in file ${filePath}: Unknown error`);
   }
@@ -97,16 +87,16 @@ async function cleanupBackups(): Promise<void> {
     return backups;
   };
 
-  const backups = await findBackups(".");
+  const backups = await findBackups('.');
   for (const backup of backups) {
     await fs.unlink(backup);
   }
 }
 
 async function cleanupFiles(): Promise<void> {
-  const filesToRemove = ["todo.md"];
+  const filesToRemove = ['todo.md'];
 
-  const directoriesToRemove = ["docs", "tools/customize"];
+  const directoriesToRemove = ['docs', 'tools/customize'];
 
   // Remove individual files
   for (const file of filesToRemove) {
@@ -115,7 +105,7 @@ async function cleanupFiles(): Promise<void> {
       console.log(`✓ Deleted ${file}`);
     } catch (error) {
       // Ignore errors if file doesn't exist
-      if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
         console.error(`Failed to delete ${file}`);
       }
       // Możemy dodać informację, że plik nie istniał
@@ -132,7 +122,7 @@ async function cleanupFiles(): Promise<void> {
       console.log(`✓ Deleted directory ${dir} and all its contents`);
     } catch (error) {
       // Ignore errors if directory doesn't exist
-      if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
         console.error(`Failed to delete directory ${dir}`);
       }
       // Możemy dodać informację, że katalog nie istniał
@@ -144,11 +134,11 @@ async function cleanupFiles(): Promise<void> {
 }
 
 async function customize(): Promise<void> {
-  console.log("Starting customization process...");
+  console.log('Starting customization process...');
 
   const validation = await validateConfig();
   if (!validation.isValid) {
-    console.error("Validation failed:");
+    console.error('Validation failed:');
     validation.errors.forEach((error) => console.error(`- ${error}`));
     process.exit(1);
   }
@@ -163,17 +153,17 @@ async function customize(): Promise<void> {
     }
 
     await cleanupBackups();
-    console.log("✓ Cleaned up backup files");
+    console.log('✓ Cleaned up backup files');
 
     await cleanupFiles();
-    console.log("✓ Cleaned up customization files");
+    console.log('✓ Cleaned up customization files');
 
-    console.log("✓ Customization completed successfully");
+    console.log('✓ Customization completed successfully');
   } catch (error: unknown) {
     if (error instanceof Error) {
-      console.error("❌ Customization failed:", error.message);
+      console.error('❌ Customization failed:', error.message);
     } else {
-      console.error("❌ Customization failed with unknown error");
+      console.error('❌ Customization failed with unknown error');
     }
     process.exit(1);
   }
@@ -181,9 +171,9 @@ async function customize(): Promise<void> {
 
 customize().catch((error: unknown) => {
   if (error instanceof Error) {
-    console.error("Fatal error:", error.message);
+    console.error('Fatal error:', error.message);
   } else {
-    console.error("Fatal unknown error occurred");
+    console.error('Fatal unknown error occurred');
   }
   process.exit(1);
 });

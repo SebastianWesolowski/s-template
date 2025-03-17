@@ -75,7 +75,6 @@ export const eslintSettings = {
 };
 
 export const typescriptEslintConfigRecommended = typescriptEslint.configs.recommended;
-export const typescriptEslintConfigRecommendedTypeChecked = typescriptEslint.configs.recommendedTypeChecked;
 
 const config = [
   {
