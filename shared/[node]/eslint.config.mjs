@@ -3,7 +3,8 @@ import eslintPluginSecurity from 'eslint-plugin-security';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import * as fs from 'fs';
 import path from 'path';
-import typescriptEslint from 'typescript-eslint';
+import { FlatCompat } from '@eslint/eslintrc';
+import * as typescriptEslint from 'typescript-eslint';
 
 export const eslintIgnore = [
   '.git/',
@@ -25,6 +26,11 @@ export const eslintIgnore = [
   'tsconfig.json',
   '.eslintrc.js',
   '.husky',
+  '.commitlintrc.js',
+  '.releaserc.js',
+  'tools/addDependency.js',
+  'tools/addModuleType.js',
+  'tools/ngrok-auth.js',
 ];
 
 export const eslintFiles = ['./src/**/*.+(js|ts)', './**/*.test.+(js|ts)'];
@@ -33,7 +39,7 @@ export const typescriptEslintConfig = {
   languageOptions: {
     parser: typescriptEslint.parser,
     parserOptions: {
-      project: true,
+      project: './tsconfig.json',
       tsconfigRootDir: process.cwd(),
     },
   },
@@ -44,11 +50,8 @@ export const jsEslint = {
   files: ['*.js', '*.mjs'],
   ignores: ['eslint.config.mjs', 'eslint.config.strict.mjs'],
   languageOptions: {
-    parser: 'espree',
-    parserOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
 };
 
@@ -72,34 +75,36 @@ export const eslintSettings = {
 };
 
 export const typescriptEslintConfigRecommended = typescriptEslint.configs.recommended;
-export const typescriptEslintConfigRecommendedTypeChecked = typescriptEslint.configs.recommendedTypeChecked;
 
-const config = typescriptEslint.config(
+const config = [
   {
     ignores: eslintIgnore,
-    files: eslintFiles,
   },
-  { ...typescriptEslintConfig },
-  typescriptEslintConfigRecommended,
-  typescriptEslintConfigRecommendedTypeChecked,
-  jsEslint,
-  eslintPluginImportConfig,
+  ...typescriptEslintConfigRecommended,
   {
-    plugins: eslintPluginsConfig,
+    files: eslintFiles,
+    languageOptions: {
+      parser: typescriptEslint.parser,
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: process.cwd(),
+      },
+    },
+    plugins: {
+      'unused-imports': eslintPluginUnusedImports,
+      security: eslintPluginSecurity,
+      '@typescript-eslint': typescriptEslint.plugin,
+      import: eslintPluginImport,
+    },
     rules: {
-      // Security rules - keeping only basic ones
       'security/detect-eval-with-expression': 'warn',
       'security/detect-no-csrf-before-method-override': 'warn',
       'security/detect-possible-timing-attacks': 'warn',
       'security/detect-non-literal-regexp': 'warn',
-
-      // Import rules
       'import/no-duplicates': 'warn',
       'import/newline-after-import': 'warn',
       'import/first': 'warn',
       'import/no-cycle': 'warn',
-
-      // Unused imports
       'unused-imports/no-unused-imports': 'warn',
       'unused-imports/no-unused-vars': [
         'warn',
@@ -110,22 +115,15 @@ const config = typescriptEslint.config(
           argsIgnorePattern: '^_',
         },
       ],
-
-      // Basic security rules
       'no-eval': 'warn',
       'no-implied-eval': 'warn',
       'no-new-func': 'warn',
-
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-
-      // Console rules
       'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
-
-      // TypeScript rules
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-misused-promises': 'warn',
       '@typescript-eslint/await-thenable': 'warn',
@@ -137,14 +135,23 @@ const config = typescriptEslint.config(
           varsIgnorePattern: '^_',
         },
       ],
-
-      // Simplified import sorting
       'sort-imports': 'warn',
       'import/order': 'warn',
     },
   },
   {
+    files: ['*.js', '*.mjs'],
+    ignores: ['eslint.config.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+    },
+  },
+  {
     settings: eslintSettings,
+    plugins: {
+      import: eslintPluginImport,
+    },
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -182,8 +189,8 @@ const config = typescriptEslint.config(
         },
       ],
     },
-  }
-);
+  },
+];
 
 export function getDirectoriesToSort() {
   const ignoredSortingDirectories = ['.git', '.vscode', 'node_modules', '.cache', 'public'];

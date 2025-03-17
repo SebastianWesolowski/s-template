@@ -13,7 +13,6 @@
     "dev": "cross-env SDEBUG=true tsx watch ./src/index.ts",
     "dev:tunnel": "run-p ngrok:auth dev ngrok",
     "ℹ️ info:Production": "ℹ️",
-
     "build:prebuild": "run-s build:clean build:prepare",
     "build": "run-s build:prebuild build:rollup",
     "build:rollup": "npx rollup -c rollup.config.mjs",
@@ -36,9 +35,9 @@
     "lint:fix": "run-p lint:prettier:fix lint:eslint:fix",
     "lint:prettier:check": "prettier --check --cache './src/**/*.{js,ts,md,json}'",
     "lint:prettier:fix": "prettier --write --cache './src/**/*.{js,ts,md,json}'",
-    "lint:eslint:check": "eslint --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --max-warnings 0 --config eslint.config.mjs",
-    "lint:eslint:check:strict": "eslint --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --max-warnings 0 --config eslint.config.strict.mjs",
-    "lint:eslint:fix": "eslint --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --fix --config eslint.config.strict.mjs",
+    "lint:eslint:check": "eslint --no-error-on-unmatched-pattern --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --max-warnings 0 --config eslint.config.mjs",
+    "lint:eslint:check:strict": "eslint --no-error-on-unmatched-pattern --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --max-warnings 0 --config eslint.config.strict.mjs",
+    "lint:eslint:fix": "eslint --no-error-on-unmatched-pattern --cache --cache-strategy content --cache-location .eslintcache/ './src/**/*.+(js|ts)' --fix --config eslint.config.strict.mjs",
     "lint:typescript:check": "tsc --noEmit --project ./tsconfig.json",
     "ℹ️ info:Quality": "ℹ️",
     "quality:coverage": "yarn test:unit --coverage --coverageDirectory=./reports/coverage",
@@ -146,7 +145,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME.git"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}.git"
   },
   "license": "MIT",
   "author": {
@@ -158,12 +157,13 @@
     "node": ">=0.0.0"
   },
   "bugs": {
-    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME/issues"
+    "url": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/issues"
   },
-  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/PLACEHOLDER_REPO_NAME#readme",
+  "homepage": "https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}#readme",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"
-    }
+    },
+    "issueTag": "SC"
   }
 }

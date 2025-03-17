@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo \[🐶 Husky] Running pre-commit hook...\
 
 # Get current branch

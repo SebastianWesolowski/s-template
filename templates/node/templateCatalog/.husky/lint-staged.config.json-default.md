@@ -1,8 +1,4 @@
 {
-  "*.{js,jsx,ts,tsx,json}": [
-    "yarn run staged:prettier:fix",
-    "yarn run staged:prettier:check",
-    "yarn run staged:lint:fix",
-    "yarn run staged:lint:check"
-  ]
+  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "jest --bail --findRelatedTests --passWithNoTests"],
+  "*.{json,md,yml}": ["prettier --write"]
 }

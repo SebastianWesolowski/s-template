@@ -1,40 +1,44 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testEnvironmentOptions: {
-    experimentalVmModules: true,
-  },
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
+
+  // Konfiguracja pokrycia kodu
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts?(x)',
-    '!<rootDir>/src/**/*.d.ts',
-    '!<rootDir>/src/**/index.ts',
-    '!<rootDir>/src/**/*.interface.ts',
-    '!<rootDir>/src/**/*.enum.ts',
-    '!<rootDir>/src/**/*.constant.ts',
+    '!<rootDir>/src/**/*.{d.ts,index.ts,interface.ts,enum.ts,constant.ts}',
   ],
+
+  // Mapowanie modułów
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^(\\.{1,2}/.*)\\.js$': '$1',
   },
-  verbose: true,
+
+  // Konfiguracja ESM
+  extensionsToTreatAsEsm: ['.ts', '.tsx', '.mts'],
   transform: {
     '^.+\\.tsx?$': [
       'ts-jest',
       {
-        diagnostics: false,
         isolatedModules: true,
         tsconfig: '<rootDir>/tsconfig.json',
-        sourceMap: true,
+        useESM: true,
       },
     ],
   },
+
+  // Ścieżki i ustawienia środowiska
   moduleDirectories: ['node_modules', 'src'],
   roots: ['<rootDir>/src'],
   testPathIgnorePatterns: ['/node_modules/', '/dist/', '/lib/', '/coverage/'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+
+  // Ustawienia mocków
   clearMocks: true,
   resetMocks: true,
   restoreMocks: true,
+
   maxWorkers: '50%',
 };

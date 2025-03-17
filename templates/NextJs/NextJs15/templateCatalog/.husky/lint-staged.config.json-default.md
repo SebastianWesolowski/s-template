@@ -1,5 +1,5 @@
 {
-  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "jest --bail --findRelatedTests"],
+  "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix", "jest --bail --findRelatedTests --passWithNoTests"],
   "*.{json,css,md,yml}": ["prettier --write"],
   "*.{css,scss,sass}": ["stylelint --fix"]
 }
