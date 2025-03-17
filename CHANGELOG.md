@@ -1,3 +1,10 @@
+## [1.5.0-dev.19](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.18...v1.5.0-dev.19) (March 17, 2025)
+
+
+### Other tasks
+
+- ✨ [] sync node template ([3346ad7](https://github.com/SebastianWesolowski/s-template/commit/3346ad78ca0e65aba7a39fcc18a89f9d51f6d734))
+
 ## [1.5.0-dev.18](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.17...v1.5.0-dev.18) (March 15, 2025)
 
 
