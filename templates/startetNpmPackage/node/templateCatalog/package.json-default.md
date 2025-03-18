@@ -137,7 +137,6 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.2.1",
     "ts-node-dev": "^2.0.0",
-    "tsc": "^2.0.4",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.2",
     "typed-query-selector": "^2.12.0",

@@ -116,7 +116,6 @@
     "semantic-release": "^24.2.2",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.2.1",
-    "tsc": "^2.0.4",
     "tsx": "^4.19.2",
     "typed-query-selector": "^2.12.0",
     "typescript-eslint": "^8.21.0",

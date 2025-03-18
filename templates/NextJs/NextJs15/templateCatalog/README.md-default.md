@@ -122,6 +122,8 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
 
+### GitFlow
+
 - [Development Workflow](./docs/WayToWrok.md#-development-and-setup) - Complete setup instructions
 - [Pre-release Process](./docs/WayToWrok.md#pre-release) - From feature and dev branches
 - [Pre-production Setup](./docs/WayToWrok.md#pre-production) - Via pull requests to main
@@ -129,49 +131,60 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 ## 📃 Scripts Overview
 
-### Development
+The template project includes a variety of configured scripts divided into logical categories:
 
-- `dev`: Starts the development server
-- `dev:storybook`: Starts development server with storybook server
-- `dev:tunnel`: Starts the development server with **[ngrok](https://ngrok.com/)**
-- `dev:build`: Builds localy the app for production
+### 🚀 Development & Running
 
-### Production
+- `dev` - Runs Next.js development server with turbo
+- `dev:storybook` - Runs development server and Storybook concurrently
+- `dev:tunnel` - Runs development server with ngrok exposure
+- `dev:build` - Builds production app and runs it locally
+- `build:analyze` - Builds app with bundle size analysis
 
-- `build`: Builds the app for production
-- `build:prod`: Builds the app for production
+### 🏗️ Building
+
+- `build` - Builds app for deployment
+- `build:prod` - Builds production app with additional final steps
+- `build:prebuild` - Prepares environment before building (cleaning and copying assets)
+- `build:postbuild` - Executes post-build tasks (e.g. sitemap generation)
 
 ### 🧪 Testing
 
-- `build:analyze`: Builds the app for production and analyzes the bundle size
-- `test:*`: Runs unit and integration tests with coverage
-- `e2e:*`: Runs end-to-end tests (headless or with UI)
-- `test:typescript`: Runs TypeScript compiler checks
+- `test` - Runs all tests (unit, component, snapshot, smoke, e2e)
+- `test:unit` - Runs Jest unit tests
+- `test:components` - Runs React component tests
+- `test:snapshot` - Runs UI snapshot comparison tests
+- `test:smoke` - Runs smoke tests in Storybook
+- `test:e2e` - Runs Playwright end-to-end tests
+- `test:e2e:ui` - Runs end-to-end tests in UI mode
 
 ### 🔍 Linting & Formatting
 
-- `lint:*`: Lints and fixes code using ESLint
-- `prettier:*`: Checks and fixes code formatting
-- `eslint:*`: Runs ESLint checks and fixes
-- `staged:*`: Runs linting and formatting checks on git staged files
+- `lint` - Runs all code checking tools
+- `lint:check` - Checks code correctness without making changes
+- `lint:fix` - Automatically fixes code issues
+- `lint:prettier:check/fix` - Checks/fixes formatting with Prettier
+- `lint:eslint:check/fix` - Checks/fixes code with ESLint
+- `lint:style:check/fix` - Checks/fixes CSS styles with Stylelint
+- `lint:typescript:check` - Checks TypeScript types
+
+### 📊 Code Quality
+
+- `quality:knip` - Detects unused code in project
+- `quality:coverage` - Generates test coverage report
+- `quality:coupling:graph` - Creates visualization of module dependencies
+- `quality:coupling:json` - Exports dependency data to JSON format
 
 ### 📚 Storybook
 
-- `storybook`: Starts Storybook server
-- `storybook:build`: Builds Storybook for deployment
-- `storybook:build`: Builds Storybook for deployment
+- `storybook` - Runs Storybook server
+- `storybook:build` - Builds static Storybook for deployment
 
-### 📝 Git Hooks & Commits
+### 🛠️ Tools & Configuration
 
-- `commit`: Creates conventional commit messages
-- `prepare`: Sets up Husky git hooks
-- `husky:*`: Manages git hooks for commits and pushes
-
-### 🛠️ Tools
-
-- `coupling-graph`: Generates coupling and cohesion graph
-- `customize`: Runs project customization script
-- `postinstall`: Applies patches to dependencies
+- `customize` - Runs project customization script
+- `update-template` - Updates project from central template repository
+- `ngrok` - Exposes local server through ngrok
 
 ## 🔗 Coupling Graph
 
