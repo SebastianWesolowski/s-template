@@ -42,6 +42,11 @@ export const config: CustomizeConfig = {
       value: 'sebastian.wesolowski.sw',
       files: ['README.md', './docs/HowToAutoDeploy.md'],
     },
+    {
+      placeholder: '{{PLACEHOLDER_CURRENT_YEAR}}',
+      value: new Date().getFullYear().toString(),
+      files: ['LICENSE'],
+    },
   ],
   cleanupExtensions: ['.mybak'],
 };
