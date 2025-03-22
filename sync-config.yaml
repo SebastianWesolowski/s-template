@@ -4,6 +4,7 @@
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
   excludeFiles:
     - workflows
 
@@ -13,6 +14,7 @@
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
   excludeFiles:
     - ci.yml
 
@@ -22,6 +24,7 @@
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
   excludeFiles:
     - lint-staged-with-style.config.json
     - lint-staged.config.json
@@ -31,6 +34,7 @@
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
 
 .husky/lint-staged-with-style.config.json:
   projects:
@@ -42,6 +46,7 @@
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 "[next]":
   projects:
@@ -57,6 +62,7 @@
 '[nestjs]':
   projects:
     - nestjs
+    - nestjsModule
   copyToRoot: true
 
 docs:
@@ -65,6 +71,7 @@ docs:
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
   excludeFiles:
     - npm.png
     - "[web]"
@@ -87,6 +94,7 @@ tools:
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
   excludeFiles:
     - transform-browser-list
     - addDependency.js
@@ -101,73 +109,86 @@ tools/addDependency.js:
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
 
 tools/addModuleType.js:
   projects:
     - startetNpmPackage/node
     - node
     - nestjs
+    - nestjsModule
 
 .commitlintrc.js:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .cursorignore:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .editorconfig:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .gitattributes:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .npmrc:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .nvmrc:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .prettierignore:
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .quokka:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 .releaserc.js:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 LICENSE:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
 
 prettier.config.js:
   - startetNpmPackage/node
   - node
   - nestjs
+  - nestjsModule
