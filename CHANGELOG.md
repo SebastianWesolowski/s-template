@@ -1,3 +1,10 @@
+## [1.5.0-dev.22](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.21...v1.5.0-dev.22) (March 22, 2025)
+
+
+### Other tasks
+
+- ✨ [] build SUM files ([f8527fb](https://github.com/SebastianWesolowski/s-template/commit/f8527fbd2f98d1334ef05cdc3eb3ce71109df6df))
+
 ## [1.5.0-dev.21](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.20...v1.5.0-dev.21) (March 22, 2025)
 
 
