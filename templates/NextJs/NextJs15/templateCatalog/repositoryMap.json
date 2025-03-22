@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.93",
+  "templateVersion": "1.0.96",
   "fileMap": [
     "templateCatalog/.browserslistrc-default.md",
     "templateCatalog/.commitlintrc.js-default.md",
