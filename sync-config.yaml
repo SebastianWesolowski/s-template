@@ -50,11 +50,17 @@
     - node
   copyToRoot: true
 
+'[nestjs]':
+  projects:
+    - nestjs
+  copyToRoot: true
+
 docs:
   projects:
     - NextJs/NextJs15
     - startetNpmPackage/node
     - node
+    - nestjs
   excludeFiles:
     - npm.png
     - "[web]"
@@ -69,6 +75,7 @@ docs/[npm]/HowToAutoDeploy.md:
   projects:
     - startetNpmPackage/node
     - node
+    - nestjs
   asName: ../HowToAutoDeploy.md
 
 tools:
@@ -76,6 +83,7 @@ tools:
     - NextJs/NextJs15
     - startetNpmPackage/node
     - node
+    - nestjs
   excludeFiles:
     - transform-browser-list
     - addDependency.js
@@ -89,61 +97,74 @@ tools/addDependency.js:
   projects:
     - startetNpmPackage/node
     - node
+    - nestjs
 
 tools/addModuleType.js:
   projects:
     - startetNpmPackage/node
     - node
+    - nestjs
 
 .commitlintrc.js:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .cursorignore:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .editorconfig:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .gitattributes:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .npmrc:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .nvmrc:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .prettierignore:
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .quokka:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 .releaserc.js:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 LICENSE:
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 prettier.config.js:
   - startetNpmPackage/node
   - node
+  - nestjs
