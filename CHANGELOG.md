@@ -1,3 +1,25 @@
+## [1.5.0-dev.21](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.20...v1.5.0-dev.21) (March 22, 2025)
+
+
+### [SC-110](https://linear.app/wesolowskidev/issue/SC-110)
+
+- ✨ [[SC-110](https://linear.app/wesolowskidev/issue/SC-110)] documentation for nextjs ([bf92f22](https://github.com/SebastianWesolowski/s-template/commit/bf92f22f9491f58f0f6077cd9f876ebe101da649))
+
+
+### [SC-153](https://linear.app/wesolowskidev/issue/SC-153)
+
+- ✨ [[SC-153](https://linear.app/wesolowskidev/issue/SC-153)] sync nestjs ([eefa14b](https://github.com/SebastianWesolowski/s-template/commit/eefa14b91d679e7d3b5dca4b54a02211f0f73765))
+- ✨ [[SC-153](https://linear.app/wesolowskidev/issue/SC-153)] add nestjs template ([4b916be](https://github.com/SebastianWesolowski/s-template/commit/4b916be8dde1a391aae587323c508a8fdb22d261))
+
+
+### Other tasks
+
+- 🐛 [] config from customization and sync ([a7b351c](https://github.com/SebastianWesolowski/s-template/commit/a7b351c90811f22fd633d041ea4f35505e8bb7c4))
+- 🐛 [] update readme ([3b24134](https://github.com/SebastianWesolowski/s-template/commit/3b2413442c8cc65cd1d050ee4a18d73534792e8b))
+- ✨ [] add template nestjsModule ([8cfcf9b](https://github.com/SebastianWesolowski/s-template/commit/8cfcf9bf3ee9dec4ea069ae73d7f99b9123beff3))
+- ✨ [] add nestjs to sync-config ([1280ff4](https://github.com/SebastianWesolowski/s-template/commit/1280ff404757ff8e9610ed671792785b73ae489a))
+- ✨ [] sync shared impovmen - gh workflow, docs ([fe5d490](https://github.com/SebastianWesolowski/s-template/commit/fe5d490361542071905998ab3c1fe00de5c6d9b9))
+
 ## [1.5.0-dev.20](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.19...v1.5.0-dev.20) (March 17, 2025)
 
 
