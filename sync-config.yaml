@@ -49,11 +49,6 @@
     - node
   copyToRoot: true
 
-"@types":
-  - NextJs/NextJs15
-  - startetNpmPackage/node
-  - node
-
 docs:
   projects:
     - NextJs/NextJs15

@@ -139,7 +139,6 @@
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.2",
-    "typed-query-selector": "^2.12.0",
     "typescript-eslint": "^8.21.0",
     "wait-on": "^8.0.2"
   },

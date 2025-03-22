@@ -66,6 +66,25 @@ jobs:
       lint_summary: ${{ steps.summary.outputs.lint_summary }}
 
     steps:
+      - name: 🔍 inputs
+        run: |
+          echo "Debugowanie inputów workflow:"
+          echo "cache_keys: ${{ inputs.cache_keys }}"
+          echo "eslint_check: ${{ inputs.eslint_check }}"
+          echo "fix_issues: ${{ inputs.fix_issues }}"
+          echo "install_args: ${{ inputs.install_args }}"
+          echo "install_deps: ${{ inputs.install_deps }}"
+          echo "node_version: ${{ inputs.node_version }}"
+          echo "prettier_check: ${{ inputs.prettier_check }}"
+          echo "stylelint_check: ${{ inputs.stylelint_check }}"
+          echo "typescript_check: ${{ inputs.typescript_check }}"
+          echo "upload_artifacts: ${{ inputs.upload_artifacts }}"
+
+          # Debugowanie cache keys po parsowaniu JSON
+          echo "Parsed cache keys:"
+          echo "lint_key: ${{ fromJSON(inputs.cache_keys).lint_key }}"
+          echo "deps_key: ${{ fromJSON(inputs.cache_keys).deps_key }}"
+
       - name: 📝 Checkout
         uses: actions/checkout@v4
         with:

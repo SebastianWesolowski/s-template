@@ -61,6 +61,7 @@
     "next-env.d.ts",
     "@types",
     "src/**/*.ts",
+
     "src/**/*.tsx",
     ".next/types/**/*.ts",
     "tools/snapshotUtils.ts"

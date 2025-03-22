@@ -47,6 +47,11 @@ export const config: CustomizeConfig = {
       value: new Date().getFullYear().toString(),
       files: ['LICENSE'],
     },
+    {
+      placeholder: '{{A template for creating ...}}',
+      value: 'A template for creating npm packages using TypeScript',
+      files: ['README.md', 'package.json'],
+    },
   ],
   cleanupExtensions: ['.mybak'],
 };
