@@ -55,6 +55,21 @@ jobs:
       ANALYZE: ${{ inputs.analyze_bundle && 'true' || 'false' }}
 
     steps:
+      - name: 🔍 inputs
+        run: |
+          echo "Debugowanie inputów workflow:"
+          echo "analyze_bundle: ${{ inputs.analyze_bundle }}"
+          echo "cache_keys: ${{ inputs.cache_keys }}"
+          echo "install_args: ${{ inputs.install_args }}"
+          echo "install_deps: ${{ inputs.install_deps }}"
+          echo "node_version: ${{ inputs.node_version }}"
+          echo "production_build: ${{ inputs.production_build }}"
+          echo "upload_artifacts: ${{ inputs.upload_artifacts }}"
+
+          echo "Parsed cache keys:"
+          echo "build_key: ${{ fromJSON(inputs.cache_keys).build_key }}"
+          echo "deps_key: ${{ fromJSON(inputs.cache_keys).deps_key }}"
+
       - name: 📝 Checkout
         uses: actions/checkout@v4
         with:

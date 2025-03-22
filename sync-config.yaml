@@ -37,6 +37,7 @@
   - NextJs/NextJs15
   - startetNpmPackage/node
   - node
+  - nestjs
 
 "[next]":
   projects:

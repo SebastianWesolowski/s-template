@@ -74,6 +74,25 @@ jobs:
       test_summary: ${{ steps.summary.outputs.test_summary }}
 
     steps:
+      - name: 🔍 inputs
+        run: |
+          echo "Debugowanie inputów workflow:"
+          echo "cache_keys: ${{ inputs.cache_keys }}"
+          echo "e2e_tests: ${{ inputs.e2e_tests }}"
+          echo "install_args: ${{ inputs.install_args }}"
+          echo "install_deps: ${{ inputs.install_deps }}"
+          echo "install_playwright: ${{ inputs.install_playwright }}"
+          echo "node_version: ${{ inputs.node_version }}"
+          echo "smoke_tests: ${{ inputs.smoke_tests }}"
+          echo "storybook_build: ${{ inputs.storybook_build }}"
+          echo "test_matrix: ${{ inputs.test_matrix }}"
+          echo "unit_tests: ${{ inputs.unit_tests }}"
+          echo "upload_artifacts: ${{ inputs.upload_artifacts }}"
+
+          echo "Parsed cache keys:"
+          echo "test_key: ${{ fromJSON(inputs.cache_keys).test_key }}"
+          echo "deps_key: ${{ fromJSON(inputs.cache_keys).deps_key }}"
+
       - name: 📝 Checkout
         uses: actions/checkout@v4
         with:
