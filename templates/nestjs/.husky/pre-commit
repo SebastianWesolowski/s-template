@@ -17,7 +17,7 @@ check_main_branch_updates() {
     behind_commits=$(git rev-list --count $current_branch..origin/main)
     if [ "$behind_commits" -gt 0 ]; then
         echo "ℹ️  Main branch has $behind_commits new commits that are not in your branch! Update your branch before committing."
-        echo "ℹ️  [⏩]Run: git stash && git merge origin/main && git stash pop"
+        echo "ℹ️  [⏩]Run: git stash && git rebase origin/main && git stash pop"
         return 1
     else
         echo "✅ Your branch is up to date with main"

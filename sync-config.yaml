@@ -3,6 +3,7 @@
     - NextJs/NextJs15
     - startetNpmPackage/node
     - node
+    - nestjs
   excludeFiles:
     - workflows
 
@@ -11,6 +12,7 @@
     - NextJs/NextJs15
     - startetNpmPackage/node
     - node
+    - nestjs
   excludeFiles:
     - ci.yml
 
@@ -19,6 +21,7 @@
     - NextJs/NextJs15
     - startetNpmPackage/node
     - node
+    - nestjs
   excludeFiles:
     - lint-staged-with-style.config.json
     - lint-staged.config.json
@@ -27,6 +30,7 @@
   projects:
     - startetNpmPackage/node
     - node
+    - nestjs
 
 .husky/lint-staged-with-style.config.json:
   projects:
@@ -75,7 +79,6 @@ docs/[npm]/HowToAutoDeploy.md:
   projects:
     - startetNpmPackage/node
     - node
-    - nestjs
   asName: ../HowToAutoDeploy.md
 
 tools:
