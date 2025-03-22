@@ -1,3 +1,10 @@
+## [1.5.0-dev.23](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.22...v1.5.0-dev.23) (March 22, 2025)
+
+
+### Other tasks
+
+- 🐛 [] unignore env.example* ([089c216](https://github.com/SebastianWesolowski/s-template/commit/089c216666ab6bfd60239c9dea059c58682e879c))
+
 ## [1.5.0-dev.22](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.21...v1.5.0-dev.22) (March 22, 2025)
 
 
