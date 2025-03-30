@@ -52,6 +52,16 @@ on:
         required: false
         type: boolean
         default: true
+      release_type_detected:
+        description: 'Type of release detected (production, preprod, prerelease, feature)'
+        required: false
+        type: string
+        default: 'prerelease'
+      framework_type:
+        description: 'Type of framework detected (next, nest, react)'
+        required: false
+        type: string
+        default: 'next'
     outputs:
       lint_summary:
         description: 'Summary of lint results'
@@ -67,6 +77,7 @@ jobs:
 
     steps:
       - name: 🔍 inputs
+        id: check_inputs
         run: |
           echo "Debugowanie inputów workflow:"
           echo "cache_keys: ${{ inputs.cache_keys }}"
@@ -79,6 +90,7 @@ jobs:
           echo "stylelint_check: ${{ inputs.stylelint_check }}"
           echo "typescript_check: ${{ inputs.typescript_check }}"
           echo "upload_artifacts: ${{ inputs.upload_artifacts }}"
+          echo "release_type_detected: ${{ inputs.release_type_detected }}"
 
           echo "Parsed cache keys:"
           echo "lint_key: ${{ fromJSON(inputs.cache_keys).lint_key }}"
@@ -121,35 +133,35 @@ jobs:
           yarn install ${{ inputs.install_args }} --prefer-offline --no-scripts
 
       - name: 🔍 TypeScript type checking
-        if: ${{ inputs.typescript_check }}
+        if: inputs.typescript_check == true
         run: yarn lint:typescript:check
 
       - name: 🔍 ESLint
-        if: ${{ inputs.eslint_check && !inputs.fix_issues }}
+        if: inputs.eslint_check == true && inputs.fix_issues != true
         run: yarn lint:eslint:check
 
       - name: 🔧 ESLint (with fixes)
-        if: ${{ inputs.eslint_check && inputs.fix_issues }}
+        if: inputs.eslint_check == true && inputs.fix_issues == true
         run: yarn lint:eslint:fix
 
       - name: 🔍 Prettier
-        if: ${{ inputs.prettier_check && !inputs.fix_issues }}
+        if: inputs.prettier_check == true && inputs.fix_issues != true
         run: yarn lint:prettier:check
 
       - name: 🔧 Prettier (with fixes)
-        if: ${{ inputs.prettier_check && inputs.fix_issues }}
+        if: inputs.prettier_check == true && inputs.fix_issues == true
         run: yarn lint:prettier:fix
 
       - name: 🔍 Stylelint
-        if: ${{ inputs.stylelint_check && !inputs.fix_issues }}
+        if: inputs.stylelint_check == true && inputs.fix_issues != true
         run: yarn lint:style:check
 
       - name: 🔧 Stylelint (with fixes)
-        if: ${{ inputs.stylelint_check && inputs.fix_issues }}
+        if: inputs.stylelint_check == true && inputs.fix_issues == true
         run: yarn lint:style:fix
 
       - name: 📊 Upload lint results
-        if: ${{ failure() || inputs.upload_artifacts }}
+        if: (failure() || inputs.upload_artifacts == true)
         uses: actions/upload-artifact@v4
         with:
           name: lint-results
@@ -167,6 +179,37 @@ jobs:
       - name: 📝 Summary
         id: summary
         run: |
+          DETAILS=()
+
+          # Dodanie informacji o wykonanych sprawdzeniach
+          if [[ "${{ inputs.typescript_check }}" == "true" ]]; then
+            DETAILS+=("- TypeScript: wykonano sprawdzenie typów")
+          fi
+
+          if [[ "${{ inputs.eslint_check }}" == "true" ]]; then
+            if [[ "${{ inputs.fix_issues }}" == "true" ]]; then
+              DETAILS+=("- ESLint: wykonano sprawdzenie z naprawą błędów")
+            else
+              DETAILS+=("- ESLint: wykonano sprawdzenie")
+            fi
+          fi
+
+          if [[ "${{ inputs.prettier_check }}" == "true" ]]; then
+            if [[ "${{ inputs.fix_issues }}" == "true" ]]; then
+              DETAILS+=("- Prettier: wykonano formatowanie kodu")
+            else
+              DETAILS+=("- Prettier: wykonano sprawdzenie formatowania")
+            fi
+          fi
+
+          if [[ "${{ inputs.stylelint_check }}" == "true" ]]; then
+            if [[ "${{ inputs.fix_issues }}" == "true" ]]; then
+              DETAILS+=("- Stylelint: wykonano sprawdzenie z naprawą błędów")
+            else
+              DETAILS+=("- Stylelint: wykonano sprawdzenie")
+            fi
+          fi
+
           # Przygotowanie podsumowania
           lint_summary=$(jq -n \
             --arg title "### Wyniki lintowania 🔍" \
@@ -174,19 +217,23 @@ jobs:
             --arg fix "${{ inputs.fix_issues }}" \
             --arg node "${{ inputs.node_version }}" \
             --arg time "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+            --arg release_type_detected "${{ inputs.release_type_detected }}" \
+            --arg framework_type "${{ inputs.framework_type }}" \
             --argjson checks "$(printf '%s\n' "${DETAILS[@]}" | jq -R . | jq -s .)" \
             '{
               markdown: {
                 title: $title,
                 subtitle: $subtitle,
                 details: $checks,
-                fix_status: (if $fix == "true" then "🔧 Wykonano automatyczne poprawki" else "" end)
+                fix_status: (if $fix == "true" then "🔧 Wykonano automatyczne poprawki" else "" end),
               },
               data: {
                 executed_checks: ($checks | map(sub("- "; "")) | join(",")),
                 fix_applied: ($fix == "true"),
                 node_version: $node,
-                timestamp: $time
+                timestamp: $time,
+                release_type_detected: $release_type_detected,
+                framework_type: $framework_type
               }
             }')
 
@@ -196,9 +243,16 @@ jobs:
             echo ""
             echo "$lint_summary" | jq -r '.markdown.subtitle'
             echo "$lint_summary" | jq -r '.markdown.details[]'
-            if [[ "${{ inputs.fix_issues }}" == "true" ]]; then
+
+            echo ""
+            echo "**Release type:** ${{ inputs.release_type_detected }}"
+            echo "**Framework type:** ${{ inputs.framework_type }}"
+
+            # Sprawdzenie czy jest status fix, bezpieczniejszy sposób
+            FIX_STATUS=$(echo "$lint_summary" | jq -r '.markdown.fix_status')
+            if [[ "$FIX_STATUS" != "" ]]; then
               echo ""
-              echo "$lint_summary" | jq -r '.markdown.fix_status'
+              echo "$FIX_STATUS"
             fi
           } >> $GITHUB_STEP_SUMMARY
 

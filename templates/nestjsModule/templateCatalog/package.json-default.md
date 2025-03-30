@@ -3,11 +3,8 @@
   "version": "0.0.0-development",
   "description": "{{A template for creating ...}}",
   "private": true,
-  "main": "./lib/index.js",
-  "files": [
-    "lib/**/*",
-    "CHANGELOG.md"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "ℹ️ info:Development": "ℹ️",
     "dev": "run-s \"nest:start -- --watch\"",
@@ -15,8 +12,9 @@
     "dev:tunnel": "run-p ngrok:auth dev ngrok",
     "ℹ️ info:Production": "ℹ️",
     "build:prebuild": "run-s build:clean",
-    "build": "run-s build:prebuild nest:build",
-    "build:prod": "run-s build node dist/main",
+    "build": "tsc -p tsconfig.json",
+    "build:prod": "run-s build:prebuild build",
+    "build:package": "run-s build:prod",
     "build:clean": "rimraf ./dist/",
     "start:prod": "run-s build nest:run:prod",
     "ℹ️ info:nestTools": "ℹ️",
@@ -25,7 +23,7 @@
     "nest:run:prod": "cross-env NODE_ENV=production node dist/main",
     "ℹ️ info:Testing": "ℹ️",
     "test": "run-s test:unit test:snapshot test:e2e",
-    "test:dev": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --passWithNoTests --updateSnapshot",
+    "test:dev": "cross-env NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest --runInBand --passWithNoTests --updateSnapshot",
     "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --passWithNoTests",
     "test:snapshot": "cross-env TEST_WITH_SNAPSHOTS=true node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --passWithNoTests --updateSnapshot",
     "test:unit:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch --passWithNoTests",
@@ -53,6 +51,9 @@
     "husky:prepare-commit-msg": "exec < /dev/tty && yarn commit --hook || true",
     "commit": "czg",
     "prepare": "husky",
+    "ℹ️ info:Release": "ℹ️",
+    "release": "semantic-release --debug",
+    "release:dry": "cross-env SKIP_TRANSFORM=true semantic-release --debug --dry-run",
     "ℹ️ info:Tools": "ℹ️",
     "mkdir:reports": "mkdir -p reports",
     "ngrok": "ngrok http 3000 --request-header-add=\"ngrok-skip-browser-warning: 1\"",
@@ -60,15 +61,9 @@
     "customize": "tsx tools/customize/customize.ts",
     "customize:clean": "echo TODO [SC-148]",
     "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjs'",
-    "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjs'",
-    "ℹ️ info:Zod": "ℹ️",
-    "zod:generate": "tsx tools/zod-generator/generate-schemas.ts",
-    "zod:watch": "tsx tools/zod-generator/generate-schemas.ts --watch"
+    "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjs'"
   },
   "dependencies": {
-    "@anatine/zod-mock": "^3.13.5",
-    "@anatine/zod-openapi": "^2.2.7",
-    "@faker-js/faker": "^9.6.0",
     "@nestjs/common": "^11.0.12",
     "@nestjs/config": "^3.2.0",
     "@nestjs/core": "^11.0.12",
@@ -82,9 +77,7 @@
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.0.1",
     "rxjs": "^7.8.2",
-    "typescript": "^5.7.3",
-    "zod": "^3.22.4",
-    "zod-to-ts": "^1.2.0"
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
@@ -147,7 +140,7 @@
     "prettier": "^3.5.3",
     "s-prettier": "^1.1.0",
     "s-update-manager": "^1.0.0-dev.48",
-    "semantic-release": "^24.2.2",
+    "semantic-release": "^24.2.3",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.1",
@@ -155,8 +148,7 @@
     "ts-node": "^10.2.1",
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.19.2",
-    "typescript-eslint": "^8.21.0",
-    "wait-on": "^8.0.2"
+    "typescript-eslint": "^8.21.0"
   },
   "repository": {
     "type": "git",
@@ -180,5 +172,8 @@
       "path": "node_modules/cz-git"
     },
     "issueTag": "SC"
+  },
+  "resolutions": {
+    "string-width": "^4.2.0"
   }
 }

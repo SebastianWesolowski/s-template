@@ -86,6 +86,7 @@ docs/[npm]/HowToAutoDeploy.md:
   projects:
     - startetNpmPackage/node
     - node
+    - nestjsModule
   asName: ../HowToAutoDeploy.md
 
 tools:

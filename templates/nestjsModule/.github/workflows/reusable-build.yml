@@ -37,6 +37,16 @@ on:
         required: false
         type: boolean
         default: true
+      release_type_detected:
+        description: 'Type of release detected (production, preprod, prerelease, feature)'
+        required: false
+        type: string
+        default: 'prerelease'
+      framework_type:
+        description: 'Type of framework detected (next, nest, react)'
+        required: false
+        type: string
+        default: 'next'
     outputs:
       build_summary:
         description: 'Summary of build results'
@@ -56,6 +66,7 @@ jobs:
 
     steps:
       - name: 🔍 inputs
+        id: check_inputs
         run: |
           echo "Debugowanie inputów workflow:"
           echo "analyze_bundle: ${{ inputs.analyze_bundle }}"
@@ -65,9 +76,10 @@ jobs:
           echo "node_version: ${{ inputs.node_version }}"
           echo "production_build: ${{ inputs.production_build }}"
           echo "upload_artifacts: ${{ inputs.upload_artifacts }}"
-
+          echo "release_type_detected: ${{ inputs.release_type_detected }}"
+          echo "framework_type: ${{ inputs.framework_type }}"
           echo "Parsed cache keys:"
-          echo "build_key: ${{ fromJSON(inputs.cache_keys).build_key }}"
+          echo "nextBuild_key: ${{ fromJSON(inputs.cache_keys).nextBuild_key }}"
           echo "deps_key: ${{ fromJSON(inputs.cache_keys).deps_key }}"
 
       - name: 📝 Checkout
@@ -83,14 +95,31 @@ jobs:
           restore-keys: |
             ${{ fromJSON(inputs.cache_keys).deps_key }}
 
-      - name: ⚡ Cache build
+      - name: ⚡ Cache NextBuild
+        if: inputs.framework_type == 'next'
         uses: actions/cache@v4
+        id: next-cache
+        continue-on-error: true
         with:
           path: |
             ${{ github.workspace }}/.next/
             ${{ github.workspace }}/out/
-          key: ${{ fromJSON(inputs.cache_keys).build_key }}
-          restore-keys: ${{ fromJSON(inputs.cache_keys).build_key }}
+          key: ${{ fromJSON(inputs.cache_keys).nextBuild_key }}
+          restore-keys: |
+            ${{ fromJSON(inputs.cache_keys).nextBuild_key }}
+
+      - name: ⚡ Cache nestBuild
+        if: inputs.framework_type == 'nest'
+        uses: actions/cache@v4
+        id: nest-cache
+        continue-on-error: true
+        with:
+          path: |
+            ${{ github.workspace }}/next.config.js
+            ${{ github.workspace }}/dist/
+          key: ${{ fromJSON(inputs.cache_keys).nestBuild_key }}
+          restore-keys: |
+            ${{ fromJSON(inputs.cache_keys).nestBuild_key }}
 
       - name: 🟢 Setup Node.js ${{ inputs.node_version }}
         uses: actions/setup-node@v4
@@ -103,17 +132,33 @@ jobs:
           yarn config set network-timeout 300000
           yarn install ${{ inputs.install_args }} --prefer-offline --no-scripts
 
+      - name: 🔍 Sprawdź status cache
+        id: check-cache
+        run: |
+          if [[ "${{ inputs.framework_type }}" == "next" && "${{ steps.next-cache.outputs.cache-hit }}" == "true" ]]; then
+            echo "cache_hit=true" >> $GITHUB_OUTPUT
+            echo "✅ Znaleziono cache dla Next.js, budowanie zostanie pominięte"
+          elif [[ "${{ inputs.framework_type }}" == "nest" && "${{ steps.nest-cache.outputs.cache-hit }}" == "true" ]]; then
+            echo "cache_hit=true" >> $GITHUB_OUTPUT
+            echo "✅ Znaleziono cache dla Nest.js, budowanie zostanie pominięte"
+          else
+            echo "cache_hit=false" >> $GITHUB_OUTPUT
+            echo "⚠️ Nie znaleziono cache, aplikacja zostanie zbudowana"
+          fi
+
       - name: 🏗️ Build application
-        run: ${{ inputs.production_build && 'yarn build:prod' || 'yarn build' }}
+        if: steps.check-cache.outputs.cache_hit != 'true'
+        run: ${{ inputs.production_build == true && 'yarn build:prod' || 'yarn build' }}
 
       - name: 📊 Upload build artifacts
-        if: ${{ failure() || inputs.upload_artifacts }}
+        if: failure() || inputs.upload_artifacts == true
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: |
-            .next/
-            out/
+            ${{ inputs.framework_type == 'next' && format('{0}/.next/', github.workspace) || '' }}
+            ${{ inputs.framework_type == 'next' && 'out/' || '' }}
+            ${{ inputs.framework_type == 'nest' && format('{0}/dist/', github.workspace) || '' }}
             public/sitemap*.xml
           retention-days: 7
           if-no-files-found: ignore
@@ -122,30 +167,51 @@ jobs:
         id: summary
         run: |
           # Przygotowanie podsumowania
+          build_status="✅ Budowanie przebiegło pomyślnie"
+
+          # Sprawdzenie czy budowanie zostało pominięte
+          if [[ "${{ steps.check-cache.outputs.cache_hit }}" == "true" ]]; then
+            build_status="🚀 Budowanie pominięte - użyto cache"
+            additional_info="[Cache] Użyto zapisanej wersji dla ${{ inputs.framework_type }}"
+          else
+            additional_info="[Build] Wykonano pełny proces budowania"
+          fi
+
           build_summary=$(jq -n \
             --arg title "### Wyniki budowy 📦" \
             --arg env "${{ env.NODE_ENV }}" \
             --arg analyze "${{ env.ANALYZE }}" \
             --arg node "${{ inputs.node_version }}" \
+            --arg release_type_detected "${{ inputs.release_type_detected }}" \
+            --arg framework_type "${{ inputs.framework_type }}" \
             --arg time "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
             --arg duration "$(date +%s)" \
+            --arg build_status "$build_status" \
+            --arg additional_info "$additional_info" \
+            --arg cache_used "${{ steps.check-cache.outputs.cache_hit }}" \
             '{
               markdown: {
                 title: $title,
                 details: [
                   "🔧 Środowisko: " + $env,
                   "📊 Analiza bundle: " + $analyze,
-                  "📦 Wersja Node.js: " + $node
+                  "📦 Wersja Node.js: " + $node,
+                  "📌 Typ wydania: " + $release_type_detected,
+                  "📚 Typ frameworku: " + $framework_type,
+                  "💾 Użyto cache: " + $cache_used,
+                  "ℹ️ " + $additional_info
                 ],
-                status: "✅ Budowanie przebiegło pomyślnie"
+                status: $build_status
               },
               data: {
                 environment: $env,
                 analyze_bundle: ($analyze == "true"),
                 node_version: $node,
+                release_type_detected: $release_type_detected,
+                framework_type: $framework_type,
                 timestamp: $time,
-                production_build: ${{ inputs.production_build }},
-                duration: $duration
+                duration: $duration,
+                cache_used: ($cache_used == "true")
               }
             }')
 

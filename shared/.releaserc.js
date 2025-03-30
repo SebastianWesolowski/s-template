@@ -1,12 +1,74 @@
 const helpers = require('handlebars-helpers')();
-module.exports = {
-  branches: [
-    'main',
+
+// Function to generate branches configuration dynamically
+const getBranchesConfig = () => {
+  const branches = [
+    {
+      name: 'main',
+      channel: 'latest',
+    },
+    {
+      name: 'master',
+      channel: 'latest',
+    },
     {
       name: 'dev',
-      prerelease: true,
+      channel: 'dev',
+      prerelease: 'dev',
     },
-  ],
+    {
+      name: 'develop',
+      channel: 'dev',
+      prerelease: 'dev',
+    },
+    {
+      name: 'alfa',
+      channel: 'alfa',
+      prerelease: 'alfa',
+    },
+    {
+      name: 'beta',
+      channel: 'beta',
+      prerelease: 'beta',
+    },
+    {
+      name: 'rc',
+      channel: 'rc',
+      prerelease: 'rc',
+    },
+  ];
+
+  // Check if we're on a feature branch
+  const currentBranch = process.env.GITHUB_REF_NAME || '';
+  if (currentBranch.startsWith('feature/')) {
+    const featureName = currentBranch.replace('feature/', '');
+    // Get shortened commit hash from environment
+    const shortHash = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.substring(0, 7) : '';
+    branches.push({
+      name: currentBranch,
+      channel: 'feature',
+      prerelease: `${featureName}-${shortHash}`,
+    });
+  }
+
+  // Handle pull request to main/master for rc version
+  const isPR = process.env.GITHUB_EVENT_NAME === 'pull_request';
+  const targetBranch = process.env.GITHUB_BASE_REF || '';
+  if (isPR && (targetBranch === 'main' || targetBranch === 'master')) {
+    const prNumber = process.env.GITHUB_HEAD_REF ? process.env.GITHUB_HEAD_REF.replace(/\D/g, '') : '';
+    const shortHash = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.substring(0, 7) : '';
+    branches.push({
+      name: process.env.GITHUB_HEAD_REF,
+      channel: 'rc',
+      prerelease: `rc-pr${prNumber}-${shortHash}`,
+    });
+  }
+
+  return branches;
+};
+
+module.exports = {
+  branches: getBranchesConfig(),
   plugins: [
     [
       '@semantic-release/commit-analyzer',
@@ -57,48 +119,50 @@ module.exports = {
             return (a.title || '').localeCompare(b.title || '');
           },
           transform: (commit, context) => {
+            // Stwórz kopię obiektu commit zamiast modyfikować go bezpośrednio
+            const result = { ...commit };
+
             if (commit.type === 'feat') {
-              commit.type = 'Features';
+              result.type = 'Features';
             } else if (commit.type === 'fix') {
-              commit.type = 'Bug Fixes';
+              result.type = 'Bug Fixes';
             } else if (commit.type === 'build') {
-              commit.type = 'Dependencies and Other Build Updates';
+              result.type = 'Dependencies and Other Build Updates';
             } else if (commit.type === null || !commit.type || commit.type === 'chore') {
-              commit.type = 'Other tasks';
+              result.type = 'Other tasks';
             }
 
             if (typeof commit.hash === 'string') {
-              commit.shortHash = commit.hash.substring(0, 7);
+              result.shortHash = commit.hash.substring(0, 7);
             }
 
             if (typeof commit.subject === 'string' || commit.subject === null) {
               let url = context.repository ? `${context.host}/${context.owner}/${context.repository}` : context.repoUrl;
 
               // Extract SC issue number
-
               if (commit.message && commit.subject === null) {
-                commit.subject = commit.message;
+                result.subject = commit.message;
               }
 
               const scMatch = commit.subject ? commit.subject.match(/\[?(SC-\d+)\]?/) : null;
               if (scMatch) {
                 const scIssue = scMatch[1];
-                commit.scIssue = scIssue;
+                result.scIssue = scIssue;
                 // Replace SC issue with linked version
-                commit.subject = commit.subject.replace(
+                result.subject = commit.subject.replace(
                   /\[?(SC-\d+)\]?/,
                   `[[${scIssue}](https://linear.app/wesolowskidev/issue/${scIssue})]`
                 );
               } else {
-                commit.scIssue = 'Other tasks';
+                result.scIssue = 'Other tasks';
               }
 
               if (url) {
-                commit.commitUrl = `${url}/commit/${commit.hash}`;
+                result.commitUrl = `${url}/commit/${commit.hash}`;
               }
             }
 
-            return commit;
+            return result;
           },
           commitPartial: '- {{subject}} ([{{shortHash}}]({{commitUrl}}))\n',
           mainTemplate: `{{> header}}
