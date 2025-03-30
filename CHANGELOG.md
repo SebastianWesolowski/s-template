@@ -1,3 +1,10 @@
+## [1.5.0-dev.24](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.23...v1.5.0-dev.24) (March 30, 2025)
+
+
+### [SC-144](https://linear.app/wesolowskidev/issue/SC-144)
+
+- ✨ [[SC-144](https://linear.app/wesolowskidev/issue/SC-144)] improve GH action with package flow ([ce1b33f](https://github.com/SebastianWesolowski/s-template/commit/ce1b33f897a552b0ac92592dd960b5f01d5096a4))
+
 ## [1.5.0-dev.23](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.22...v1.5.0-dev.23) (March 22, 2025)
 
 
