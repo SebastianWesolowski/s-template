@@ -60,8 +60,8 @@
     "ngrok:auth": "node tools/ngrok-auth.js",
     "customize": "tsx tools/customize/customize.ts",
     "customize:clean": "echo TODO [SC-148]",
-    "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjs'",
-    "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjs'"
+    "update-template": "s-update --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjsModule'",
+    "update-template:build": "s-build --remoteRepository='https://github.com/SebastianWesolowski/s-template/tree/dev/templates/nestjsModule'"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.12",

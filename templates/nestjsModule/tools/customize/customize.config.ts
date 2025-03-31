@@ -29,12 +29,12 @@ export const config: CustomizeConfig = {
     },
     {
       placeholder: 'placeholder-repo-name',
-      value: 's-prettier',
+      value: 's-nestjs-module-xx',
       files: ['package.json'],
     },
     {
       placeholder: '{{PLACEHOLDER_REPO_NAME}}',
-      value: 's-prettier',
+      value: 's-nestjs-module-xx',
       files: ['package.json', 'tools/addDependency.js', 'README.md', './docs/HowToAutoDeploy.md'],
     },
     {
