@@ -1,3 +1,10 @@
+## [1.5.0-dev.25](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.24...v1.5.0-dev.25) (March 31, 2025)
+
+
+### Other tasks
+
+- ✨ [] add repo SUM for nestModule ([6cf95c7](https://github.com/SebastianWesolowski/s-template/commit/6cf95c74510588945910d4b7bbcf2bb64ce04f06))
+
 ## [1.5.0-dev.24](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.23...v1.5.0-dev.24) (March 30, 2025)
 
 
