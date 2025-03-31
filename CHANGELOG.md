@@ -1,3 +1,10 @@
+## [1.5.0-dev.26](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.25...v1.5.0-dev.26) (March 31, 2025)
+
+
+### Other tasks
+
+- ✨ [] improve lint-staged ([186f5c6](https://github.com/SebastianWesolowski/s-template/commit/186f5c67368bea5842164ba18fb5fb6175312368))
+
 ## [1.5.0-dev.25](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.24...v1.5.0-dev.25) (March 31, 2025)
 
 
