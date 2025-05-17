@@ -1,3 +1,10 @@
+## [1.5.0-dev.27](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.26...v1.5.0-dev.27) (May 17, 2025)
+
+
+### [SC-185](https://linear.app/wesolowskidev/issue/SC-185)
+
+- ✨ [[SC-185](https://linear.app/wesolowskidev/issue/SC-185)] npm publish with env process ([c67709e](https://github.com/SebastianWesolowski/s-template/commit/c67709ef2f236a827c55f9b83d7f1988306edf6e))
+
 ## [1.5.0-dev.26](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.25...v1.5.0-dev.26) (March 31, 2025)
 
 
