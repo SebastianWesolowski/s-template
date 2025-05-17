@@ -112,7 +112,6 @@ export default typescriptEslint.config(
       prettier: eslintPluginPrettier,
     },
     rules: {
-      'prettier/prettier': 'warn',
       'security/detect-eval-with-expression': 'warn',
       'security/detect-no-csrf-before-method-override': 'warn',
       'security/detect-possible-timing-attacks': 'warn',

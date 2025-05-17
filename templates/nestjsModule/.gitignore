@@ -28,6 +28,7 @@ yarn-error.log*
 .env*
 !.env.mjs
 !.env.*example
+!.env.*.md
 
 # vercel
 .vercel

@@ -2,7 +2,6 @@
   "name": "placeholder-repo-name",
   "version": "0.0.0-development",
   "description": "{{A template for creating ...}}",
-  "private": true,
   "main": "./lib/index.js",
   "files": [
     "lib/**/*",

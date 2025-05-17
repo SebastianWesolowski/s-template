@@ -10,7 +10,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: '{{PLACEHOLDER_PAGE_AUTHOR}}',
       value: 'www.wesolowski.dev',
-      files: ['.github/FUNDING.yml', 'LICENSE'],
+      files: ['.github/FUNDING.yml', 'LICENSE', 'package.json'],
     },
     {
       placeholder: '{{PLACEHOLDER_GITHUB_USER}}',
@@ -49,7 +49,7 @@ export const config: CustomizeConfig = {
     },
     {
       placeholder: '{{A template for creating ...}}',
-      value: 'A template for creating npm packages using TypeScript',
+      value: 'A submodule for nestjs, with features like a... etc.',
       files: ['README.md', 'package.json'],
     },
   ],

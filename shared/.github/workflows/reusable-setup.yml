@@ -109,7 +109,7 @@ jobs:
           if [ -f "package.json" ]; then
             echo "✅ Plik package.json znaleziony"
             echo "📄 Zawartość package.json:"
-            cat package.json | grep -E "next|@nestjs|react"
+            cat package.json | grep -E "next|@nestjs|react" || true
 
             # Sprawdzanie Next.js
             if grep -qE '"next"|"next":' package.json || grep -qE "'next'|'next':" package.json; then
@@ -120,6 +120,8 @@ jobs:
             # Sprawdzanie React (bez Next.js)
             elif (grep -qE '"react"|"react":' package.json || grep -qE "'react'|'react':" package.json) && ! (grep -qE '"next"|"next":' package.json || grep -qE "'next'|'next':" package.json); then
               FRAMEWORK_TYPE="react"
+            else
+              FRAMEWORK_TYPE=""
             fi
 
             echo "🔍 Wykryty framework: ${FRAMEWORK_TYPE}"

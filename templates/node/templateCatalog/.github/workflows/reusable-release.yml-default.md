@@ -51,8 +51,8 @@ jobs:
     env:
       # FORCE_COLOR: 1
       # NODE_ENV: production
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
@@ -75,6 +75,11 @@ jobs:
           echo "GH_TOKEN: ${{ secrets.GH_TOKEN != '' }}"
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN != '' }}"
           echo "NPM_TOKEN: ${{ secrets.NPM_TOKEN != '' }}"
+
+          echo "Env status:"
+          echo "GH_TOKEN: ${{ env.GH_TOKEN != '' }}"
+          echo "GITHUB_TOKEN: ${{ env.GITHUB_TOKEN != '' }}"
+          echo "NPM_TOKEN: ${{ env.NPM_TOKEN != '' }}"
 
           # Informacja o logice release'u
           echo "reason=Release controlled by .releaserc.js configuration" >> $GITHUB_OUTPUT
@@ -137,11 +142,30 @@ jobs:
             echo "| REASON | ${{ steps.check_inputs.outputs.reason }} |"
           } >> $GITHUB_STEP_SUMMARY
 
+      - name: 🔍 Check tokens
+        id: check_tokens
+        run: |
+          if [[ -n "$GH_TOKEN" ]]; then
+            echo "Using GH_TOKEN"
+            echo "token=$GH_TOKEN" >> $GITHUB_OUTPUT
+          else
+            echo "Using GITHUB_TOKEN"
+            echo "token=$GITHUB_TOKEN" >> $GITHUB_OUTPUT
+          fi
+
+          if [[ -n "$NPM_TOKEN" ]]; then
+            echo "NPM_TOKEN dostępny"
+            echo "npm_token=true" >> $GITHUB_OUTPUT
+          else
+            echo "NPM_TOKEN niedostępny"
+            echo "npm_token=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: 📝 Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ steps.check_tokens.outputs.token }}
           ref: ${{ inputs.release_branch }}
 
       - name: ⚡ Cache dependencies
