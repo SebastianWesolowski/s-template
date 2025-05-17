@@ -1,5 +1,3 @@
-# Reusable workflow for releases; to eject, you can replace this file with
-# https://github.com/SebastianWesolowski/SebastianWesolowski/blob/main/.github/workflows/release.yml
 name: CI
 
 on:
