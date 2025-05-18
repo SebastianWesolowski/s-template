@@ -35,7 +35,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: '{{PLACEHOLDER_REPO_NAME}}',
       value: 's-template',
-      files: ['package.json', 'tools/addDependency.js', 'README.md', './docs/HowToAutoDeploy.md'],
+      files: ['package.json', 'README.md', './docs/HowToAutoDeploy.md'],
     },
     {
       placeholder: '{{PLACEHOLDER_NPM_USER}}',

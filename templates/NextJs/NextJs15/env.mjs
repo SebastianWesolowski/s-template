@@ -13,7 +13,7 @@ export const env = createEnv({
       .optional()
       .transform((value) => value === 'true'),
     FORCE_COLOR: z
-      .enum(['1', '0'])
+      .enum(['1', '0', '2', '3'])
       .optional()
       .transform((value) => value === '1'),
   },

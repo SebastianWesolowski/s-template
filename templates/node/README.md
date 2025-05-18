@@ -7,7 +7,7 @@
 - [![npm package][npm-img]][npm-url]
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
-- [Author page]({{PLACEHOLDER_PAGE_AUTHOR}})
+- [Author page](https://{{PLACEHOLDER_PAGE_AUTHOR}})
 - [Git Hooks Documentation](.husky/README.md)
 
 <br/><br/>

@@ -47,4 +47,4 @@ function updateVSCodeSettings() {
 }
 
 const hasError = updateVSCodeSettings();
-process.exit(hasError ? 1 : 0);
+process.exit(hasError === false ? 1 : 0);
