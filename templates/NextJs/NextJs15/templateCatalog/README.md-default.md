@@ -83,11 +83,13 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 To get started with this boilerplate, follow these steps:
 
 1. Install the dependencies:
+
 ```bash
 yarn install
 ```
 
 2. Run the update with s-update-manager:
+
 ```bash
 yarn s-update-manager
 ```
@@ -101,6 +103,7 @@ yarn customize
 ```
 
 4. Run the development server:
+
 ```bash
 yarn dev
 ```
@@ -113,8 +116,6 @@ yarn dev
 ## 🔗 Detailed Documentation
 
 For detailed instructions and advanced options, please refer to [How to Work with Template](./docs/WayToWrok.md):
-
-
 
 ## 🚀 Deployment
 
@@ -207,7 +208,6 @@ This boilerplate comes with various testing setups to ensure your application's 
 - **Unit and integration tests**: Run Jest tests using `yarn test`
 - **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn test:e2e`
 - **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn test:e2e:ui`
-
 
 ![graph](.github/assets/runningTests.png)
 
@@ -319,7 +319,6 @@ If the required environment variables are not set, you'll get an error message:
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
-
 [build-img]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml/badge.svg
 [build-url]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/actions/workflows/release.yml
 [downloads-img]: https://img.shields.io/npm/dt/{{PLACEHOLDER_REPO_NAME}}
@@ -334,7 +333,6 @@ If the required environment variables are not set, you'll get an error message:
 [commitizen-url]: http://commitizen.github.io/cz-cli/
 [github-license-badge]: https://img.shields.io/github/license/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
 [github-license-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/blob/main/LICENSE
-
-
+[github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
 [github-contributors-badge]: https://img.shields.io/github/contributors/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}
 [github-contributors-badge-link]: https://github.com/{{PLACEHOLDER_GITHUB_USER}}/{{PLACEHOLDER_REPO_NAME}}/graphs/contributors

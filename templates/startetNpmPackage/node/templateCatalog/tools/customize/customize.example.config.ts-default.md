@@ -10,7 +10,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: '{{PLACEHOLDER_PAGE_AUTHOR}}',
       value: 'www.wesolowski.dev',
-      files: ['.github/FUNDING.yml', 'LICENSE', 'package.json'],
+      files: ['.github/FUNDING.yml', 'LICENSE', 'package.json', 'README.md'],
     },
     {
       placeholder: '{{PLACEHOLDER_GITHUB_USER}}',

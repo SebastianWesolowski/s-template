@@ -1,6 +1,7 @@
 export * from './Analytics';
 export * from './AppProvider';
 export * from './Button/Button';
+export * from './Button/ButtonLink';
 export * from './BasicLayout';
 export * from './Container';
 export * from './Footer';

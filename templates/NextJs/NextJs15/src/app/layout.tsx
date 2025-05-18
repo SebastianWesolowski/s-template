@@ -9,7 +9,7 @@ import '@fontsource/inter/900.css';
 import '@fontsource/lexend/400.css';
 import '@fontsource/lexend/500.css';
 import '@styles/global.scss';
-import '@styles/tailwind.scss';
+import '@styles/tailwind.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }): React.ReactElement {
   return (
