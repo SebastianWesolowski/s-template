@@ -1,3 +1,16 @@
+## [1.5.0-dev.28](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.27...v1.5.0-dev.28) (May 18, 2025)
+
+
+### [SC-196](https://linear.app/wesolowskidev/issue/SC-196)
+
+- ✨ [[SC-196](https://linear.app/wesolowskidev/issue/SC-196)] add shadcn to nextjs ([13b1563](https://github.com/SebastianWesolowski/s-template/commit/13b15636c4b5b021b262189b903418d1366d85a2))
+
+
+### Other tasks
+
+- 📚 [] ️ improve tex files ([2dc71d9](https://github.com/SebastianWesolowski/s-template/commit/2dc71d9f00c6807bebcf07b68b230b9bba88d371))
+- ♻ [] ️ remove coments ([8daefba](https://github.com/SebastianWesolowski/s-template/commit/8daefba9490ed7d55af18a284ed79d5e819d3499))
+
 ## [1.5.0-dev.27](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.26...v1.5.0-dev.27) (May 17, 2025)
 
 
