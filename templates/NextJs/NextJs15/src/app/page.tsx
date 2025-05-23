@@ -1,4 +1,4 @@
-import { Button as ShadcnButton } from '@/_components/ui/button';
+import { Button as ShadcnButton } from '@/ui/button';
 import { BasicLayout, Button, ButtonLink, Seo } from '@components';
 import React from 'react';
 
