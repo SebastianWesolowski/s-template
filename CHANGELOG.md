@@ -1,3 +1,10 @@
+## [1.5.0-dev.30](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.29...v1.5.0-dev.30) (November 05, 2025)
+
+
+### Other tasks
+
+- 🐛 [] remove duplicate file in nextjs ([38126c9](https://github.com/SebastianWesolowski/s-template/commit/38126c9ef3c81ff61708cdac8603a9e5628d6f9c))
+
 ## [1.5.0-dev.29](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.28...v1.5.0-dev.29) (November 05, 2025)
 
 
