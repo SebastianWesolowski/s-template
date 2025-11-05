@@ -10,7 +10,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: '{{PLACEHOLDER_PAGE_AUTHOR}}',
       value: 'www.wesolowski.dev',
-      files: ['.github/FUNDING.yml', 'LICENSE', 'package.json', 'README.md'],
+      files: ['.github/FUNDING.yml', 'LICENSE', 'README.md'],
     },
     {
       placeholder: '{{PLACEHOLDER_GITHUB_USER}}',
@@ -35,12 +35,7 @@ export const config: CustomizeConfig = {
     {
       placeholder: '{{PLACEHOLDER_REPO_NAME}}',
       value: 's-template',
-      files: ['package.json', 'tools/addDependency.js', 'README.md', './docs/HowToAutoDeploy.md'],
-    },
-    {
-      placeholder: '{{PLACEHOLDER_NPM_USER}}',
-      value: 'sebastian.wesolowski.sw',
-      files: ['./docs/HowToAutoDeploy.md'],
+      files: ['package.json', 'README.md', './docs/HowToAutoDeploy.md'],
     },
     {
       placeholder: '{{A template for creating ...}}',

@@ -5,5 +5,5 @@
     "jest --bail --findRelatedTests --passWithNoTests"
   ],
   "src/**/*.{json,md,yml}": ["prettier --write"],
-  "src/**/*.{css,scss,sass}": ["stylelint --fix"]
+  "src/**/*.{css,scss,sass}": ["stylelint --fix --allow-empty-input"]
 }
