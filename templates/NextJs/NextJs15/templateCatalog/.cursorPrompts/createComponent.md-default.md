@@ -23,7 +23,7 @@ Create the following files in a standardized way:
 
 ```tsx
 import { type FC, type ReactNode, forwardRef } from 'react';
-import { cn } from '@utils';  // Utility for class name merging
+import { cn } from '@/utils/utils'; // Utility for class name merging
 
 // Use a prefix for component-specific constants
 const COMPONENT_BASE_CLASS = 'base-component';
