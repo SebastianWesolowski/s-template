@@ -1,3 +1,16 @@
+## [1.5.0-dev.29](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.28...v1.5.0-dev.29) (November 05, 2025)
+
+
+### Other tasks
+
+- 🐛 [] cleanup nextjs15 ([95c303f](https://github.com/SebastianWesolowski/s-template/commit/95c303fb960a383490be5008d67b26edfc9df3b7))
+- 🐛 [] remove PLACEHOLDER_PAGE_AUTHOR from package.json in customize ([852ba92](https://github.com/SebastianWesolowski/s-template/commit/852ba92e9b5fbf721bb2306e9ce427df89a7ab31))
+- ✨ [] add documentation for nextJS, cursor rules, small cleanups ([831eb86](https://github.com/SebastianWesolowski/s-template/commit/831eb86209db8b8f41b33b25fa9babe379962326))
+- ✨ [] move shadcns ([6a05215](https://github.com/SebastianWesolowski/s-template/commit/6a05215318a2eb9c131c84ced9b386c974e70946))
+- improve readme ([78f55af](https://github.com/SebastianWesolowski/s-template/commit/78f55af6072ce1ee238eed7cd513132442f30fd8))
+- ♻ [] ️ propagate shared lint-staged-with-style.config.json in to nextjs ([9f7168d](https://github.com/SebastianWesolowski/s-template/commit/9f7168d0e2cbd309b77e805046e71b643a3ddad3))
+- ♻ [] ️ update file references in customize config to remove addDependency from example ([afa0420](https://github.com/SebastianWesolowski/s-template/commit/afa04208e9207a891622fe504778170aa6979b20))
+
 ## [1.5.0-dev.28](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.27...v1.5.0-dev.28) (May 18, 2025)
 
 
