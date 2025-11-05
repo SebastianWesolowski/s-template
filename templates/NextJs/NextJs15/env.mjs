@@ -16,8 +16,18 @@ export const env = createEnv({
       .enum(['1', '0', '2', '3'])
       .optional()
       .transform((value) => value === '1'),
+    DEBUG: z.string().optional(),
+    ENV_VARIABLE: z.string().optional(),
+    DEVELOPMENT_ENV_VARIABLE: z.string().optional(),
+    LOCAL_ENV_VARIABLE: z.string().optional(),
+    PRODUCTION_ENV_VARIABLE: z.string().optional(),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_ENV_VARIABLE: z.string().optional(),
+    NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE: z.string().optional(),
+    NEXT_PUBLIC_LOCAL_ENV_VARIABLE: z.string().optional(),
+    NEXT_PUBLIC_PRODUCTION_ENV_VARIABLE: z.string().optional(),
+  },
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
     NGROK_AUTH_TOKEN: process.env.NGROK_AUTH_TOKEN,

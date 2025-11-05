@@ -19,6 +19,5 @@
     "ms-azuretools.vscode-docker",
     "eamodio.gitlens",
     "davidanson.vscode-markdownlint",
-    "christian-kohler.path-intellisense"
   ]
 }

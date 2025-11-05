@@ -77,10 +77,11 @@ docs:
     - "[web]"
     - "[npm]"
 
-docs/[web]/HowToAutoDeploy.md:
+docs/[web]:
   projects:
     - NextJs/NextJs15
-  asName: ../HowToAutoDeploy.md
+  asName: ../docs
+
 
 docs/[npm]/HowToAutoDeploy.md:
   projects:

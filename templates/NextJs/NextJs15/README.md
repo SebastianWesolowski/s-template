@@ -8,14 +8,17 @@
 - [![Build Status][build-img]][build-url]
 - [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
 - [Author page](https://{{PLACEHOLDER_PAGE_AUTHOR}})
+- [📚 **Complete Documentation**](docs/INDEX.md) - Full project documentation index
+- [🚀 **Getting Started**](docs/domains/1-getting-started/README.md) - Quick start guide
+- [⚙️ **Developer Experience**](docs/domains/developer-experience/README.md) - DX tools and workflows
 - [Git Hooks Documentation](.husky/README.md)
 
 <br/><br/>
 
 **Remove before final release**
 
-- [Set up your repository](docs/HowToAutoDeploy.md)
-- [Way to work](docs/WayToWrok.md)
+- [Set up your repository](docs/domains/15-deployment/tech-github-actions-release.md#konfiguracja-tokenów)
+- [Way to work](docs/domains/workflow/README.md)
 - [Known issues](docs/knowProblems.md)
 
 ---
@@ -26,39 +29,73 @@
 
 ### Integrated features
 
-Don't worry, with this template you will anyways get all the awesomeness you need:
+Production-ready Next.js template with everything you need:
 
-- 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
-- 🎨 **[s-customize](https://github.com/SebastianWesolowski/s-template/tools/customize)** - Customize your repozytory with one command
-- 🌐 **[ngrok](https://ngrok.com/)** - For local development with remote services
-- 🏎️ **[Next.js 15](https://nextjs.org/)** - Fast by default, with config optimized for performance (with **App Directory**)
-- 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
-- ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
-- 🛠️ **[Extremely strict TypeScript](https://www.typescriptlang.org/)** - With [`ts-reset`](https://github.com/total-typescript/ts-reset) library for ultimate type safety
-- 🚀 **[GitHub Actions](https://github.com/features/actions)** - Pre-configured actions for smooth workflows, including Bundle Size and performance stats
-- 💯 **Perfect Lighthouse score** - Because performance matters
-- **[Bundle analyzer plugin](https://www.npmjs.com/package/@next/bundle-analyzer)** - Keep an eye on your bundle size
-- **[Jest](https://jestjs.io/)** and **[React Testing Library](https://testing-library.com/react)** - For rock-solid unit and integration tests
-- **[Playwright](https://playwright.dev/)** - Write end-to-end tests like a pro
-- **[Storybook](https://storybook.js.org/)** - Create, test, and showcase your components
-- **Smoke Testing** and **Acceptance Tests** - For confidence in your deployments
-- **[Conventional commits git hook](https://www.conventionalcommits.org/)** - Keep your commit history neat and tidy
-- **[Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases)** - No more spaghetti imports
-- **[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)** - Kubernetes-compatible for robust deployments
-- **[Radix UI](https://www.radix-ui.com/)** - Headless UI components for endless customization
-- **[CVA](http://cva.style/)** - Create a consistent, reusable, and atomic design system
-- **[Renovate BOT](https://www.whitesourcesoftware.com/free-developer-tools/renovate)** - Auto-updating dependencies, so you can focus on coding
-- **[Patch-package](https://www.npmjs.com/package/patch-package)** - Fix external dependencies without losing your mind
-- **Components coupling and cohesion graph** - A tool for managing component relationships
-- **[Semantic Release](https://github.com/semantic-release/semantic-release)** - for automatic changelog
-- **[T3 Env](https://env.t3.gg/)** - Manage your environment variables with ease
-- **[Husky](https://typicode.github.io/husky/)** - Git hooks made easy (see [Git Hooks Documentation](.husky/README.md))
+#### 🚀 **Core Framework**
+
+- **[Next.js 15](https://nextjs.org/)** - App Router, React 19, optimized for performance
+- **[TypeScript 5.7](https://www.typescriptlang.org/)** - Strict mode with [`ts-reset`](https://github.com/total-typescript/ts-reset)
+
+#### 🎨 **UI & Styling**
+
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[CVA](http://cva.style/)** - Class Variance Authority for component variants
+- **[Radix UI](https://www.radix-ui.com/)** - Headless accessible components
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Dark/light mode support
+- **Absolute imports** - Clean import paths with path aliases
+
+#### 🧪 **Testing Suite**
+
+- **[Jest](https://jestjs.io/)** + **[React Testing Library](https://testing-library.com/react)** - Unit & integration tests
+- **[Playwright](https://playwright.dev/)** - End-to-end testing
+- **[Storybook](https://storybook.js.org/)** - Component development & testing
+- **Smoke Testing** - Automated component validation
+
+#### 🔧 **Code Quality**
+
+- **[ESLint](https://eslint.org/)** - Dual config (standard/strict) for progressive quality
+- **[Prettier](https://prettier.io/)** - Code formatting with import sorting
+- **[Stylelint](https://stylelint.io/)** - CSS/SCSS linting
+- **[Husky](https://typicode.github.io/husky/)** - Git hooks with multi-stage validation
+
+#### 🛠️ **Developer Tools**
+
+- **[Coupling Graph](https://github.com/pahen/madge)** - Visualize module dependencies
+- **[Knip](https://knip.dev/)** - Detect unused code and dependencies
+- **[Bundle Analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)** - Monitor bundle size
+- **[ngrok](https://ngrok.com/)** - Local development with remote services
+- **[T3 Env](https://env.t3.gg/)** - Type-safe environment variables
+- **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Centralized dependency management
+- **[s-customize](https://github.com/SebastianWesolowski/s-template/tools/customize)** - Template personalization
+
+#### 🔄 **Workflow & Automation**
+
+- **[Linear Integration](https://linear.app/)** - Automated issue tracking with GitHub
+- **[Semantic Release](https://github.com/semantic-release/semantic-release)** - Automatic versioning & changelog
+- **[Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate)** - Auto-updating dependencies
+- **[Patch-package](https://www.npmjs.com/package/patch-package)** - Fix external dependencies
+
+#### 📚 **Documentation & AI**
+
+- **[Memory Bank System](memory-bank/README.md)** - AI-powered documentation for seamless development
+
+#### 🚀 **Performance & Security**
+
+- **Perfect Lighthouse score** - Optimized for Core Web Vitals
+- **Security headers** - Pre-configured security policies
+- **Health checks** - Kubernetes-compatible for robust deployments
 
 ## Table of Contents
 
 - [Integrated features](#integrated-features)
 - [Table of Contents](#table-of-contents)
 - [Getting Started](#-getting-started)
+- [Template Customization](#-template-customization)
+- [Memory Bank System](#-memory-bank-system)
+- [Linear Integration](#-linear-integration)
+- [Developer Tools](#-developer-tools)
+- [Architecture Patterns](#-architecture-patterns)
+- [Quality Monitoring](#-quality-monitoring)
 - [Deployment](#-deployment)
 - [Scripts Overview](#-scripts-overview)
 - [Coupling Graph](#-coupling-graph)
@@ -73,6 +110,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
   - [Jotai](#jotai)
   - [Recoil](#recoil)
 - [Environment Variables handling](#-environment-variables-handling)
+- [Documentation Index](#-documentation-index)
 - [Contribution](#-contribution)
 - [Support](#support)
 - [License](#-license)
@@ -80,38 +118,116 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 
 ## 🎯 Getting Started
 
-To get started with this boilerplate, follow these steps:
+> [!NOTE] Wystąpienie tematu
+> To jest skrót lub odniesienie. Pełne Źródło: [`docs/domains/1-getting-started/overview.md`](docs/domains/1-getting-started/overview.md#project-overview)
 
-1. Install the dependencies:
+Quick setup in 6 steps:
 
 ```bash
+# 1. Install dependencies
 yarn install
-```
 
-2. Run the update with s-update-manager:
-
-```bash
+# 2. Update template
 yarn s-update-manager
-```
 
-3. Customize your repository:
+# 3. Configure customization
+# Edit tools/customize/customize.config.ts
+# See: docs/domains/customization/technical.md
 
-> [Repository Customization](./docs/WayToWrok.md#set-up-your-repository) - Personalize your project with custom details
-
-```bash
+# 4. Customize project
 yarn customize
-```
 
-4. Run the development server:
-
-```bash
+# 5. Start development
 yarn dev
+
+# 6. Open http://localhost:3000
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Important**: Configure `tools/customize/customize.config.ts` before running `yarn customize`
 
-- [Ngrok Integration](./docs/WayToWrok.md#optional) - Expose your local server to the internet
-- [Local Preview](./docs/WayToWrok.md#check-local-preview-package) - Test your build locally
+**Optional Setup:**
+
+- [Ngrok Integration](./docs/domains/workflow/technical.md#ngrok-integration) - Expose local server to internet
+- [Local Preview](./docs/domains/workflow/technical.md#local-preview) - Test production build locally
+
+> **Detailed Guide**: See [Getting Started Technical Guide](docs/domains/1-getting-started/technical.md) for complete installation process
+
+## 🎨 Template Customization
+
+> [!NOTE] Wystąpienie tematu
+> To jest skrót lub odniesienie. Pełne Źródło: [`docs/domains/customization/overview.md`](docs/domains/customization/overview.md#overview)
+
+This template requires personalization before use. The `yarn customize` command automatically replaces placeholders with your project details:
+
+- **Project Identity**: Repository name, GitHub user, author info
+- **Technical Details**: Node version, current year, descriptions
+- **URLs**: Repository URLs, author pages, documentation links
+- **Validation**: Build-time verification of all placeholders
+- **Cleanup**: Automatic removal of customization files after completion
+
+> **Required**: Run `yarn customize` before first use - see [Template Customization Guide](docs/domains/customization/README.md)
+
+## 🧠 Memory Bank System
+
+AI-powered documentation system for seamless development continuity:
+
+- **Core Files**: Project brief, system patterns, tech context, active context
+- **AI Integration**: Cursor AI uses Memory Bank for project understanding
+- **Documentation Strategy**: Memory Bank (AI-focused) + Docs (developer-focused)
+- **Auto-updates**: Documentation evolves with project changes
+
+> **Learn More**: [Memory Bank Documentation](docs/domains/memory-bank/README.md) | [Memory Bank Structure](memory-bank/README.md)
+
+## 🔗 Linear Integration
+
+Automated issue tracking and project management:
+
+- **Auto-linking**: PRs automatically link with Linear issues
+- **Status Automation**: PR states update Linear issue status
+- **Commit Formatting**: Husky auto-adds issue references [SC-XXX]
+- **Changelog Generation**: Semantic Release includes Linear issue links
+- **Traceability**: Complete tracking from issue → commit → PR → changelog
+
+> **Setup Guide**: [Linear + GitHub Workflow](docs/domains/issue-tracking/README.md)
+
+## 🛠️ Developer Tools
+
+Advanced development and code quality tools:
+
+- **Coupling Graph**: Visualize module dependencies with [Madge](https://github.com/pahen/madge)
+- **Unused Code Detection**: [Knip](https://knip.dev/) finds dead code and dependencies
+- **Patch-Package**: Fix external dependencies without forking
+- **Dual ESLint Config**: Standard (warnings) + Strict (errors) for progressive quality
+- **Bundle Analysis**: Monitor bundle size with interactive reports
+
+> **Tools Guide**: [Developer Experience](docs/domains/developer-experience/README.md) | [Code Quality](docs/domains/code-quality/README.md)
+>
+> [!NOTE] Wystąpienie tematu
+> To jest skrót lub odniesienie. Pełne Źródło: [`docs/domains/developer-experience/overview.md`](docs/domains/developer-experience/overview.md#overview)
+
+## 🏗️ Architecture Patterns
+
+Proven design patterns and architectural decisions:
+
+- **Component Structure**: Consistent folder organization with tests, stories, docs
+- **CVA Variants**: Type-safe component variants with Class Variance Authority
+- **Multi-Stage Git Hooks**: 4-hook system for quality enforcement
+- **Configuration Management**: Centralized configs with T3 Env validation
+- **Provider Pattern**: Theme management and context sharing
+
+> **Architecture Guide**: [System Patterns](memory-bank/systemPatterns.md) | [Architecture Documentation](docs/domains/7-architecture/README.md)
+
+## 📊 Quality Monitoring
+
+Comprehensive quality assurance and monitoring:
+
+- **Bundle Size Tracking**: CI fails on >10% increase
+- **Security Headers**: Pre-configured security policies
+- **Test Coverage**: Jest + Playwright + Storybook integration
+- **Performance Monitoring**: Lighthouse scores and Core Web Vitals
+- **Dependency Management**: Renovate Bot + s-update-manager
+
+> **Quality Guide**: [Performance Optimization](docs/domains/performance/README.md) | [Security Guide](docs/domains/performance/tech-security.md)
 
 ## 🔗 Detailed Documentation
 
@@ -121,7 +237,7 @@ For detailed instructions and advanced options, please refer to [How to Work wit
 
 Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js) by clicking the button below:
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=PLACEHOLDER_REPO_URL)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url={{PLACEHOLDER_REPO_URL}})
 
 ### GitFlow
 
@@ -132,184 +248,259 @@ Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=d
 
 ## 📃 Scripts Overview
 
-The template project includes a variety of configured scripts divided into logical categories:
+Essential commands organized by category:
 
-### 🚀 Development & Running
+### 🚀 **Development**
 
-- `dev` - Runs Next.js development server with turbo
-- `dev:storybook` - Runs development server and Storybook concurrently
-- `dev:tunnel` - Runs development server with ngrok exposure
-- `dev:build` - Builds production app and runs it locally
-- `build:analyze` - Builds app with bundle size analysis
+```bash
+yarn dev              # Next.js dev server with Turbopack
+yarn dev:storybook    # Dev server + Storybook (parallel)
+yarn dev:tunnel       # Dev server + ngrok tunnel
+yarn dev:build        # Production build + local preview
+```
 
-### 🏗️ Building
+### 🏗️ **Building**
 
-- `build` - Builds app for deployment
-- `build:prod` - Builds production app with additional final steps
-- `build:prebuild` - Prepares environment before building (cleaning and copying assets)
-- `build:postbuild` - Executes post-build tasks (e.g. sitemap generation)
+```bash
+yarn build            # Standard build
+yarn build:prod       # Full production build (4-stage)
+yarn build:analyze    # Build with bundle analysis
+```
 
-### 🧪 Testing
+### 🧪 **Testing**
 
-- `test` - Runs all tests (unit, component, snapshot, smoke, e2e)
-- `test:unit` - Runs Jest unit tests
-- `test:components` - Runs React component tests
-- `test:snapshot` - Runs UI snapshot comparison tests
-- `test:smoke` - Runs smoke tests in Storybook
-- `test:e2e` - Runs Playwright end-to-end tests
-- `test:e2e:ui` - Runs end-to-end tests in UI mode
+```bash
+yarn test             # All tests (unit, integration, e2e)
+yarn test:unit        # Jest unit tests
+yarn test:e2e         # Playwright E2E tests
+yarn test:smoke       # Storybook smoke tests
+```
 
-### 🔍 Linting & Formatting
+### 🔍 **Code Quality**
 
-- `lint` - Runs all code checking tools
-- `lint:check` - Checks code correctness without making changes
-- `lint:fix` - Automatically fixes code issues
-- `lint:prettier:check/fix` - Checks/fixes formatting with Prettier
-- `lint:eslint:check/fix` - Checks/fixes code with ESLint
-- `lint:style:check/fix` - Checks/fixes CSS styles with Stylelint
-- `lint:typescript:check` - Checks TypeScript types
+```bash
+yarn lint:check       # Standard linting (warnings)
+yarn lint:fix         # Auto-fix issues
+yarn lint:eslint:check:strict  # Strict linting (errors)
+yarn quality:knip     # Find unused code
+yarn quality:coverage # Test coverage report
+```
 
-### 📊 Code Quality
+### 📚 **Storybook**
 
-- `quality:knip` - Detects unused code in project
-- `quality:coverage` - Generates test coverage report
-- `quality:coupling:graph` - Creates visualization of module dependencies
-- `quality:coupling:json` - Exports dependency data to JSON format
+```bash
+yarn storybook        # Storybook server
+yarn storybook:build  # Static Storybook build
+```
 
-### 📚 Storybook
+### 🛠️ **Tools**
 
-- `storybook` - Runs Storybook server
-- `storybook:build` - Builds static Storybook for deployment
-
-### 🛠️ Tools & Configuration
-
-- `customize` - Runs project customization script
-- `update-template` - Updates project from central template repository
-- `ngrok` - Exposes local server through ngrok
+```bash
+yarn customize        # Template personalization
+yarn ngrok            # Expose local server
+```
 
 ## 🔗 Coupling Graph
 
-The `coupling-graph` script is a useful tool that helps visualize the coupling and connections between your project's internal modules. It's built using the [Madge](https://github.com/pahen/madge) library. To generate the graph, simply run the following command:
+Visualize module dependencies and component relationships:
 
 ```bash
-yarn coupling-graph
+yarn quality:coupling:graph  # Alternative command
 ```
 
-This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
+**Output**: `graph.svg` - Interactive visualization of module connections
 
 ![graph](.github/assets/couplingGraph-react.png)
 
+> **Built with**: [Madge](https://github.com/pahen/madge) - Module dependency analysis
+
 ## 🧪 Testing
 
-This boilerplate comes with various testing setups to ensure your application's reliability and robustness.
+Comprehensive testing suite for reliable applications:
 
-### Running Tests
+### **Test Types**
 
-- **Unit and integration tests**: Run Jest tests using `yarn test`
-- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `yarn test:e2e`
-- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `yarn test:e2e:ui`
+- **Unit Tests**: Jest + React Testing Library
+- **E2E Tests**: Playwright (headless + UI mode)
+- **Component Tests**: Storybook with interaction testing
+- **Smoke Tests**: Automated component validation
 
-![graph](.github/assets/runningTests.png)
+### **Running Tests**
 
-### Acceptance Tests
+```bash
+yarn test             # All tests
+yarn test:unit        # Unit tests only
+yarn test:e2e         # E2E tests (headless)
+yarn test:e2e:ui      # E2E tests (UI mode)
+yarn test:smoke       # Smoke tests
+```
 
-To write acceptance tests, we leverage Storybook's [`play` function](https://storybook.js.org/docs/react/writing-stories/play-function#writing-stories-with-the-play-function). This allows you to interact with your components and test various user flows within Storybook.
+### **Acceptance Testing**
+
+Use Storybook's [`play` function](https://storybook.js.org/docs/react/writing-stories/play-function) for interaction testing:
 
 ```ts
-/*
- * See https://storybook.js.org/docs/react/writing-stories/play-function#working-with-the-canvas
- * to learn more about using the canvasElement to query the DOM
- */
 export const FilledForm: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-
-    const emailInput = canvas.getByLabelText('email', {
-      selector: 'input',
-    });
-
-    await userEvent.type(emailInput, 'example-email@email.com', {
-      delay: 100,
-    });
-
-    const passwordInput = canvas.getByLabelText('password', {
-      selector: 'input',
-    });
-
-    await userEvent.type(passwordInput, 'ExamplePassword', {
-      delay: 100,
-    });
-    // See https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
-    const submitButton = canvas.getByRole('button');
-
-    await userEvent.click(submitButton);
+    const emailInput = canvas.getByLabelText('email', { selector: 'input' });
+    await userEvent.type(emailInput, 'example@email.com');
+    // ... more interactions
   },
 };
 ```
 
-### Smoke Testing
+> **Note**: Write stories in JSX/TSX format only - MDX stories don't work well with smoke testing
 
-In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `yarn test:smoke` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
+![graph](.github/assets/runningTests.png)
 
 ## 🎨 Styling and Design System
 
-This boilerplate uses Tailwind CSS for styling and CVA for creating a powerful, easy-to-use design system. If you want to learn more about the setup, check out this fantastic video by Vercel:
+Modern styling with Tailwind CSS and CVA for type-safe component variants:
 
-[![Styling and Design System](https://img.youtube.com/vi/T-Zv73yZ_QI/0.jpg)](https://www.youtube.com/watch?v=T-Zv73yZ_QI&ab_channel=Vercel)
+### **Core Styling**
 
-### CVA - A New Approach to Variants
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[CVA](http://cva.style/)** - Class Variance Authority for component variants
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Dark/light mode support
+- **Absolute imports** - Clean import paths
 
-While CSS-in-TS libraries such as [Stitches](https://stitches.dev/) and [Vanilla Extract](https://vanilla-extract.style/) are great for building type-safe UI components, they might not be the perfect fit for everyone. You may prefer more control over your stylesheets, need to use a framework like Tailwind CSS, or simply enjoy writing your own CSS.
+### **CVA - Type-Safe Variants**
 
-Creating variants using traditional CSS can be a tedious task, requiring you to manually match classes to props and add types. CVA is here to take that pain away, allowing you to focus on the enjoyable aspects of UI development. By providing an easy and type-safe way to create variants, CVA simplifies the process and helps you create powerful design systems without compromising on the flexibility and control of CSS.
+CVA provides an easy, type-safe way to create component variants without compromising CSS flexibility:
+
+```ts
+const buttonVariants = cva(
+  'base-classes', // Always applied
+  {
+    variants: {
+      variant: {
+        primary: 'primary-classes',
+        secondary: 'secondary-classes',
+      },
+      size: {
+        sm: 'small-classes',
+        md: 'medium-classes',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  }
+);
+```
+
+> **Learn More**: [Vercel's CVA Tutorial](https://www.youtube.com/watch?v=T-Zv73yZ_QI) | [Styling Guide](docs/styling-guide.md)
 
 ## 💾 State Management
 
-While this boilerplate doesn't include a specific state management library, we believe it's essential for you to choose the one that best suits your project's needs. Here are some libraries we recommend for state management:
+Choose the state management solution that best fits your project:
 
-### Zustand
+### **Recommended Libraries**
 
-[Zustand](https://github.com/pmndrs/zustand) is a small, fast, and scalable state management library. It's designed to be simple and intuitive, making it a great choice for small to medium-sized projects. It's also optimized for bundle size, ensuring minimal impact on your app's performance.
+#### **[Zustand](https://github.com/pmndrs/zustand)**
 
-### Jotai
+- Small, fast, and scalable
+- Simple and intuitive API
+- Optimized for bundle size
+- Great for small to medium projects
 
-[Jotai](https://github.com/pmndrs/jotai) is an atom-based state management library for React that focuses on providing a minimal and straightforward API. Its atom-based approach allows you to manage your state in a granular way while still being highly optimized for bundle size.
+#### **[Jotai](https://github.com/pmndrs/jotai)**
 
-### Recoil
+- Atom-based state management
+- Minimal and straightforward API
+- Granular state management
+- Highly optimized for bundle size
 
-[Recoil](https://recoiljs.org/) is a state management library developed by Facebook, specifically designed for React applications. By utilizing atoms and selectors, Recoil allows you to efficiently manage state and derived state. Its key benefit is the ability to update components only when the state they're subscribed to changes, reducing unnecessary re-renders and keeping your application fast and efficient. Recoil also offers great developer experience with built-in debugging tools.
+#### **[Recoil](https://recoiljs.org/)**
 
-Choose the library that best fits your requirements and project structure to ensure an efficient state management solution for your application.
+- Facebook-developed for React
+- Atoms and selectors pattern
+- Efficient derived state management
+- Built-in debugging tools
 
-## 💻 Environment Variables handling
+> **Note**: No state management library is included by default - choose based on your project needs
 
-[T3 Env](https://env.t3.gg/) is a library that provides environmental variables checking at build time, type validation and transforming. It ensures that your application is using the correct environment variables and their values are of the expected type. You'll never again struggle with runtime errors caused by incorrect environment variable usage.
+## 💻 Environment Variables
 
-Config file is located at `env.mjs`. Simply set your client and server variables and import `env` from any file in your project.
+Type-safe environment variable management with [T3 Env](https://env.t3.gg/):
+
+### **Features**
+
+- **Build-time validation** - Catch errors before deployment
+- **Type safety** - TypeScript integration with Zod schemas
+- **Client/Server separation** - Clear distinction between environments
+- **Runtime validation** - Ensure correct variable types
+
+### **Configuration**
+
+Define variables in `env.mjs`:
 
 ```ts
 export const env = createEnv({
   server: {
-    // Server variables
     SECRET_KEY: z.string(),
   },
   client: {
-    // Client variables
     API_URL: z.string().url(),
   },
   runtimeEnv: {
-    // Assign runtime variables
     SECRET_KEY: process.env.SECRET_KEY,
     API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
 });
 ```
 
-If the required environment variables are not set, you'll get an error message:
+### **Usage**
 
-```sh
-  ❌ Invalid environment variables: { SECRET_KEY: [ 'Required' ] }
+```ts
+import { env } from '@/env.mjs';
+// Type-safe access to environment variables
+const apiUrl = env.API_URL;
 ```
+
+> **Error Handling**: Missing variables show clear error messages at build time
+
+## 📚 Documentation Index
+
+Complete project documentation organized by domain:
+
+### Core Documentation
+
+- **[Complete Documentation Index](docs/INDEX.md)** - Full project documentation navigation
+- **[Memory Bank System](memory-bank/README.md)** - AI-focused documentation structure
+- **[Getting Started Guide](docs/domains/1-getting-started/README.md)** - Extended setup instructions
+
+### Development & Architecture
+
+- **[Developer Experience](docs/domains/developer-experience/README.md)** - Tools, workflows, and DX optimization
+- **[Architecture Guide](docs/domains/7-architecture/README.md)** - System patterns and design decisions
+- **[Component Development](docs/domains/7-architecture/technical.md)** - Component structure and patterns
+- **[Code Quality](docs/domains/code-quality/README.md)** - Linting, formatting, and quality enforcement
+
+### Configuration & Environment
+
+- **[Environment Configuration](docs/domains/3-environment/README.md)** - T3 Env setup and management
+- **[Configuration Guide](docs/domains/3-environment/technical.md)** - Config patterns and best practices
+- **[Dependency Management](docs/domains/4-dependencies/README.md)** - s-update-manager, Renovate, patches
+
+### Testing & Quality
+
+- **[Testing Guide](docs/domains/testing/README.md)** - Jest, Playwright, Storybook testing strategies
+- **[Performance Optimization](docs/domains/performance/README.md)** - Bundle analysis and optimization
+- **[Security Guide](docs/domains/performance/tech-security.md)** - Security headers and best practices
+
+### Workflow & Deployment
+
+- **[Linear + GitHub Workflow](docs/domains/issue-tracking/README.md)** - Issue tracking integration
+- **[Deployment Guide](docs/domains/15-deployment/README.md)** - CI/CD and deployment strategies
+- **[Maintenance Guide](docs/domains/16-maintenance/README.md)** - Long-term project maintenance
+
+### Styling & UI
+
+- **[Styling Guide](docs/domains/styling/README.md)** - Tailwind CSS, CVA, and design system
+- **[Template Customization](docs/domains/customization/README.md)** - Project personalization
 
 ## Badges
 

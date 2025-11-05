@@ -59,7 +59,7 @@ npm-debug.log*
 
 # cache files
 .stylelintcache
-.eslintcache
+.eslintcache/
 .prettier-cache
 .npm
 

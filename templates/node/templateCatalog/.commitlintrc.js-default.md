@@ -1,4 +1,3 @@
-// commitlint.config.js | .commitlintrc.js
 /** @type {import('cz-git').UserConfig} */
 const pkg = require('./package.json');
 const issueTag = pkg.config?.issueTag || 'SC';

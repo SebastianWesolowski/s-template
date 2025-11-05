@@ -10,7 +10,6 @@
   "editor.guides.bracketPairs": true,
   "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
-  "files.autoSaveDelay": 500,
 
   // Files
   "files.trimTrailingWhitespace": true,

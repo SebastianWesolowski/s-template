@@ -19,7 +19,7 @@
 - [Remove Unnecessary Files](#remove-unnecessary-files)
 - [Add Permissions and Run tools/cleanCustomize.sh](#add-permissions-and-run-cleancustomizesh)
 
-5. [WayToWrok](WayToWrok.md)
+5. [Workflow Guide](domains/14-workflow/README.md)
 
 - [How work with branch](#How-work-with-branch)
 
@@ -54,10 +54,13 @@ use `use customize:clean` it
 ### Publish
 
 #### Pre-release
+
 Pre-release is prepared from feature and dev branches.
 
 #### Pre-production
+
 Pre-production should be created with a pull request to the main branch.
 
 #### Release
+
 Release is created on the main branch and prepared by GitHub Actions.
