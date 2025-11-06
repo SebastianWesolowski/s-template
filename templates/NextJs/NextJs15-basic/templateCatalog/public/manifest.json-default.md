@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "density": "0.75",
+      "sizes": "36x36",
+      "src": "/assets/favicon/android-icon-36x36.png",
+      "type": "image/png"
+    },
+    {
+      "density": "1.0",
+      "sizes": "48x48",
+      "src": "/assets/favicon/android-icon-48x48.png",
+      "type": "image/png"
+    },
+    {
+      "density": "1.5",
+      "sizes": "72x72",
+      "src": "/assets/favicon/android-icon-72x72.png",
+      "type": "image/png"
+    },
+    {
+      "density": "2.0",
+      "sizes": "96x96",
+      "src": "/assets/favicon/android-icon-96x96.png",
+      "type": "image/png"
+    },
+    {
+      "density": "3.0",
+      "sizes": "144x144",
+      "src": "/assets/favicon/android-icon-144x144.png",
+      "type": "image/png"
+    },
+    {
+      "density": "4.0",
+      "sizes": "192x192",
+      "src": "/assets/favicon/android-icon-192x192.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "App"
+}
