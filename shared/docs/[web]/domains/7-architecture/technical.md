@@ -50,8 +50,7 @@ src/app/
 
 ```typescript
 // src/app/layout.tsx - Root Layout
-import { Analytics, AppProvider } from '@components';
-import config from '@configs';
+import { AppProvider } from '@components';
 import '@styles/global.scss';
 import '@styles/tailwind.css';
 
@@ -61,10 +60,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={config.SEO.locale} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body className='flex h-full flex-col'>
         <AppProvider>
-          <Analytics />
           {children}
         </AppProvider>
       </body>

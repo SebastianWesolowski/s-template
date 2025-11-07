@@ -133,9 +133,6 @@ src/
 ├── ui/                 # UI primitives
 │   ├── button.tsx      # shadcn/ui components
 │   └── button.stories.tsx
-├── configs/            # Configuration
-│   ├── config.tsx      # App config
-│   └── configAnalytics.ts
 ├── utils/              # Utilities
 │   ├── utils.ts        # Helper functions
 │   └── formatPrice/    # Feature utils
@@ -170,12 +167,6 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_APP_NAME=My App
 NEXT_PUBLIC_APP_DESCRIPTION=My App Description
 
-# Analytics (optional)
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_HOTJAR_ID=XXXXXXXXXX
-NEXT_PUBLIC_UMAMI_URL=https://analytics.example.com
-NEXT_PUBLIC_UMAMI_WEBSITE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
 # Development tools (optional)
 NGROK_AUTH_TOKEN=your-ngrok-token
 ```
@@ -188,11 +179,6 @@ NEXT_PUBLIC_APP_URL=https://myapp.com
 NEXT_PUBLIC_APP_NAME=My Production App
 NEXT_PUBLIC_APP_DESCRIPTION=Production App Description
 
-# Analytics
-NEXT_PUBLIC_GA_ID=G-PRODUCTION-ID
-NEXT_PUBLIC_HOTJAR_ID=PRODUCTION-ID
-NEXT_PUBLIC_UMAMI_URL=https://analytics.myapp.com
-NEXT_PUBLIC_UMAMI_WEBSITE_ID=production-website-id
 ```
 
 ## Port Configuration

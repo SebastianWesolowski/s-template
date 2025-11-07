@@ -151,7 +151,7 @@ static measureCoreWebVitals(): void
 private static sendMetrics(metrics: any): void
 ```
 
-**Funkcjonalność:** Wysyła metryki do analytics service (gtag).
+**Funkcjonalność:** Wysyła metryki do monitoring service.
 
 ### Core Web Vitals Metrics
 
@@ -330,7 +330,7 @@ response.headers.set('ETag', `"${Date.now()}"`);
 
 ## Performance Monitoring Tools
 
-### PerformanceMonitor (Analytics)
+### PerformanceMonitor
 
 [technical.md](technical.md) linie 224-271
 
@@ -342,7 +342,7 @@ response.headers.set('ETag', `"${Date.now()}"`);
 static trackPageView(url: string): void
 ```
 
-**Funkcjonalność:** Śledzi wyświetlenie strony w Google Analytics i custom analytics.
+**Funkcjonalność:** Śledzi wyświetlenie strony i wysyła metryki do monitoring service.
 
 **trackError(error: Error, context: string): void**
 

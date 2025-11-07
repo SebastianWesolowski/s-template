@@ -96,7 +96,7 @@ async function cleanupBackups(): Promise<void> {
 async function cleanupFiles(): Promise<void> {
   const filesToRemove = ['todo.md'];
 
-  const directoriesToRemove = ['docs', 'tools/customize'];
+  const directoriesToRemove = ['tools/customize'];
 
   // Remove individual files
   for (const file of filesToRemove) {

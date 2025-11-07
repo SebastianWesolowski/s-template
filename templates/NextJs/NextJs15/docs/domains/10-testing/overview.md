@@ -62,12 +62,15 @@ flowchart TD
 ### Narzędzia
 
 1. **Jest** — unit i integration testing (70% piramidy)
+
    - Szybkie, izolowane testy jednostek
    - Testowanie interakcji między modułami
    - Mockowanie zewnętrznych zależności
+   - Snapshot testing dla komponentów UI
    - Raportowanie pokrycia testami
 
 2. **Playwright** — E2E testing (10% piramidy)
+
    - Testowanie pełnych user journeys
    - Cross-browser testing
    - Visual testing
@@ -104,6 +107,7 @@ System testowania można łatwo adaptować i rozszerzać:
 
 - [`technical.md`](technical.md) — szczegóły implementacji i konfiguracji
 - [`tech-jest.md`](tech-jest.md) — szczegóły Jest configuration
+- [`tech-snapshots.md`](tech-snapshots.md) — snapshot testing i praca z plikami .snap
 - [`tech-playwright.md`](tech-playwright.md) — szczegóły Playwright setup
 - [`tech-storybook.md`](tech-storybook.md) — szczegóły Storybook testing
 - [`tech-ngrok.md`](tech-ngrok.md) — external testing i webhook testing

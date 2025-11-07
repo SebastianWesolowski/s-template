@@ -1,4 +1,4 @@
-import { BasicLayout, Seo } from '@components';
+import { BasicLayout } from '@components';
 import React from 'react';
 
 type CodeProps = {
@@ -29,8 +29,7 @@ const DevelopmentPage = (): React.ReactElement => {
 
   return (
     <BasicLayout>
-      <Seo title='Development Environment' />
-      <main className='p-8'>
+      <div className='p-8'>
         <h2>TODO create developer component</h2>
         <h2>NEXT_PUBLIC_NODE_ENV</h2>
         <p>{process.env.NEXT_PUBLIC_NODE_ENV}</p>
@@ -100,7 +99,7 @@ const DevelopmentPage = (): React.ReactElement => {
             </p>
           </div>
         </section>
-      </main>
+      </div>
     </BasicLayout>
   );
 };

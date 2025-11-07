@@ -88,7 +88,14 @@ docs/[web]:
   projects:
     - NextJs/NextJs15
     - NextJs/NextJs15-basic
+  excludeFiles:
+    - domains-lp
   asName: ../docs
+
+docs/[web]/domains-lp:
+  projects:
+    - NextJs/NextJs15
+  asName: ../../docs/domains
 
 
 docs/[npm]/HowToAutoDeploy.md:

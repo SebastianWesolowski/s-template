@@ -1,3 +1,4 @@
+import { Container } from '@components/Container';
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
 import { type FC, type ReactNode } from 'react';
@@ -17,7 +18,9 @@ export const BasicLayout: FC<BasicLayoutProps> = ({ children, className = '' }):
   return (
     <div className={`flex min-h-screen flex-col ${className}`.trim()}>
       <Header />
-      {children}
+      <main className='flex-1'>
+        <Container>{children}</Container>
+      </main>
       <Footer />
     </div>
   );

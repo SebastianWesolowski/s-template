@@ -38,8 +38,7 @@ src/app/
 
 ```typescript
 // src/app/layout.tsx
-import { AppProvider, Analytics } from '@components';
-import config from '@configs';
+import { AppProvider } from '@components';
 import '@styles/global.scss';
 import '@styles/tailwind.css';
 
@@ -49,10 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={config.SEO.locale} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body className='flex h-full flex-col'>
         <AppProvider>
-          <Analytics />
           {children}
         </AppProvider>
       </body>
@@ -65,7 +63,7 @@ export default function RootLayout({
 
 ```typescript
 // src/app/page.tsx
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/ui/button';
 import { Card } from '@/components/ui/Card';
 
 export default function HomePage() {
@@ -103,7 +101,7 @@ export default function Loading() {
 'use client';
 
 import { useEffect } from 'react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/ui/button';
 
 export default function Error({
   error,
@@ -300,7 +298,7 @@ export default async function DashboardPage() {
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/ui/button';
 
 export function UserList() {
   const [users, setUsers] = useState([]);

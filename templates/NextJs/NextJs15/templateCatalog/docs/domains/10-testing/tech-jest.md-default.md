@@ -33,10 +33,9 @@ Jest używany do unit i integration testing z nietypowymi konfiguracjami: ES Mod
 
 ```json
 {
-  "test:dev": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --passWithNoTests --updateSnapshot",
   "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --passWithNoTests",
   "test:components": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --passWithNoTests 'src/**/*.test.tsx'",
-  "test:snapshot": "cross-env TEST_WITH_SNAPSHOTS=true node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --passWithNoTests --updateSnapshot",
+  "test:snapshot:generate": "cross-env TEST_WITH_SNAPSHOTS=true node --experimental-vm-modules node_modules/jest/bin/jest.js --silent --passWithNoTests --updateSnapshot",
   "test:unit:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch --passWithNoTests"
 }
 ```
@@ -79,10 +78,12 @@ describe('Component', () => {
 **Skrypt snapshot tests:**
 
 ```bash
-yarn test:snapshot  # Uruchamia tylko gdy TEST_WITH_SNAPSHOTS=true
+yarn test:snapshot:generate  # Uruchamia tylko gdy TEST_WITH_SNAPSHOTS=true, generuje/aktualizuje snapshoty
 ```
 
 **Szczegóły:** Automatyczne snapshot management w pre-commit hook → [tech-husky.md](../9-code-quality/tech-husky.md#pre-commit)
+
+**Kompletny przewodnik snapshot testing:** [tech-snapshots.md](tech-snapshots.md) — szczegóły pracy z plikami `.snap`, best practices i troubleshooting
 
 ### 3. ts-jest Transform z diagnostics: false
 
@@ -272,19 +273,9 @@ cat package.json | grep test:
 yarn test:unit
 ```
 
-### Problem: Snapshots nie działają
+### Problem: Snapshots — wszystkie problemy związane ze snapshotami
 
-**Przyczyna:** Brak env variable `TEST_WITH_SNAPSHOTS=true`.
-
-**Rozwiązanie:**
-
-```bash
-# Uruchom snapshot tests
-yarn test:snapshot
-
-# Lub ręcznie z env variable
-TEST_WITH_SNAPSHOTS=true yarn test:unit
-```
+**Szczegóły troubleshooting snapshotów:** [tech-snapshots.md](tech-snapshots.md#troubleshooting) — kompletny przewodnik rozwiązywania problemów ze snapshotami
 
 ### Problem: Module path resolution errors
 
@@ -313,6 +304,7 @@ rm -rf node_modules/.cache/jest
 - [`overview.md`](overview.md) — koncepcja Jest i test pyramid
 - [`technical.md`](technical.md) — workflow testing i integracja narzędzi
 - [`reference.md`](reference.md) — kompletna referencja konfiguracji i skryptów
+- [`tech-snapshots.md`](tech-snapshots.md) — snapshot testing (conditional snapshots)
 - [`../9-code-quality/tech-husky.md`](../9-code-quality/tech-husky.md) — integracja z pre-commit hooks
 - [`../9-code-quality/technical.md`](../9-code-quality/technical.md) — kontekst w code quality workflow
 - [`memory-bank/testing.md`](../../../memory-bank/testing.md) — skrót Jest dla AI

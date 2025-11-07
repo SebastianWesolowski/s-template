@@ -3,7 +3,7 @@
 > [!NOTE] Wystąpienie tematu
 > Szczegółowy przewodnik implementacji.
 > Źródło koncepcji: [overview.md](overview.md)
-TypeScript zapewnia type safety w projekcie przez strict mode. Jest już zainstalowane i skonfigurowane z dodatkowymi bibliotekami poprawiającymi domyślne typy (`ts-reset`, `typed-query-selector`).
+> TypeScript zapewnia type safety w projekcie przez strict mode. Jest już zainstalowane i skonfigurowane z dodatkowymi bibliotekami poprawiającymi domyślne typy (`ts-reset`, `typed-query-selector`).
 
 **Dokumentacja:** [TypeScript Docs](https://www.typescriptlang.org/docs)
 
@@ -62,8 +62,6 @@ Kluczowe opcje strict:
       "@app": ["./src/app"],
       "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
-      "@configs": ["./src/configs"],
-      "@configs/*": ["./src/configs/*"],
       "@assets/*": ["./src/assets/*"],
       "@assets": ["./src/assets"]
     },
@@ -102,7 +100,6 @@ Dostępne aliases:
 - `@/*` → `src/*`
 - `@components/*`, `@components` → `src/components`
 - `@utils/*`, `@utils` → `src/utils`
-- `@configs/*`, `@configs` → `src/configs`
 - `@assets/*`, `@assets` → `src/assets`
 - `@hooks/*`, `@hooks` → `src/hooks`
 - `@lib/*`, `@lib` → `src/lib`
@@ -116,7 +113,6 @@ Dostępne aliases:
 ```typescript
 import { Button } from '@components/Button';
 import { cn } from '@utils/utils';
-import { config } from '@configs/config';
 ```
 
 **Szczegóły:** [7-architecture/tech-components.md](../7-architecture/tech-components.md) — TypeScript patterns w komponentach

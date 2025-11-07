@@ -45,18 +45,7 @@ const stories = {
   },
 
   WithCustomMenuItems: {
-    args: {
-      menuContent: [
-        { id: '1', title: 'Home', url: '/' },
-        { id: '2', title: 'Products', url: '/products' },
-        { id: '3', title: 'About', url: '/about' },
-        { id: '4', title: 'Contact', url: '/contact' },
-      ],
-      menuRightContent: [
-        { id: '5', title: 'Login', url: '/login' },
-        { id: '6', title: 'Sign Up', url: '/signup', button: true },
-      ],
-    },
+    args: {},
   },
 
   WithChildren: {

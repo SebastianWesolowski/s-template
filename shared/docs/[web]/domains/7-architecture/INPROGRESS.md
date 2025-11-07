@@ -6,16 +6,6 @@
 
 ---
 
-## 1. Komponent Button — stan przejściowy
-
-- **Obecnie istnieją dwie implementacje Button:**
-  - `src/ui/button.tsx` — wersja bazowa/prymityw, testowana pod kątem bazowania na shadcn/ui/Radix UI
-  - `src/components/Button/Button/Button.tsx` — dotychczasowa, rozbudowana wersja aplikacyjna (feature, obsługa linków, warianty intent)
-- Trwa **migracja do jednej, spójnej implementacji Button**
-  - Docelowa wersja będzie oparta o shadcn/ui (lub własną forkowaną bibliotekę)
-  - Różnice i dublowanie są stanem przejściowym wynikającym z testów oraz stopniowej adopcji nowych wzorców
-  - Aktualna dokumentacja opisuje obie wersje — po ujednoliceniu wzorzec będzie podany TYLKO dla architektury docelowej.
-
 ## 2. Middleware — przykład referencyjny, brak implementacji produkcyjnej
 
 - Przykłady middleware (`src/middleware.ts`) są tylko propozycją/wzorcami na przyszłość

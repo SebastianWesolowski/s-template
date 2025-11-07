@@ -14,7 +14,7 @@ describe('Footer', () => {
     // Check that GitHub link is present
     const githubLink = screen.getByRole('link', { name: /wesolowski on github/i });
     expect(githubLink).toBeInTheDocument();
-    expect(githubLink).toHaveAttribute('href', 'https://github.com/wesolowski');
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/SebastianWesolowski');
 
     maybeSnapshot(container);
   });

@@ -133,7 +133,6 @@ https://app.domain.com
 # .env.pre-release
 NODE_ENV=development
 NEXT_PUBLIC_APP_URL=https://feature-name-v1.2.3.domain.com
-NEXT_PUBLIC_ANALYTICS_ENABLED=false
 NEXT_PUBLIC_DEBUG_MODE=true
 ```
 
@@ -143,7 +142,6 @@ NEXT_PUBLIC_DEBUG_MODE=true
 # .env.pre-production
 NODE_ENV=production
 NEXT_PUBLIC_APP_URL=https://pre-prod.domain.com
-NEXT_PUBLIC_ANALYTICS_ENABLED=true
 NEXT_PUBLIC_DEBUG_MODE=false
 ```
 
@@ -153,7 +151,6 @@ NEXT_PUBLIC_DEBUG_MODE=false
 # .env.production
 NODE_ENV=production
 NEXT_PUBLIC_APP_URL=https://domain.com
-NEXT_PUBLIC_ANALYTICS_ENABLED=true
 NEXT_PUBLIC_DEBUG_MODE=false
 ```
 

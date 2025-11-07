@@ -126,12 +126,9 @@ export class PerformanceMonitor {
   }
 
   private static sendMetrics(metrics: any) {
-    // Send to analytics service
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'performance_metrics', {
-        custom_parameter: metrics,
-      });
-    }
+    // Send metrics to monitoring service
+    // Example: Send to your monitoring endpoint
+    // fetch('/api/metrics', { method: 'POST', body: JSON.stringify(metrics) });
   }
 }
 ```
@@ -230,14 +227,7 @@ export class CDNManager {
 export class PerformanceMonitor {
   static trackPageView(url: string) {
     if (typeof window !== 'undefined') {
-      // Google Analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('config', process.env.NEXT_PUBLIC_GA_ID!, {
-          page_path: url,
-        });
-      }
-
-      // Custom analytics
+      // Track page view
       this.sendEvent('page_view', { url });
     }
   }
@@ -259,9 +249,9 @@ export class PerformanceMonitor {
   }
 
   private static sendEvent(event: string, data: any) {
-    // Send to analytics service
+    // Send to monitoring service
     if (typeof fetch !== 'undefined') {
-      fetch('/api/analytics', {
+      fetch('/api/metrics', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ event, data }),

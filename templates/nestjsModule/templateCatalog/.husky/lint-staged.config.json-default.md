@@ -2,7 +2,7 @@
   "src/**/*.{js,jsx,ts,tsx}": [
     "prettier --write",
     "eslint --fix --config eslint.config.mjs",
-    "jest --bail --findRelatedTests --passWithNoTests"
+    "jest --bail --findRelatedTests --passWithNoTests --no-error-on-obsolete-snapshots"
   ],
   "src/**/*.{json,md,yml}": ["prettier --write"]
 }

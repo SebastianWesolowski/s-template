@@ -19,11 +19,11 @@
 - `yarn test` — uruchamia wszystkie testy (unit + components + snapshot + smoke + e2e)
 - `yarn test:unit` — tylko unit tests (Jest)
 - `yarn test:components` — tylko component tests (Jest)
-- `yarn test:snapshot` — snapshot tests z aktualizacją
+- `yarn test:snapshot:generate` — generuje/aktualizuje snapshoty
+- `yarn test:snapshot:verify` — testuje snapshoty bez aktualizacji
 - `yarn test:unit:watch` — watch mode dla unit tests
 - `yarn test:changed:unit` — tylko zmienione unit tests
 - `yarn test:changed:components` — tylko zmienione component tests
-- `yarn test:dev` — development mode (runInBand, updateSnapshot)
 
 ### Playwright (E2E Testing)
 
@@ -98,6 +98,19 @@
 
 **Szczegóły:** [tech-jest.md](tech-jest.md#5-rozbudowane-module-path-mapping)
 
+### Snapshot Testing
+
+**Konfiguracja:** [`tools/snapshotUtils.ts`](../../../tools/snapshotUtils.ts) — conditional snapshots utility
+
+**Skrypty:**
+
+- `yarn test:snapshot:generate` — generuje/aktualizuje snapshoty
+- `yarn test:snapshot:verify` — testuje snapshoty bez aktualizacji
+
+**Lokalizacja snapshotów:** `src/**/__snapshots__/*.snap`
+
+**Szczegóły:** [tech-snapshots.md](tech-snapshots.md) — kompletny przewodnik pracy z snapshotami
+
 ### CI/CD Integration
 
 **Workflow files:** [`.github/workflows/`](../../../.github/workflows/)
@@ -111,6 +124,7 @@
 - [overview.md](overview.md) — filozofia testing i test pyramid
 - [technical.md](technical.md) — workflow i integracja narzędzi
 - [tech-jest.md](tech-jest.md) — szczegóły Jest configuration
+- [tech-snapshots.md](tech-snapshots.md) — snapshot testing i praca z plikami .snap
 - [tech-playwright.md](tech-playwright.md) — szczegóły Playwright setup
 - [tech-storybook.md](tech-storybook.md) — szczegóły Storybook testing
 - [tech-ngrok.md](tech-ngrok.md) — external testing i webhook testing

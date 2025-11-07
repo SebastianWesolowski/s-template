@@ -1,7 +1,7 @@
 # Przewodnik techniczny testowania
 
 > [!NOTE] Wystąpienie tematu
-> Kanoniczne źródła szczegółów konfiguracji: [overview.md](overview.md), [tech-jest.md](tech-jest.md), [tech-playwright.md](tech-playwright.md), [tech-storybook.md](tech-storybook.md). W tym pliku tylko workflow i integracja narzędzi.
+> Kanoniczne źródła szczegółów konfiguracji: [overview.md](overview.md), [tech-jest.md](tech-jest.md), [tech-snapshots.md](tech-snapshots.md), [tech-playwright.md](tech-playwright.md), [tech-storybook.md](tech-storybook.md). W tym pliku tylko workflow i integracja narzędzi.
 
 ---
 
@@ -109,6 +109,11 @@ Coverage configuration znajduje się w:
 - Mock problems → [tech-jest.md](tech-jest.md#mocking-strategies)
 - Configuration errors → [tech-jest.md](tech-jest.md#jest-setup)
 
+### Snapshots
+
+- Snapshot issues → [tech-snapshots.md](tech-snapshots.md#troubleshooting)
+- Dynamiczne dane w snapshotach → [tech-snapshots.md](tech-snapshots.md#problem-snapshot-zawiera-dynamiczne-dane-daty-timestamps)
+
 ### Playwright
 
 - Browser installation → [tech-playwright.md](tech-playwright.md#playwright-setup)
@@ -139,6 +144,7 @@ Coverage configuration znajduje się w:
 
 - [overview.md](overview.md) — koncepcja i filozofia testing
 - [tech-jest.md](tech-jest.md) — szczegóły Jest configuration
+- [tech-snapshots.md](tech-snapshots.md) — snapshot testing i praca z plikami .snap
 - [tech-playwright.md](tech-playwright.md) — szczegóły Playwright setup
 - [tech-storybook.md](tech-storybook.md) — szczegóły Storybook testing
 - [tech-ngrok.md](tech-ngrok.md) — external testing i webhook testing

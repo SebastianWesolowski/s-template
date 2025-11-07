@@ -97,7 +97,6 @@ flowchart TD
     A[src/] --> B[app/ - Next.js App Router]
     A --> C[components/ - Feature Components]
     A --> D[ui/ - UI Primitives]
-    A --> E[configs/ - Configuration]
     A --> F[utils/ - Utilities]
     A --> G[styles/ - Global Styles]
     A --> H[assets/ - Static Assets]
