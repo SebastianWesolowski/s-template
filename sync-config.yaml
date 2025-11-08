@@ -1,7 +1,7 @@
 .github:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
     - startetNpmPackage/node
     - node
     - nestjs
@@ -12,7 +12,7 @@
 .github/workflows:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
     - startetNpmPackage/node
     - node
     - nestjs
@@ -23,7 +23,7 @@
 .husky:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
     - startetNpmPackage/node
     - node
     - nestjs
@@ -42,21 +42,21 @@
 .husky/lint-staged-with-style.config.json:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
   asName: lint-staged.config.json
 
 .vscode:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
   - nestjsModule
 
-"[next]":
+'[next]':
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
   copyToRoot: true
 
 '[node]':
@@ -74,7 +74,7 @@
 docs:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
     - startetNpmPackage/node
     - node
     - nestjs
@@ -87,14 +87,14 @@ docs:
 docs/[web]:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
   excludeFiles:
     - domains-lp
   asName: ../docs
 
 docs/[web]/domains-lp:
   projects:
-    - NextJs/NextJs15
+    - NextJs/NextJs15-lp
   asName: ../../docs/domains
 
 
@@ -108,7 +108,7 @@ docs/[npm]/HowToAutoDeploy.md:
 tools:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
     - startetNpmPackage/node
     - node
     - nestjs
@@ -121,7 +121,7 @@ tools:
 tools/transform-browser-list:
   projects:
     - NextJs/NextJs15
-    - NextJs/NextJs15-basic
+    - NextJs/NextJs15-lp
 
 tools/addDependency.js:
   projects:
@@ -139,7 +139,7 @@ tools/addModuleType.js:
 
 .commitlintrc.js:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -147,7 +147,7 @@ tools/addModuleType.js:
 
 .cursorignore:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -155,7 +155,7 @@ tools/addModuleType.js:
 
 .editorconfig:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -163,7 +163,7 @@ tools/addModuleType.js:
 
 .gitattributes:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -171,7 +171,7 @@ tools/addModuleType.js:
 
 .npmrc:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -179,7 +179,7 @@ tools/addModuleType.js:
 
 .nvmrc:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -193,7 +193,7 @@ tools/addModuleType.js:
 
 .quokka:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -201,7 +201,7 @@ tools/addModuleType.js:
 
 .releaserc.js:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs
@@ -209,7 +209,7 @@ tools/addModuleType.js:
 
 LICENSE:
   - NextJs/NextJs15
-  - NextJs/NextJs15-basic
+  - NextJs/NextJs15-lp
   - startetNpmPackage/node
   - node
   - nestjs

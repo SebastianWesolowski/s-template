@@ -15,7 +15,7 @@
     "prepare:node": "s-prepare-template --projectCatalog='./templates/node'",
     "prepare:startetNpmPackage/node": "s-prepare-template --projectCatalog='./templates/startetNpmPackage/node'",
     "prepare:NextJs/NextJs15": "s-prepare-template --projectCatalog='./templates/NextJs/NextJs15'",
-    "prepare:NextJs/NextJs15-basic": "s-prepare-template --projectCatalog='./templates/NextJs/NextJs15-basic'",
+    "prepare:NextJs/NextJs15-lp": "s-prepare-template --projectCatalog='./templates/NextJs/NextJs15-lp'",
     "prepare:mocks/mockTemplateWithImageWithConfig": "s-prepare-template --projectCatalog='./templates/mocks/mockTemplateWithImageWithConfig'",
     "prepare:mocks/microTemplate": "s-prepare-template --projectCatalog='./templates/mocks/microTemplate'",
     "prepare:nestjs": "s-prepare-template --projectCatalog='./templates/nestjs'",
