@@ -1,3 +1,6 @@
 node_modules
 *.backup
 DS_Store
+# misc
+.DS_Store
+*.pem
