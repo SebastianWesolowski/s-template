@@ -1,3 +1,16 @@
+## [1.5.0-dev.31](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.30...v1.5.0-dev.31) (November 08, 2025)
+
+
+### Other tasks
+
+- 📚 [] ️ improve docs share ([cc1eae3](https://github.com/SebastianWesolowski/s-template/commit/cc1eae3393eeebd5179cd70d03453e6faf8cc146))
+- ✨ [] auto generat snapshots with strictConfig ([48887f5](https://github.com/SebastianWesolowski/s-template/commit/48887f58b4ae6d207af4d38edd7f1c3ae787cb7b))
+- ✨ [] add new type nextJS - NextJs15-basic ([186f00b](https://github.com/SebastianWesolowski/s-template/commit/186f00bb3099f9f4216ff643928b8620ce4f00cf))
+- add remove ignored files ([cc92e7f](https://github.com/SebastianWesolowski/s-template/commit/cc92e7fe3855442153b67c7934225d3efb4374d1))
+- split nextjs in to module
+
+Signed-off-by: Sebastian Wesołowski <Sebastian.wesolowski.sw@gmail.com> ([93d5e32](https://github.com/SebastianWesolowski/s-template/commit/93d5e32ea7b025790523b4b08f73800ef25caa40))
+
 ## [1.5.0-dev.30](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.29...v1.5.0-dev.30) (November 05, 2025)
 
 
