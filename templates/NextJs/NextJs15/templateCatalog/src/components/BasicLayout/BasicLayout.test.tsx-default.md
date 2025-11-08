@@ -2,25 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { maybeSnapshot } from '@tools/snapshotUtils';
 import { BasicLayout } from './BasicLayout';
 
-// Mock the dependencies
-jest.mock('@configs/config', () => ({
-  __esModule: true,
-  default: {
-    content: {
-      menu: {
-        headerMenu: [
-          { id: 'mock-1', title: 'Mock Item 1', url: '/mock-1' },
-          { id: 'mock-2', title: 'Mock Item 2', url: '/mock-2' },
-        ],
-        headerCTAMenu: [
-          { id: 'mock-3', title: 'Login', url: '/login' },
-          { id: 'mock-4', title: 'Sign Up', url: '/signup', button: true },
-        ],
-      },
-    },
-  },
-}));
-
 // Ensure Header and Footer are properly mocked
 jest.mock('@components/Header', () => ({
   Header: () => <header data-testid='mock-header'>Header</header>,

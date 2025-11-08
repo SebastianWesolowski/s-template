@@ -2,13 +2,12 @@
 
 import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { type IMenuItem } from '@configs';
 import { Fragment } from 'react';
 
-export function MobileNavigation({ menuContent }: { menuContent: IMenuItem[] }): React.ReactElement {
+export function MobileNavigation(): React.ReactElement {
   return (
     <Popover className='relative'>
-      {({ open, close }) => (
+      {({ open }) => (
         <>
           <PopoverButton className='relative z-10 flex h-8 w-8 items-center justify-center [&:not(:focus-visible)]:focus:outline-none'>
             <span className='sr-only'>Toggle Navigation</span>
@@ -47,18 +46,14 @@ export function MobileNavigation({ menuContent }: { menuContent: IMenuItem[] }):
           >
             <PopoverPanel className='light:bg-white absolute inset-x-0 top-full mt-4 origin-top space-y-4 rounded-2xl p-6 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5 dark:bg-gray-900'>
               <ul className='space-y-4'>
-                {menuContent.map(({ title, url, id, button }) => {
-                  if (button) {
-                    return null;
-                  }
-                  return (
-                    <li key={id} className={url === '/logowanie' ? 'border-t border-slate-300/40 pt-4' : ''}>
-                      <Link href={url} className='block w-full' onClick={() => close()}>
-                        {title}
-                      </Link>
-                    </li>
-                  );
-                })}
+                <li>
+                  <Link
+                    href={'#'}
+                    className='rounded-lg px-2 py-1 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                  >
+                    ### example
+                  </Link>
+                </li>
               </ul>
             </PopoverPanel>
           </Transition>

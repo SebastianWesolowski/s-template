@@ -5,47 +5,8 @@ import { Header } from './Header';
 // Mock the dependencies
 jest.mock('@assets/svg/MinimalLogo', () => () => <div data-testid='mock-logo'>Logo</div>);
 jest.mock('./MobileNavigation', () => ({
-  MobileNavigation: ({ menuContent }: { menuContent: unknown[] }) => (
-    <div data-testid='mock-mobile-navigation'>{menuContent.length} items</div>
-  ),
+  MobileNavigation: () => <div data-testid='mock-mobile-navigation'>Mobile Navigation</div>,
 }));
-jest.mock('../Button', () => ({
-  ButtonLink: ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href} data-testid='mock-button-link'>
-      {children}
-    </a>
-  ),
-}));
-
-// Mock the config to avoid the uuid import issues
-jest.mock('@configs/config', () => ({
-  __esModule: true,
-  default: {
-    content: {
-      menu: {
-        headerMenu: [
-          { id: 'mock-1', title: 'Mock Item 1', url: '/mock-1' },
-          { id: 'mock-2', title: 'Mock Item 2', url: '/mock-2' },
-        ],
-        headerCTAMenu: [
-          { id: 'mock-3', title: 'Login', url: '/login' },
-          { id: 'mock-4', title: 'Sign Up', url: '/signup', button: true },
-        ],
-      },
-    },
-  },
-}));
-
-// Sample menu items for testing
-const sampleMenuContent = [
-  { id: '1', title: 'Home', url: '/' },
-  { id: '2', title: 'Features', url: '/features' },
-];
-
-const sampleMenuRightContent = [
-  { id: '3', title: 'Login', url: '/login' },
-  { id: '4', title: 'Sign Up', url: '/signup', button: true },
-];
 
 describe('Header', () => {
   it('renders with default props', () => {
@@ -55,15 +16,16 @@ describe('Header', () => {
     maybeSnapshot(container);
   });
 
-  it('renders with custom menu items', () => {
-    const { container } = render(<Header menuContent={sampleMenuContent} menuRightContent={sampleMenuRightContent} />);
+  it('renders navigation links', () => {
+    const { container } = render(<Header />);
 
-    // Use more specific selectors to avoid ambiguity with multiple "Home" texts
-    expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
-    expect(screen.getByRole('link', { name: 'Features' })).toHaveAttribute('href', '/features');
-    expect(screen.getByRole('link', { name: 'Login' })).toHaveAttribute('href', '/login');
-    expect(screen.getByTestId('mock-button-link')).toBeInTheDocument();
-    expect(screen.getByText('Sign Up')).toBeInTheDocument();
+    // Check that the logo link is present
+    const logoLink = screen.getByRole('link', { name: 'Home Logo' });
+    expect(logoLink).toHaveAttribute('href', '/');
+
+    // Check that example links are present
+    const exampleLinks = screen.getAllByRole('link', { name: '### example' });
+    expect(exampleLinks.length).toBeGreaterThan(0);
     maybeSnapshot(container);
   });
 

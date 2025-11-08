@@ -7,7 +7,7 @@
   "bumpVersion": true,
   "isDebug": false,
   "_": [],
-  "templateVersion": "1.0.132",
+  "templateVersion": "1.0.133",
   "fileMap": [
     "templateCatalog/.gitignore-default.md",
     "templateCatalog/package.json-default.md",
