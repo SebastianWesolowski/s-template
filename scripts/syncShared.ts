@@ -114,18 +114,17 @@ function syncSharedFiles(): void {
 
   console.log("\n📦 Starting synchronization:\n");
 
-  // Najpierw posortuj ścieżki od najbardziej szczegółowych do ogólnych
-  const sortedEntries = Object.entries(config).sort((a, b) => {
-    return b[0].split('/').length - a[0].split('/').length;
-  });
-
-  // Śledź już przetworzone ścieżki dla każdego template
-  const processedPaths = new Map<string, Set<string>>();
+  // Przetwarzaj reguły w kolejności z pliku YAML
+  // UWAGA: Użytkownik musi upewnić się, że ogólne reguły są przed szczegółowymi
+  const entries = Object.entries(config);
 
   // Śledź skopiowane pliki
   const copiedFiles: Record<string, string[]> = {};
 
-  sortedEntries.forEach(([sharedPath, configValue]) => {
+  // Śledź chronione ścieżki dla każdego template (z protectFromOverwrite)
+  const protectedPaths = new Map<string, Set<string>>();
+
+  entries.forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
     console.log(`\n📁 Processing: ${sharedPath}`);
 
@@ -137,6 +136,7 @@ function syncSharedFiles(): void {
     const projects = Array.isArray(configValue) ? configValue : configValue.projects;
     const excludeFiles = isProjectConfig(configValue) ? configValue.excludeFiles || [] : [];
     const asName = isProjectConfig(configValue) ? configValue.asName : undefined;
+    const protectFromOverwrite = isProjectConfig(configValue) ? configValue.protectFromOverwrite === true : false;
 
     if (excludeFiles.length > 0) {
       console.log(`  🚫 Excluded files:`, excludeFiles);
@@ -148,13 +148,13 @@ function syncSharedFiles(): void {
         copiedFiles[template] = [];
       }
 
-      // Inicjalizuj Set dla template jeśli nie istnieje
-      if (!processedPaths.has(template)) {
-        processedPaths.set(template, new Set());
-      }
-      const templateProcessedPaths = processedPaths.get(template)!;
-
       console.log(`\n  📌 Template: ${template}`);
+
+      // Inicjalizuj Set dla chronionych ścieżek jeśli nie istnieje
+      if (!protectedPaths.has(template)) {
+        protectedPaths.set(template, new Set());
+      }
+      const templateProtectedPaths = protectedPaths.get(template)!;
 
       // Określ ścieżkę docelową
       const destPath = asName
@@ -164,13 +164,13 @@ function syncSharedFiles(): void {
       // Normalizuj ścieżkę, aby uniknąć problemów z './' i '/'
       const normalizedDestPath = path.normalize(destPath);
 
-      // Sprawdź czy ta ścieżka (lub jej nadrzędna) została już przetworzona
-      const isAlreadyProcessed = Array.from(templateProcessedPaths).some(
-        processed => normalizedDestPath.startsWith(path.normalize(processed))
+      // Sprawdź czy aktualna ścieżka jest podrzędna do chronionej
+      const isProtected = Array.from(templateProtectedPaths).some(
+        protectedPath => normalizedDestPath.startsWith(path.normalize(protectedPath))
       );
 
-      if (isAlreadyProcessed) {
-        console.log(`    ⏭️  Already processed in more specific configuration - skipping`);
+      if (isProtected) {
+        console.log(`    🛡️  Path is protected from overwrite - skipping`);
         return;
       }
 
@@ -233,8 +233,10 @@ function syncSharedFiles(): void {
           }
         }
 
-        // Dodaj przetworzoną ścieżkę do Set
-        templateProcessedPaths.add(normalizedDestPath);
+        // Jeśli reguła ma protectFromOverwrite, dodaj ścieżkę do chronionych
+        if (protectFromOverwrite) {
+          templateProtectedPaths.add(normalizedDestPath);
+        }
 
       } catch (error) {
         console.error(`Error processing ${srcPath}:`, error);

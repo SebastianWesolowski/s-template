@@ -16,10 +16,9 @@ function cleanSharedFiles(): void {
 
   console.log("\n🧹 Rozpoczynam czyszczenie plików:\n");
 
-  // Sortuj ścieżki od najbardziej szczegółowych do ogólnych
-  const sortedEntries = Object.entries(config).sort((a, b) => {
-    return b[0].split('/').length - a[0].split('/').length;
-  });
+  // Przetwarzaj reguły w kolejności z pliku YAML
+  // UWAGA: Użytkownik musi upewnić się, że ogólne reguły są przed szczegółowymi
+  const entries = Object.entries(config);
 
   // Śledź już przetworzone ścieżki dla każdego template
   const processedPaths = new Map<string, Set<string>>();
@@ -29,7 +28,7 @@ function cleanSharedFiles(): void {
 
   let errorCount = 0;
 
-  sortedEntries.forEach(([sharedPath, configValue]) => {
+  entries.forEach(([sharedPath, configValue]) => {
     const srcPath = path.join(SHARED_DIR, sharedPath);
     console.log(`\n📁 Przetwarzanie: ${sharedPath}`);
 
@@ -76,13 +75,13 @@ function cleanSharedFiles(): void {
       // Normalizuj ścieżkę, aby uniknąć problemów z './' i '/'
       const normalizedDestPath = path.normalize(destBasePath);
 
-      // Sprawdź czy ta ścieżka (lub jej nadrzędna) została już przetworzona
+      // Sprawdź czy nadrzędna ścieżka została już przetworzona wcześniej (w pliku YAML)
       const isAlreadyProcessed = Array.from(templateProcessedPaths).some(
-        processed => normalizedDestPath.startsWith(path.normalize(processed))
+        processed => path.normalize(processed).startsWith(normalizedDestPath)
       );
 
       if (isAlreadyProcessed) {
-        console.log(`    ⏭️  Już przetworzono w bardziej szczegółowej konfiguracji - pomijam`);
+        console.log(`    ⏭️  Już przetworzono w bardziej ogólnej konfiguracji - pomijam`);
         return;
       }
 

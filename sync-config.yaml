@@ -91,12 +91,12 @@ docs/[web]:
   excludeFiles:
     - domains-lp
   asName: ../docs
+  protectFromOverwrite: true
 
 docs/[web]/domains-lp:
   projects:
     - NextJs/NextJs15-lp
   asName: ../../docs/domains
-
 
 docs/[npm]/HowToAutoDeploy.md:
   projects:

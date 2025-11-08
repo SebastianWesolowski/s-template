@@ -11,6 +11,7 @@ export interface ProjectConfig {
   excludeFiles?: string[];
   asName?: string;
   copyToRoot?: boolean;
+  protectFromOverwrite?: boolean;
 }
 
 export type SyncConfig = {
