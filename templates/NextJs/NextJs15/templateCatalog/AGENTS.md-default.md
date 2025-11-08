@@ -1,4 +1,4 @@
-# AGENTS.md
+# AGENTS.md 1
 
 Instructions for AI coding agents working on this project.
 
@@ -28,7 +28,8 @@ This is a Next.js 15 template with TypeScript, Tailwind CSS, and comprehensive t
 - E2E tests: `yarn test:e2e`
 - E2E tests UI: `yarn test:e2e:ui`
 - Watch mode: `yarn test:unit:watch`
-- Update snapshots: `yarn test:snapshot`
+- Generate snapshots: `yarn test:snapshot:generate`
+- Verify snapshots: `yarn test:snapshot:verify`
 
 ### Linting & Code Quality
 
@@ -198,7 +199,8 @@ This is a Next.js 15 template with TypeScript, Tailwind CSS, and comprehensive t
 ### Test Failures
 
 - Run tests individually to isolate issue
-- Update snapshots: `yarn test:snapshot`
+- Generate snapshots: `yarn test:snapshot:generate`
+- Verify snapshots: `yarn test:snapshot:verify`
 - Check `jest.setup.js` configuration
 
 ### Build Failures

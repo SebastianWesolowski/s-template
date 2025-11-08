@@ -39,6 +39,9 @@ const customJestConfig = {
       },
     ],
   },
+  reporters: process.env.TEST_WITH_SNAPSHOTS
+    ? ['default']
+    : ['default', '<rootDir>/tools/jest-ignore-obsolete-snapshots-reporter.js'],
 };
 
 module.exports = createJestConfig(customJestConfig);
