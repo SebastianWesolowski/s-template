@@ -1,3 +1,13 @@
+## [1.5.0-dev.32](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.31...v1.5.0-dev.32) (November 09, 2025)
+
+
+### Other tasks
+
+- 📚 [] ️ correct docs nextjs vs nextjs-lp ([f2a4c5d](https://github.com/SebastianWesolowski/s-template/commit/f2a4c5d4c6a2584c31cd7b32aecce518c72a6e6a))
+- ✨ [] nextJs15 ([9f0bc23](https://github.com/SebastianWesolowski/s-template/commit/9f0bc23602a85d453334b23e8b0caa7212cae5a9))
+- ✨ [] nextJs15-lp ([8749479](https://github.com/SebastianWesolowski/s-template/commit/8749479fccd8997b0fe15e91d15bdea8e5e2e1d6))
+- ♻ [] ️ clean up docs ang rename - NextJs15/NextJs15-lp ([5cbb347](https://github.com/SebastianWesolowski/s-template/commit/5cbb3477993a49a222108a10a97b9afc5f1a8000))
+
 ## [1.5.0-dev.31](https://github.com/SebastianWesolowski/s-template/compare/v1.5.0-dev.30...v1.5.0-dev.31) (November 08, 2025)
 
 
